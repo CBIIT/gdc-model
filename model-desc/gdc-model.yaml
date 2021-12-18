@@ -1,0 +1,1524 @@
+---
+_commit: b452665607490d487bb41d8024e50b4f5aba30fa
+Nodes:
+  aggregated_somatic_mutation:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - projects
+    - somatic_aggregation_workflows
+  aligned_reads:
+    Props:
+    - alignment_cocleaning_workflows
+    - alignment_workflows
+    - average_base_quality
+    - average_insert_size
+    - average_read_length
+    - contamination
+    - contamination_error
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - mean_coverage
+    - msi_score
+    - msi_status
+    - pairs_on_diff_chr
+    - platform
+    - proportion_base_mismatch
+    - proportion_coverage_10x
+    - proportion_coverage_30x
+    - proportion_reads_duplicated
+    - proportion_reads_mapped
+    - proportion_targets_no_coverage
+    - submitted_aligned_reads_files
+    - submitted_unaligned_reads_files
+    - total_reads
+    - tumor_ploidy
+    - tumor_purity
+  aligned_reads_index:
+    Props:
+    - aligned_reads_files
+    - data_category
+    - data_format
+    - data_type
+    - submitted_aligned_reads_files
+  alignment_cocleaning_workflow:
+    Props:
+    - submitted_aligned_reads_files
+    - submitted_unaligned_reads_files
+    - workflow_type
+  alignment_workflow:
+    Props:
+    - submitted_aligned_reads_files
+    - submitted_unaligned_reads_files
+    - type
+    - workflow_type
+  aliquot:
+    Props:
+    - aliquot_quantity
+    - aliquot_volume
+    - amount
+    - analyte_type
+    - analyte_type_id
+    - analytes
+    - centers
+    - concentration
+    - no_matched_normal_low_pass_wgs
+    - no_matched_normal_targeted_sequencing
+    - no_matched_normal_wgs
+    - no_matched_normal_wxs
+    - samples
+    - selected_normal_low_pass_wgs
+    - selected_normal_targeted_sequencing
+    - selected_normal_wgs
+    - selected_normal_wxs
+    - source_center
+  analysis_metadata:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - files
+    - submitted_aligned_reads_files
+  analyte:
+    Props:
+    - a260_a280_ratio
+    - amount
+    - analyte_quantity
+    - analyte_type
+    - analyte_type_id
+    - analyte_volume
+    - concentration
+    - experimental_protocol_type
+    - normal_tumor_genotype_snp_match
+    - portions
+    - ribosomal_rna_28s_16s_ratio
+    - rna_integrity_number
+    - samples
+    - spectrophotometer_method
+    - well_number
+  annotated_somatic_mutation:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - genomic_profile_harmonization_workflows
+    - somatic_annotation_workflows
+  annotation:
+    Props:
+    - aggregated_somatic_mutations
+    - aligned_reads_files
+    - aligned_reads_indexes
+    - aliquots
+    - analysis_metadata_files
+    - analytes
+    - annotated_somatic_mutations
+    - archives
+    - biospecimen_supplements
+    - cases
+    - category
+    - centers
+    - classification
+    - clinical_supplements
+    - copy_number_estimates
+    - copy_number_segments
+    - creator
+    - demographics
+    - diagnoses
+    - experiment_metadata_files
+    - exposures
+    - family_histories
+    - files
+    - filtered_copy_number_segments
+    - follow_ups
+    - gene_expressions
+    - legacy_created_datetime
+    - legacy_updated_datetime
+    - masked_methylation_arrays
+    - masked_somatic_mutations
+    - methylation_beta_values
+    - mirna_expressions
+    - molecular_tests
+    - notes
+    - pathology_details
+    - pathology_reports
+    - portions
+    - protein_expressions
+    - raw_methylation_arrays
+    - read_group_qcs
+    - read_groups
+    - run_metadata_files
+    - samples
+    - secondary_expression_analyses
+    - simple_germline_variations
+    - simple_somatic_mutations
+    - slide_images
+    - slides
+    - somatic_mutation_indexes
+    - status
+    - structural_variations
+    - submitted_aligned_reads_files
+    - submitted_genomic_profiles
+    - submitted_genotyping_arrays
+    - submitted_methylation_beta_values
+    - submitted_tangent_copy_numbers
+    - submitted_unaligned_reads_files
+    - tissue_source_sites
+    - treatments
+  archive:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - projects
+    - related_to_files
+    - revision
+  biospecimen_supplement:
+    Props:
+    - archives
+    - cases
+    - data_category
+    - data_format
+    - data_type
+  case:
+    Props:
+    - consent_type
+    - days_to_consent
+    - days_to_lost_to_followup
+    - disease_type
+    - index_date
+    - lost_to_followup
+    - primary_site
+    - projects
+    - tissue_source_sites
+  center:
+    Props:
+    - center_type
+    - code
+    - id
+    - name
+    - namespace
+    - short_name
+    - type
+  clinical:
+    Props:
+    - age_at_diagnosis
+    - cases
+    - days_to_death
+    - ethnicity
+    - gender
+    - icd_10
+    - race
+    - vital_status
+    - year_of_diagnosis
+  clinical_supplement:
+    Props:
+    - archives
+    - cases
+    - data_category
+    - data_format
+    - data_type
+  copy_number_estimate:
+    Props:
+    - copy_number_variation_workflows
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - genomic_profile_harmonization_workflows
+    - platform
+    - somatic_copy_number_workflows
+  copy_number_liftover_workflow:
+    Props:
+    - submitted_tangent_copy_numbers
+    - workflow_type
+  copy_number_segment:
+    Props:
+    - copy_number_liftover_workflows
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - genomic_profile_harmonization_workflows
+    - platform
+    - somatic_copy_number_workflows
+  copy_number_variation_workflow:
+    Props:
+    - copy_number_segments
+    - workflow_type
+  data_format:
+    Props:
+    - id
+    - name
+    - type
+  data_release:
+    Props:
+    - created_datetime
+    - id
+    - major_version
+    - minor_version
+    - name
+    - release_date
+    - released
+    - roots
+    - type
+    - updated_datetime
+  data_subtype:
+    Props:
+    - data_types
+    - id
+    - name
+    - type
+  data_type:
+    Props:
+    - id
+    - name
+    - type
+  demographic:
+    Props:
+    - age_at_index
+    - age_is_obfuscated
+    - cases
+    - cause_of_death
+    - cause_of_death_source
+    - country_of_residence_at_enrollment
+    - days_to_birth
+    - days_to_death
+    - ethnicity
+    - gender
+    - occupation_duration_years
+    - premature_at_birth
+    - race
+    - vital_status
+    - weeks_gestation_at_birth
+    - year_of_birth
+    - year_of_death
+  diagnosis:
+    Props:
+    - adrenal_hormone
+    - age_at_diagnosis
+    - ajcc_clinical_m
+    - ajcc_clinical_n
+    - ajcc_clinical_stage
+    - ajcc_clinical_t
+    - ajcc_pathologic_m
+    - ajcc_pathologic_n
+    - ajcc_pathologic_stage
+    - ajcc_pathologic_t
+    - ajcc_staging_system_edition
+    - ann_arbor_b_symptoms
+    - ann_arbor_b_symptoms_described
+    - ann_arbor_clinical_stage
+    - ann_arbor_extranodal_involvement
+    - ann_arbor_pathologic_stage
+    - best_overall_response
+    - burkitt_lymphoma_clinical_variant
+    - cases
+    - child_pugh_classification
+    - classification_of_tumor
+    - cog_liver_stage
+    - cog_neuroblastoma_risk_group
+    - cog_renal_stage
+    - cog_rhabdomyosarcoma_risk_group
+    - days_to_best_overall_response
+    - days_to_diagnosis
+    - days_to_last_follow_up
+    - days_to_last_known_disease_status
+    - days_to_recurrence
+    - diagnosis_is_primary_disease
+    - eln_risk_classification
+    - enneking_msts_grade
+    - enneking_msts_metastasis
+    - enneking_msts_stage
+    - enneking_msts_tumor_site
+    - esophageal_columnar_dysplasia_degree
+    - esophageal_columnar_metaplasia_present
+    - figo_stage
+    - figo_staging_edition_year
+    - first_symptom_prior_to_diagnosis
+    - gastric_esophageal_junction_involvement
+    - gleason_grade_group
+    - gleason_grade_tertiary
+    - gleason_patterns_percent
+    - goblet_cells_columnar_mucosa_present
+    - icd_10_code
+    - igcccg_stage
+    - inpc_grade
+    - inpc_histologic_group
+    - inrg_stage
+    - inss_stage
+    - international_prognostic_index
+    - irs_group
+    - irs_stage
+    - ishak_fibrosis_score
+    - iss_stage
+    - last_known_disease_status
+    - laterality
+    - margin_distance
+    - margins_involved_site
+    - masaoka_stage
+    - medulloblastoma_molecular_classification
+    - metastasis_at_diagnosis
+    - metastasis_at_diagnosis_site
+    - method_of_diagnosis
+    - micropapillary_features
+    - mitosis_karyorrhexis_index
+    - mitotic_count
+    - morphology
+    - ovarian_specimen_status
+    - ovarian_surface_involvement
+    - papillary_renal_cell_type
+    - peritoneal_fluid_cytological_status
+    - pregnant_at_diagnosis
+    - primary_diagnosis
+    - primary_disease
+    - primary_gleason_grade
+    - prior_malignancy
+    - prior_treatment
+    - progression_or_recurrence
+    - residual_disease
+    - satellite_nodule_present
+    - secondary_gleason_grade
+    - site_of_resection_or_biopsy
+    - sites_of_involvement
+    - supratentorial_localization
+    - synchronous_malignancy
+    - tissue_or_organ_of_origin
+    - tumor_confined_to_organ_of_origin
+    - tumor_depth
+    - tumor_focality
+    - tumor_grade
+    - tumor_regression_grade
+    - weiss_assessment_score
+    - who_cns_grade
+    - who_nte_grade
+    - wilms_tumor_histologic_subtype
+    - year_of_diagnosis
+  experiment_metadata:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - files
+    - read_groups
+  experimental_strategy:
+    Props:
+    - id
+    - name
+    - type
+  exposure:
+    Props:
+    - age_at_onset
+    - alcohol_days_per_week
+    - alcohol_drinks_per_day
+    - alcohol_history
+    - alcohol_intensity
+    - alcohol_type
+    - asbestos_exposure
+    - cases
+    - cigarettes_per_day
+    - coal_dust_exposure
+    - environmental_tobacco_smoke_exposure
+    - exposure_duration
+    - exposure_duration_years
+    - exposure_type
+    - marijuana_use_per_week
+    - pack_years_smoked
+    - parent_with_radiation_exposure
+    - radon_exposure
+    - respirable_crystalline_silica_exposure
+    - secondhand_smoke_as_child
+    - smokeless_tobacco_quit_age
+    - smoking_frequency
+    - time_between_waking_and_first_smoke
+    - tobacco_smoking_onset_year
+    - tobacco_smoking_quit_year
+    - tobacco_smoking_status
+    - tobacco_use_per_day
+    - type_of_smoke_exposure
+    - type_of_tobacco_used
+    - years_smoked
+  expression_analysis_workflow:
+    Props:
+    - gene_expressions
+    - workflow_type
+  family_history:
+    Props:
+    - cases
+    - relationship_age_at_diagnosis
+    - relationship_gender
+    - relationship_primary_diagnosis
+    - relationship_type
+    - relative_with_cancer_history
+    - relatives_with_cancer_history_count
+  file:
+    Props:
+    - aliquots
+    - analytes
+    - archives
+    - cases
+    - centers
+    - data_formats
+    - data_subtypes
+    - derived_files
+    - described_cases
+    - experimental_strategies
+    - platforms
+    - portions
+    - related_files
+    - samples
+    - slides
+    - tags
+  filtered_copy_number_segment:
+    Props:
+    - copy_number_liftover_workflows
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+  follow_up:
+    Props:
+    - adverse_event
+    - adverse_event_grade
+    - aids_risk_factors
+    - barretts_esophagus_goblet_cells_present
+    - bmi
+    - body_surface_area
+    - cases
+    - cause_of_response
+    - cd4_count
+    - cdc_hiv_risk_factors
+    - comorbidity
+    - comorbidity_method_of_diagnosis
+    - days_to_adverse_event
+    - days_to_comorbidity
+    - days_to_follow_up
+    - days_to_imaging
+    - days_to_progression
+    - days_to_progression_free
+    - days_to_recurrence
+    - diabetes_treatment_type
+    - diagnoses
+    - disease_response
+    - dlco_ref_predictive_percent
+    - ecog_performance_status
+    - evidence_of_recurrence_type
+    - eye_color
+    - fev1_fvc_post_bronch_percent
+    - fev1_fvc_pre_bronch_percent
+    - fev1_ref_post_bronch_percent
+    - fev1_ref_pre_bronch_percent
+    - haart_treatment_indicator
+    - height
+    - hepatitis_sustained_virological_response
+    - history_of_tumor
+    - history_of_tumor_type
+    - hiv_viral_load
+    - hormonal_contraceptive_type
+    - hormonal_contraceptive_use
+    - hormone_replacement_therapy_type
+    - hpv_positive_type
+    - hysterectomy_margins_involved
+    - hysterectomy_type
+    - imaging_result
+    - imaging_type
+    - immunosuppressive_treatment_type
+    - karnofsky_performance_status
+    - menopause_status
+    - nadir_cd4_count
+    - pancreatitis_onset_year
+    - pregnancy_outcome
+    - procedures_performed
+    - progression_or_recurrence
+    - progression_or_recurrence_anatomic_site
+    - progression_or_recurrence_type
+    - recist_targeted_regions_number
+    - recist_targeted_regions_sum
+    - reflux_treatment_type
+    - risk_factor
+    - risk_factor_treatment
+    - scan_tracer_used
+    - undescended_testis_corrected
+    - undescended_testis_corrected_age
+    - undescended_testis_corrected_laterality
+    - undescended_testis_corrected_method
+    - undescended_testis_history
+    - undescended_testis_history_laterality
+    - viral_hepatitis_serologies
+    - weight
+  gene_expression:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - rna_expression_workflows
+  genomic_profile_harmonization_workflow:
+    Props:
+    - submitted_genomic_profiles
+    - workflow_type
+  germline_mutation_calling_workflow:
+    Props:
+    - aligned_reads_files
+    - submitted_genotyping_arrays
+    - workflow_type
+  masked_methylation_array:
+    Props:
+    - channel
+    - chip_id
+    - chip_position
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - methylation_array_harmonization_workflows
+    - plate_name
+    - plate_well
+    - platform
+  masked_somatic_mutation:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - genomic_profile_harmonization_workflows
+    - projects
+    - somatic_aggregation_workflows
+  methylation_array_harmonization_workflow:
+    Props:
+    - raw_methylation_arrays
+    - workflow_type
+  methylation_beta_value:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - methylation_array_harmonization_workflows
+    - methylation_liftover_workflows
+    - platform
+  methylation_liftover_workflow:
+    Props:
+    - submitted_methylation_beta_values
+    - workflow_type
+  mirna_expression:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - mirna_expression_workflows
+  mirna_expression_workflow:
+    Props:
+    - aligned_reads_files
+    - workflow_type
+  molecular_test:
+    Props:
+    - aa_change
+    - antigen
+    - biospecimen_type
+    - biospecimen_volume
+    - blood_test_normal_range_lower
+    - blood_test_normal_range_upper
+    - cell_count
+    - chromosome
+    - clonality
+    - copy_number
+    - cytoband
+    - days_to_test
+    - diagnoses
+    - exon
+    - follow_ups
+    - gene_symbol
+    - histone_family
+    - histone_variant
+    - intron
+    - laboratory_test
+    - loci_abnormal_count
+    - loci_count
+    - locus
+    - mismatch_repair_mutation
+    - mitotic_count
+    - mitotic_total_area
+    - molecular_analysis_method
+    - molecular_consequence
+    - pathogenicity
+    - ploidy
+    - second_exon
+    - second_gene_symbol
+    - slides
+    - specialized_molecular_test
+    - test_analyte_type
+    - test_result
+    - test_units
+    - test_value
+    - transcript
+    - variant_origin
+    - variant_type
+    - zygosity
+  pathology_detail:
+    Props:
+    - additional_pathology_findings
+    - anaplasia_present
+    - anaplasia_present_type
+    - bone_marrow_malignant_cells
+    - breslow_thickness
+    - circumferential_resection_margin
+    - columnar_mucosa_present
+    - consistent_pathology_review
+    - diagnoses
+    - dysplasia_degree
+    - dysplasia_type
+    - greatest_tumor_dimension
+    - gross_tumor_weight
+    - largest_extrapelvic_peritoneal_focus
+    - lymph_node_involved_site
+    - lymph_node_involvement
+    - lymph_nodes_positive
+    - lymph_nodes_tested
+    - lymphatic_invasion_present
+    - margin_status
+    - metaplasia_present
+    - morphologic_architectural_pattern
+    - necrosis_percent
+    - necrosis_present
+    - non_nodal_regional_disease
+    - non_nodal_tumor_deposits
+    - number_proliferating_cells
+    - percent_tumor_invasion
+    - perineural_invasion_present
+    - peripancreatic_lymph_nodes_positive
+    - peripancreatic_lymph_nodes_tested
+    - prostatic_chips_positive_count
+    - prostatic_chips_total_count
+    - prostatic_involvement_percent
+    - residual_tumor
+    - rhabdoid_percent
+    - rhabdoid_present
+    - sarcomatoid_percent
+    - sarcomatoid_present
+    - size_extraocular_nodule
+    - transglottic_extension
+    - tumor_largest_dimension_diameter
+    - tumor_thickness
+    - vascular_invasion_present
+    - vascular_invasion_type
+  pathology_report:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - samples
+  platform:
+    Props:
+    - id
+    - name
+    - type
+  portion:
+    Props:
+    - centers
+    - creation_datetime
+    - is_ffpe
+    - portion_number
+    - samples
+    - weight
+  program:
+    Props:
+    - dbgap_accession_number
+    - id
+    - name
+    - type
+  project:
+    Props:
+    - awg_review
+    - code
+    - dbgap_accession_number
+    - disease_type
+    - id
+    - in_review
+    - intended_release_date
+    - is_legacy
+    - name
+    - primary_site
+    - programs
+    - releasable
+    - release_requested
+    - released
+    - request_submission
+    - state
+    - submission_enabled
+    - type
+  protein_expression:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - platform
+    - portions
+    - samples
+  publication:
+    Props:
+    - created_datetime
+    - doi
+    - files
+    - id
+    - pmid
+    - project_id
+    - type
+    - updated_datetime
+  raw_methylation_array:
+    Props:
+    - aliquots
+    - channel
+    - chip_id
+    - chip_position
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - plate_name
+    - plate_well
+    - platform
+  read_group:
+    Props:
+    - adapter_name
+    - adapter_sequence
+    - aliquots
+    - base_caller_name
+    - base_caller_version
+    - chipseq_antibody
+    - chipseq_target
+    - days_to_sequencing
+    - experiment_name
+    - flow_cell_barcode
+    - fragment_maximum_length
+    - fragment_mean_length
+    - fragment_minimum_length
+    - fragment_standard_deviation_length
+    - fragmentation_enzyme
+    - includes_spike_ins
+    - instrument_model
+    - is_paired_end
+    - lane_number
+    - library_name
+    - library_preparation_kit_catalog_number
+    - library_preparation_kit_name
+    - library_preparation_kit_vendor
+    - library_preparation_kit_version
+    - library_selection
+    - library_strand
+    - library_strategy
+    - multiplex_barcode
+    - number_expect_cells
+    - platform
+    - read_group_name
+    - read_length
+    - rin
+    - sequencing_center
+    - sequencing_date
+    - single_cell_library
+    - size_selection_range
+    - spike_ins_concentration
+    - spike_ins_fasta
+    - target_capture_kit
+    - target_capture_kit_catalog_number
+    - target_capture_kit_name
+    - target_capture_kit_target_region
+    - target_capture_kit_vendor
+    - target_capture_kit_version
+    - to_trim_adapter_sequence
+  read_group_qc:
+    Props:
+    - adapter_content
+    - basic_statistics
+    - encoding
+    - fastq_name
+    - kmer_content
+    - overrepresented_sequences
+    - per_base_n_content
+    - per_base_sequence_content
+    - per_base_sequence_quality
+    - per_sequence_gc_content
+    - per_sequence_quality_score
+    - per_tile_sequence_quality
+    - percent_gc_content
+    - read_groups
+    - sequence_duplication_levels
+    - sequence_length_distribution
+    - submitted_aligned_reads_files
+    - submitted_unaligned_reads_files
+    - total_sequences
+    - workflow_type
+  rna_expression_workflow:
+    Props:
+    - aligned_reads_files
+    - submitted_aligned_reads_files
+    - submitted_unaligned_reads_files
+    - workflow_type
+  root:
+    Props:
+    - id
+    - schema_version
+    - type
+  run_metadata:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - files
+    - read_groups
+  sample:
+    Props:
+    - biospecimen_anatomic_site
+    - biospecimen_laterality
+    - cases
+    - catalog_reference
+    - composition
+    - current_weight
+    - days_to_collection
+    - days_to_sample_procurement
+    - diagnoses
+    - diagnosis_pathologically_confirmed
+    - distance_normal_to_tumor
+    - distributor_reference
+    - freezing_method
+    - growth_rate
+    - initial_weight
+    - intermediate_dimension
+    - is_ffpe
+    - longest_dimension
+    - method_of_sample_procurement
+    - oct_embedded
+    - parent_samples
+    - passage_count
+    - pathology_report_uuid
+    - preservation_method
+    - sample_ordinal
+    - sample_type
+    - sample_type_id
+    - shortest_dimension
+    - time_between_clamping_and_freezing
+    - time_between_excision_and_freezing
+    - tissue_collection_type
+    - tissue_source_sites
+    - tissue_type
+    - tumor_code
+    - tumor_code_id
+    - tumor_descriptor
+  secondary_expression_analysis:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - expression_analysis_workflows
+  simple_germline_variation:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - germline_mutation_calling_workflows
+    - platform
+  simple_somatic_mutation:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - genomic_profile_harmonization_workflows
+    - somatic_mutation_calling_workflows
+  slide:
+    Props:
+    - bone_marrow_malignant_cells
+    - number_proliferating_cells
+    - percent_eosinophil_infiltration
+    - percent_follicular_component
+    - percent_granulocyte_infiltration
+    - percent_inflam_infiltration
+    - percent_lymphocyte_infiltration
+    - percent_monocyte_infiltration
+    - percent_necrosis
+    - percent_neutrophil_infiltration
+    - percent_normal_cells
+    - percent_rhabdoid_features
+    - percent_sarcomatoid_features
+    - percent_stromal_cells
+    - percent_tumor_cells
+    - percent_tumor_nuclei
+    - portions
+    - prostatic_chips_positive_count
+    - prostatic_chips_total_count
+    - prostatic_involvement_percent
+    - samples
+    - section_location
+    - tissue_microarray_coordinates
+  slide_image:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - imaging_date
+    - magnification
+    - slides
+    - stain_type
+  somatic_aggregation_workflow:
+    Props:
+    - annotated_somatic_mutations
+    - simple_somatic_mutations
+    - workflow_type
+  somatic_annotation_workflow:
+    Props:
+    - simple_somatic_mutations
+    - workflow_type
+  somatic_copy_number_workflow:
+    Props:
+    - aligned_reads_files
+    - submitted_genotyping_arrays
+    - workflow_type
+  somatic_mutation_calling_workflow:
+    Props:
+    - aligned_reads_files
+    - workflow_type
+  somatic_mutation_index:
+    Props:
+    - annotated_somatic_mutations
+    - data_category
+    - data_format
+    - data_type
+    - simple_somatic_mutations
+    - structural_variations
+  structural_variant_calling_workflow:
+    Props:
+    - aligned_reads_files
+    - workflow_type
+  structural_variation:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - genomic_profile_harmonization_workflows
+    - structural_variant_calling_workflows
+  submitted_aligned_reads:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - proc_internal
+    - read_groups
+  submitted_genomic_profile:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - read_groups
+    - type
+  submitted_genotyping_array:
+    Props:
+    - aliquots
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - platform
+  submitted_methylation_beta_value:
+    Props:
+    - aliquots
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - platform
+  submitted_tangent_copy_number:
+    Props:
+    - aliquots
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+  submitted_unaligned_reads:
+    Props:
+    - data_category
+    - data_format
+    - data_type
+    - experimental_strategy
+    - read_groups
+    - read_pair_number
+  tag:
+    Props:
+    - id
+    - name
+    - type
+  tissue_source_site:
+    Props:
+    - bcr_id
+    - code
+    - id
+    - name
+    - project
+    - type
+  treatment:
+    Props:
+    - chemo_concurrent_to_radiation
+    - days_to_treatment_end
+    - days_to_treatment_start
+    - diagnoses
+    - initial_disease_status
+    - number_of_cycles
+    - reason_treatment_ended
+    - regimen_or_line_of_therapy
+    - route_of_administration
+    - therapeutic_agents
+    - treatment_anatomic_site
+    - treatment_arm
+    - treatment_dose
+    - treatment_dose_units
+    - treatment_effect
+    - treatment_effect_indicator
+    - treatment_frequency
+    - treatment_intent_type
+    - treatment_or_therapy
+    - treatment_outcome
+    - treatment_type
+Relationships:
+  annotates:
+    Ends:
+    - Dst: aggregated_somatic_mutation
+      Src: annotation
+    - Dst: aligned_reads_index
+      Src: annotation
+    - Dst: aligned_reads
+      Src: annotation
+    - Dst: aliquot
+      Src: annotation
+    - Dst: analysis_metadata
+      Src: annotation
+    - Dst: analyte
+      Src: annotation
+    - Dst: annotated_somatic_mutation
+      Src: annotation
+    - Dst: archive
+      Src: annotation
+    - Dst: biospecimen_supplement
+      Src: annotation
+    - Dst: case
+      Src: annotation
+    - Dst: center
+      Src: annotation
+    - Dst: clinical_supplement
+      Src: annotation
+    - Dst: copy_number_estimate
+      Src: annotation
+    - Dst: copy_number_segment
+      Src: annotation
+    - Dst: demographic
+      Src: annotation
+    - Dst: diagnosis
+      Src: annotation
+    - Dst: experiment_metadata
+      Src: annotation
+    - Dst: exposure
+      Src: annotation
+    - Dst: family_history
+      Src: annotation
+    - Dst: file
+      Src: annotation
+    - Dst: filtered_copy_number_segment
+      Src: annotation
+    - Dst: follow_up
+      Src: annotation
+    - Dst: gene_expression
+      Src: annotation
+    - Dst: masked_methylation_array
+      Src: annotation
+    - Dst: masked_somatic_mutation
+      Src: annotation
+    - Dst: methylation_beta_value
+      Src: annotation
+    - Dst: mirna_expression
+      Src: annotation
+    - Dst: molecular_test
+      Src: annotation
+    - Dst: pathology_detail
+      Src: annotation
+    - Dst: pathology_report
+      Src: annotation
+    - Dst: portion
+      Src: annotation
+    - Dst: protein_expression
+      Src: annotation
+    - Dst: raw_methylation_array
+      Src: annotation
+    - Dst: read_group_qc
+      Src: annotation
+    - Dst: read_group
+      Src: annotation
+    - Dst: run_metadata
+      Src: annotation
+    - Dst: sample
+      Src: annotation
+    - Dst: secondary_expression_analysis
+      Src: annotation
+    - Dst: simple_germline_variation
+      Src: annotation
+    - Dst: simple_somatic_mutation
+      Src: annotation
+    - Dst: slide_image
+      Src: annotation
+    - Dst: slide
+      Src: annotation
+    - Dst: somatic_mutation_index
+      Src: annotation
+    - Dst: structural_variation
+      Src: annotation
+    - Dst: submitted_aligned_reads
+      Src: annotation
+    - Dst: submitted_genomic_profile
+      Src: annotation
+    - Dst: submitted_genotyping_array
+      Src: annotation
+    - Dst: submitted_methylation_beta_value
+      Src: annotation
+    - Dst: submitted_tangent_copy_number
+      Src: annotation
+    - Dst: submitted_unaligned_reads
+      Src: annotation
+    - Dst: tissue_source_site
+      Src: annotation
+    - Dst: treatment
+      Src: annotation
+    Mul: many_to_many
+    Props: ~
+  data_from:
+    Ends:
+    - Dst: somatic_aggregation_workflow
+      Src: aggregated_somatic_mutation
+    - Dst: read_group
+      Src: submitted_genomic_profile
+    - Dst: expression_analysis_workflow
+      Src: secondary_expression_analysis
+    - Dst: mirna_expression_workflow
+      Src: mirna_expression
+    - Dst: somatic_annotation_workflow
+      Src: annotated_somatic_mutation
+    - Dst: genomic_profile_harmonization_workflow
+      Src: annotated_somatic_mutation
+    - Dst: methylation_array_harmonization_workflow
+      Src: masked_methylation_array
+    - Dst: germline_mutation_calling_workflow
+      Src: simple_germline_variation
+    - Dst: alignment_cocleaning_workflow
+      Src: aligned_reads
+    - Dst: alignment_workflow
+      Src: aligned_reads
+    - Dst: submitted_aligned_reads
+      Src: read_group_qc
+    - Dst: submitted_unaligned_reads
+      Src: read_group_qc
+    - Dst: aliquot
+      Src: raw_methylation_array
+    - Dst: rna_expression_workflow
+      Src: gene_expression
+    - Dst: aliquot
+      Src: file
+    - Dst: analyte
+      Src: file
+    - Dst: case
+      Src: file
+    - Dst: file
+      Src: file
+    - Dst: portion
+      Src: file
+    - Dst: sample
+      Src: file
+    - Dst: slide
+      Src: file
+    - Dst: genomic_profile_harmonization_workflow
+      Src: structural_variation
+    - Dst: structural_variant_calling_workflow
+      Src: structural_variation
+    - Dst: genomic_profile_harmonization_workflow
+      Src: masked_somatic_mutation
+    - Dst: somatic_aggregation_workflow
+      Src: masked_somatic_mutation
+    - Dst: read_group
+      Src: submitted_aligned_reads
+    - Dst: read_group
+      Src: submitted_unaligned_reads
+    - Dst: somatic_mutation_calling_workflow
+      Src: simple_somatic_mutation
+    - Dst: genomic_profile_harmonization_workflow
+      Src: simple_somatic_mutation
+    - Dst: methylation_array_harmonization_workflow
+      Src: methylation_beta_value
+    - Dst: methylation_liftover_workflow
+      Src: methylation_beta_value
+    - Dst: slide
+      Src: slide_image
+    - Dst: copy_number_liftover_workflow
+      Src: filtered_copy_number_segment
+    Mul: one_to_one
+    Props: ~
+    Req: 1
+  derived_from:
+    Ends:
+    - Dst: project
+      Src: aggregated_somatic_mutation
+    - Dst: portion
+      Src: analyte
+    - Dst: sample
+      Src: analyte
+    - Dst: sample
+      Src: portion
+    - Dst: aliquot
+      Src: submitted_genotyping_array
+    - Dst: aliquot
+      Src: read_group
+    - Dst: submitted_aligned_reads
+      Src: aligned_reads_index
+    - Dst: aligned_reads
+      Src: aligned_reads_index
+    - Dst: copy_number_liftover_workflow
+      Src: copy_number_segment
+    - Dst: genomic_profile_harmonization_workflow
+      Src: copy_number_segment
+    - Dst: somatic_copy_number_workflow
+      Src: copy_number_segment
+    - Dst: simple_somatic_mutation
+      Src: somatic_mutation_index
+    - Dst: annotated_somatic_mutation
+      Src: somatic_mutation_index
+    - Dst: structural_variation
+      Src: somatic_mutation_index
+    - Dst: case
+      Src: sample
+    - Dst: sample
+      Src: sample
+    - Dst: case
+      Src: biospecimen_supplement
+    - Dst: copy_number_variation_workflow
+      Src: copy_number_estimate
+    - Dst: genomic_profile_harmonization_workflow
+      Src: copy_number_estimate
+    - Dst: somatic_copy_number_workflow
+      Src: copy_number_estimate
+    - Dst: read_group
+      Src: experiment_metadata
+    - Dst: file
+      Src: experiment_metadata
+    - Dst: portion
+      Src: protein_expression
+    - Dst: sample
+      Src: protein_expression
+    - Dst: project
+      Src: masked_somatic_mutation
+    - Dst: analyte
+      Src: aliquot
+    - Dst: sample
+      Src: aliquot
+    - Dst: portion
+      Src: slide
+    - Dst: sample
+      Src: slide
+    - Dst: case
+      Src: clinical_supplement
+    - Dst: aliquot
+      Src: submitted_methylation_beta_value
+    - Dst: aliquot
+      Src: submitted_tangent_copy_number
+    - Dst: read_group
+      Src: run_metadata
+    - Dst: file
+      Src: run_metadata
+    - Dst: sample
+      Src: pathology_report
+    - Dst: submitted_aligned_reads
+      Src: analysis_metadata
+    - Dst: file
+      Src: analysis_metadata
+    Mul: many_to_one
+    Props: ~
+  describes:
+    Ends:
+    - Dst: case
+      Src: exposure
+    - Dst: diagnosis
+      Src: treatment
+    - Dst: diagnosis
+      Src: pathology_detail
+    - Dst: root
+      Src: data_release
+    - Dst: case
+      Src: demographic
+    - Dst: case
+      Src: follow_up
+    - Dst: diagnosis
+      Src: follow_up
+    - Dst: case
+      Src: file
+    - Dst: case
+      Src: family_history
+    - Dst: case
+      Src: clinical
+    - Dst: case
+      Src: diagnosis
+    Mul: many_to_one
+    Props: ~
+    Req: 1
+  generated_from:
+    Ends:
+    - Dst: read_group
+      Src: read_group_qc
+    - Dst: platform
+      Src: file
+    Mul: many_to_one
+    Props: ~
+    Req: 1
+  matched_to:
+    Ends:
+    - Dst: submitted_unaligned_reads
+      Src: aligned_reads
+    - Dst: submitted_aligned_reads
+      Src: aligned_reads
+    Mul: one_to_many
+    Props: ~
+  member_of:
+    Ends:
+    - Dst: project
+      Src: case
+    - Dst: archive
+      Src: biospecimen_supplement
+    - Dst: project
+      Src: archive
+    - Dst: archive
+      Src: file
+    - Dst: data_subtype
+      Src: file
+    - Dst: data_format
+      Src: file
+    - Dst: experimental_strategy
+      Src: file
+    - Dst: program
+      Src: project
+    - Dst: data_type
+      Src: data_subtype
+    - Dst: archive
+      Src: clinical_supplement
+    Mul: many_to_one
+    Props: ~
+    Req: 1
+  memeber_of:
+    Ends:
+    - Dst: tag
+      Src: file
+    Mul: many_to_many
+    Props: ~
+  performed_at:
+    Ends:
+    - Dst: follow_up
+      Src: molecular_test
+    Mul: many_to_one
+    Props: ~
+  performed_on:
+    Ends:
+    - Dst: aligned_reads
+      Src: structural_variant_calling_workflow
+    - Dst: submitted_genotyping_array
+      Src: somatic_copy_number_workflow
+    - Dst: aligned_reads
+      Src: somatic_copy_number_workflow
+    - Dst: submitted_aligned_reads
+      Src: alignment_cocleaning_workflow
+    - Dst: submitted_unaligned_reads
+      Src: alignment_cocleaning_workflow
+    - Dst: submitted_aligned_reads
+      Src: alignment_workflow
+    - Dst: submitted_unaligned_reads
+      Src: alignment_workflow
+    - Dst: submitted_methylation_beta_value
+      Src: methylation_liftover_workflow
+    - Dst: copy_number_segment
+      Src: copy_number_variation_workflow
+    - Dst: aligned_reads
+      Src: rna_expression_workflow
+    - Dst: submitted_aligned_reads
+      Src: rna_expression_workflow
+    - Dst: submitted_unaligned_reads
+      Src: rna_expression_workflow
+    - Dst: aligned_reads
+      Src: germline_mutation_calling_workflow
+    - Dst: submitted_genotyping_array
+      Src: germline_mutation_calling_workflow
+    - Dst: annotated_somatic_mutation
+      Src: somatic_aggregation_workflow
+    - Dst: simple_somatic_mutation
+      Src: somatic_aggregation_workflow
+    - Dst: submitted_genomic_profile
+      Src: genomic_profile_harmonization_workflow
+    - Dst: gene_expression
+      Src: expression_analysis_workflow
+    - Dst: simple_somatic_mutation
+      Src: somatic_annotation_workflow
+    - Dst: aligned_reads
+      Src: somatic_mutation_calling_workflow
+    - Dst: raw_methylation_array
+      Src: methylation_array_harmonization_workflow
+    - Dst: submitted_tangent_copy_number
+      Src: copy_number_liftover_workflow
+    - Dst: aligned_reads
+      Src: mirna_expression_workflow
+    Mul: many_to_many
+    Props: ~
+    Req: 1
+  processed_at:
+    Ends:
+    - Dst: tissue_source_site
+      Src: case
+    - Dst: tissue_source_site
+      Src: sample
+    Mul: many_to_one
+    Props: ~
+  refers_to:
+    Ends:
+    - Dst: file
+      Src: publication
+    Mul: many_to_many
+    Props: ~
+    Req: 1
+  related_to:
+    Ends:
+    - Dst: diagnosis
+      Src: sample
+    - Dst: file
+      Src: archive
+    - Dst: file
+      Src: file
+    - Dst: slide
+      Src: molecular_test
+    - Dst: diagnosis
+      Src: molecular_test
+    Mul: many_to_one
+    Props: ~
+  shipped_to:
+    Ends:
+    - Dst: center
+      Src: portion
+    - Dst: center
+      Src: aliquot
+    Mul: many_to_one
+    Props: ~
+  submitted_by:
+    Ends:
+    - Dst: center
+      Src: file
+    Mul: many_to_one
+    Props: ~
