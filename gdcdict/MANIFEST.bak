@@ -1,0 +1,14 @@
+Build.PL
+bin/read-munged-tbls.pl
+t/samples/case.yaml
+t/samples/aligned_reads.yaml
+t/samples/_definitions.yaml
+t/samples/metaschema.yaml
+t/samples/badyaml/case.yaml
+t/001_tests.t
+t/002_test_gdcdict.t
+README
+MANIFEST
+lib/GDC/Dict.pm
+META.yml
+META.json

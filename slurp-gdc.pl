@@ -1,9 +1,9 @@
-use lib '/Users/jensenma/Code/gdcdict/lib';
+use lib './gdcdict/lib';
 use GDC::Dict;
 use JSON::ize;
 use URI::Escape;
 use YAML::XS;
-use Tie::IxHash;
+#use Tie::IxHash;
 use strict;
 
 $ENV{SKIPYAML} = qr/_def|metaschema/;
@@ -69,19 +69,19 @@ for my $t (sort {$a->value cmp $b->value} $dict->terms) {
     origin => $t->source,
     origin_id => $t->source_id,
     origin_version => $t->source_version,
-    value => $t->value,
+    value => $t->{term},
     origin_definition => uri_escape($t->desc),
   }
 }
 
-open my $gdc, ">gdc-model.yaml" or die $!;
-print $gdc Dump($mdf);
-close $gdc;
-open my $gdcp, ">gdc-model-props.yaml" or die $!;
-print $gdcp Dump($propdefs);
-close $gdcp;
+# open my $gdc, ">gdc-model.yaml" or die $!;
+# print $gdc Dump($mdf);
+# close $gdc;
+# open my $gdcp, ">gdc-model-props.yaml" or die $!;
+# print $gdcp Dump($propdefs);
+# close $gdcp;
 
-open my $gdct, ">gdc-model-terms.yaml" or die $!;
+open my $gdct, ">gdc-model-terms.2.yaml" or die $!;
 print $gdct Dump($terms);
 close $gdct;
 1;

@@ -10627,7 +10627,7 @@ PropDefinitions:
     Type: string
   stain_type:
     Enum:
-    - Haemotoxylin and Eosin (H\&\E)
+    - Haemotoxylin and Eosin (H & E)
     - Immunohistochemistry (IHC)
   state:
     Enum:
@@ -10966,9 +10966,9 @@ PropDefinitions:
     - Allogeneic Melanoma Vaccine AGI-101H
     - Allogeneic Natural Killer Cell Line MG4101
     - Allogeneic Natural Killer Cell Line NK-92
-    - Allogeneic Plasmacytoid Dendritic Cells Expressing Lung Tumor Antigens PDC*\lung01
+    - Allogeneic Plasmacytoid Dendritic Cells Expressing Lung Tumor Antigens PDC*lung01
     - Allogeneic Renal Cell Carcinoma Vaccine MGN1601
-    - Allogeneic Third-party Suicide Gene-transduced Anti-HLA-DPB1*\0401 CD4+ T-cells
+    - Allogeneic Third-party Suicide Gene-transduced Anti-HLA-DPB1*0401 CD4+ T-cells
       CTL 19
     - Allosteric ErbB Inhibitor BDTX-189
     - Allovectin-7
@@ -11704,8 +11704,8 @@ PropDefinitions:
     - Autologous Anti-CD22 CAR-4-1BB-TCRz-transduced T-lymphocytes CART22-65s
     - Autologous Anti-EGFR CAR-transduced CXCR 5-modified T-lymphocytes
     - Autologous Anti-FLT3 CAR T Cells AMG 553
-    - Autologous Anti-HLA-A*\02/AFP TCRm-expressing T-cells ET140202
-    - Autologous Anti-HLA-A*\0201/AFP CAR T-cells ET1402L1
+    - Autologous Anti-HLA-A*02/AFP TCRm-expressing T-cells ET140202
+    - Autologous Anti-HLA-A*0201/AFP CAR T-cells ET1402L1
     - Autologous Anti-ICAM-1-CAR-CD28-4-1BB-CD3zeta-expressing T-cells AIC100
     - Autologous Anti-kappa Light Chain CAR-CD28-expressing T-lymphocytes
     - Autologous Anti-NY-ESO-1/LAGE-1 TCR-transduced c259 T Lymphocytes GSK3377794
@@ -11739,7 +11739,7 @@ PropDefinitions:
     - Autologous Genetically-modified MAGE-A4 C1032 CD8alpha T Cells
     - Autologous Genetically-modified MAGE-A4 C1032 T Cells
     - Autologous Heat-Shock Protein 70 Peptide Vaccine AG-858
-    - Autologous HPV16 E7-specific HLA-A*\02:01-restricted TCR Gene Engineered Lymphocytes
+    - Autologous HPV16 E7-specific HLA-A*02:01-restricted TCR Gene Engineered Lymphocytes
       KITE-439
     - Autologous LMP1/LMP2/EBNA1-specific HLA-A02:01/24:02/11:01-restricted TCR-expressing
       T-lymphocytes YT-E001
@@ -12957,8 +12957,8 @@ PropDefinitions:
     - HIF2a RNAi ARO-HIF2
     - Histone-Lysine N-Methyltransferase EZH2 Inhibitor GSK2816126
     - Histrelin Acetate
-    - HLA-A*\0201 Restricted TERT(572Y)/TERT(572) Peptides Vaccine Vx-001
-    - HLA-A*\2402-Restricted Multipeptide Vaccine S-488410
+    - HLA-A*0201 Restricted TERT(572Y)/TERT(572) Peptides Vaccine Vx-001
+    - HLA-A*2402-Restricted Multipeptide Vaccine S-488410
     - HLA-A2-restricted Melanoma-specific Peptides Vaccine GRN-1201
     - HM2/MMAE Antibody-Drug Conjugate ALT-P7
     - Hodgkin\'s Antigens-GM-CSF-Expressing Cell Vaccine
@@ -12974,7 +12974,7 @@ PropDefinitions:
       Vaccine BVAC-C
     - HPV-16 E6 Peptides Vaccine/Candida albicans Extract
     - HPV-6-targeting Immunotherapeutic Vaccine INO-3106
-    - HPV16 E7-specific HLA-A*\02:01-restricted IgG1-Fc Fusion Protein CUE-101
+    - HPV16 E7-specific HLA-A*02:01-restricted IgG1-Fc Fusion Protein CUE-101
     - HPV16 L2/E6/E7 Fusion Protein Vaccine TA-CIN
     - HPV6/11-targeted DNA Plasmid Vaccine INO-3107
     - Hsp90 Antagonist KW-2478

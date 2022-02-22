@@ -78,6 +78,48 @@ Provide nanoids in batch by collecting neo4j ids of nodes missing them, and iter
     ...     while (result.peek()):
     ...         result = s.run("match (c:concept) where not exists(c.nanoid) with c limit 1 set c.nanoid=$nanoid return c", {"nanoid":make_nanoid()})
 
+Term entities generated from enumerated value lists will have redundancies (the term with value "Yes" is represented many times across a number of properties). The MDF reader does not deduplicate these. 
+
+`dedup-terms.py` performs the following:
+
+Want to deduplicate terms with like values within models. Connect the one remaining term to the value sets from which the like terms are removed.
+
+	match (t:term {_commit:$commit})<-[:has_term]-(v:value_set) 
+    where not t.value =~ '^Stage.*' and not t.value =~ '[0-9]+' 
+    with t.value as value, {term:t.nanoid,vs:v.nanoid} as pair 
+    with value, head(collect(pair)) as th, 
+		tail(collect(pair)) as pairs, count(value) as ct 
+    where ct > 1
+    with value, ct, th['term'] as thid, 
+		[x in pairs where x['term'] <> th['term']] as pairs 
+    return value, thid, pairs, ct 
+
+Need to return the nanoids (scalars) and not the nodes themselves - nodes can't be used
+in query parameters. 
+
+(Don't deduplicate disease stage terms, or terms whose values are integers.)
+
+For each row above:
+
+- connect the valuesets to the single (first) term
+
+        with $pairs as pairs, $thid as thid 
+        unwind pairs as pair 
+        with thid, pair['vs'] as vsid 
+        match (t {nanoid:thid}),(vs {nanoid:vsid})
+        merge (t)<-[:has_term]-(vs) 
+
+- remove the redundant terms
+
+		with $pairs as pairs 
+        unwind pairs as pair 
+        with pair['term'] as tid 
+        match (t {nanoid:tid}) 
+        detach delete t 
+
+Terms from the individual models need to be connected to concepts that link with the external
+standard terms (NCIt and caDSR)
+
 
 Fulltext indices on term values and definitions:
 
@@ -86,9 +128,41 @@ Fulltext indices on term values and definitions:
     call db.index.fulltext.createNodeIndex("termDefn",["term"],["origin_definition"])
 
 
+Using n10s (neo4j semantics) on NCI Thesaurus - find the ICD-O-3 definitions for the codes, and their mapped NCIt concepts:
+
+    match (a:owl__Class {rdfs__label:"Mapped ICDO3.1 Topography PT Terminology"})<-[:ncit__A8]-(b)
+    with b
+    match (b)<-[os:owl__annotatedSource]-(a:owl__Axiom)-[op:owl__annotatedProperty]->
+          (p:owl__AnnotationProperty {rdfs__label:"Maps_To"})
+    where a.ncit__P396 = "ICDO3"
+    return b.ncit__NHC0 as concept, b.rdfs__label as ncit_pt, a.owl__annotatedTarget as icdo3_pt,
+           a.ncit__P395 as icdo3_code, a.ncit__P397 as icdo3_ver;
+
+Use the output of this query `icdo3.m.1.csv` in `icdo3.py` to add
+`icdo3_ver` and `icdo_pt` to ICD-O-3 Terms (as `t.origin_version` and
+`t.origin_definition`). Also create :represents link between term and
+concept objects (according to c.ncit <- concept code mapped per NCIt
+`concept`)
+
+Now, a set of GDC terms coming from enumerated value sets have values
+drawn directly from the ICD-O-3 origin definitions. We can link these
+GDC term objects to the correct concept objects as follows:
+
+    match (:origin {name:"ICD-O-3"})<--(t:term)
+    with t 
+    match (:origin {name:"GDC"})<--(s:term) 
+    where s.value = t.origin_definition 
+    with t, s
+    match (c:concept)<-[:represents]-(t) 
+    merge (c)<-[:represents]-(s);
 
 
 
+### Fix YAML
+
+Had to quote all lone instances of "True", "False", "Yes", "No", "yes", "no", to inhibit YAML parser interpretation as boolean values. This could be fixed in slurp.pl
+
+Had to escape many single quotes where functioning as apostrophes. Fix in slurp.pl.
 
 
 

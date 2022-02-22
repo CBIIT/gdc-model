@@ -1,0 +1,33 @@
+---
+abstract: 'Class for slurping GDC dictionaries'
+author:
+  - unknown
+build_requires:
+  Test::Warn: '0'
+configure_requires:
+  Module::Build: '0'
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4229, CPAN::Meta::Converter version 2.150010'
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: GDC-Dict
+provides:
+  GDC::Dict:
+    file: lib/GDC/Dict.pm
+    version: '0.3'
+  GDC::Dict::Edge:
+    file: lib/GDC/Dict.pm
+  GDC::Dict::Node:
+    file: lib/GDC/Dict.pm
+  GDC::Dict::Property:
+    file: lib/GDC/Dict.pm
+  GDC::Dict::Term:
+    file: lib/GDC/Dict.pm
+requires:
+  JSON::XS: '0'
+  Try::Tiny: '0'
+  YAML::PP: '0'
+version: '0.3'
+x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

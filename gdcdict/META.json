@@ -1,0 +1,56 @@
+{
+   "abstract" : "Class for slurping GDC dictionaries",
+   "author" : [
+      "unknown"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4229",
+   "license" : [
+      "unknown"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "GDC-Dict",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::Warn" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "JSON::XS" : "0",
+            "Try::Tiny" : "0",
+            "YAML::PP" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "GDC::Dict" : {
+         "file" : "lib/GDC/Dict.pm",
+         "version" : "0.3"
+      },
+      "GDC::Dict::Edge" : {
+         "file" : "lib/GDC/Dict.pm"
+      },
+      "GDC::Dict::Node" : {
+         "file" : "lib/GDC/Dict.pm"
+      },
+      "GDC::Dict::Property" : {
+         "file" : "lib/GDC/Dict.pm"
+      },
+      "GDC::Dict::Term" : {
+         "file" : "lib/GDC/Dict.pm"
+      }
+   },
+   "release_status" : "stable",
+   "version" : "0.3",
+   "x_serialization_backend" : "JSON::PP version 2.27300_01"
+}

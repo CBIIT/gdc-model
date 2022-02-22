@@ -1,0 +1,15 @@
+Build.PL
+lib/GDC/Dict.pm
+MANIFEST
+META.json
+META.yml
+README
+t/001_tests.t
+t/002_test_gdcdict.t
+t/samples/_definitions.yaml
+t/samples/_terms.yaml
+t/samples/aligned_reads.yaml
+t/samples/badyaml/case.yaml
+t/samples/case.yaml
+t/samples/diagnosis.yaml
+t/samples/metaschema.yaml

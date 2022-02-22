@@ -1,0 +1,8 @@
+GDC::Dict - class for reading GDC dictionaries
+Provides GDC::Dict::Node, GDC::Dict::Edge
+Install - 
+$ perl Build.PL
+$ ./Build
+$ ./Build test
+$ ./Build install
+
