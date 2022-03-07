@@ -1197,7 +1197,7 @@ Relationships:
     - Dst: treatment
       Src: annotation
     Mul: many_to_many
-    Props: ~
+    Props: null
   data_from:
     Ends:
     - Dst: somatic_aggregation_workflow
@@ -1267,7 +1267,7 @@ Relationships:
     - Dst: copy_number_liftover_workflow
       Src: filtered_copy_number_segment
     Mul: one_to_one
-    Props: ~
+    Props: null
     Req: 1
   derived_from:
     Ends:
@@ -1346,7 +1346,7 @@ Relationships:
     - Dst: file
       Src: analysis_metadata
     Mul: many_to_one
-    Props: ~
+    Props: null
   describes:
     Ends:
     - Dst: case
@@ -1372,7 +1372,7 @@ Relationships:
     - Dst: case
       Src: diagnosis
     Mul: many_to_one
-    Props: ~
+    Props: null
     Req: 1
   generated_from:
     Ends:
@@ -1381,7 +1381,7 @@ Relationships:
     - Dst: platform
       Src: file
     Mul: many_to_one
-    Props: ~
+    Props: null
     Req: 1
   matched_to:
     Ends:
@@ -1390,7 +1390,7 @@ Relationships:
     - Dst: submitted_aligned_reads
       Src: aligned_reads
     Mul: one_to_many
-    Props: ~
+    Props: null
   member_of:
     Ends:
     - Dst: project
@@ -1414,20 +1414,20 @@ Relationships:
     - Dst: archive
       Src: clinical_supplement
     Mul: many_to_one
-    Props: ~
+    Props: null
     Req: 1
   memeber_of:
     Ends:
     - Dst: tag
       Src: file
     Mul: many_to_many
-    Props: ~
+    Props: null
   performed_at:
     Ends:
     - Dst: follow_up
       Src: molecular_test
     Mul: many_to_one
-    Props: ~
+    Props: null
   performed_on:
     Ends:
     - Dst: aligned_reads
@@ -1477,7 +1477,7 @@ Relationships:
     - Dst: aligned_reads
       Src: mirna_expression_workflow
     Mul: many_to_many
-    Props: ~
+    Props: null
     Req: 1
   processed_at:
     Ends:
@@ -1486,13 +1486,13 @@ Relationships:
     - Dst: tissue_source_site
       Src: sample
     Mul: many_to_one
-    Props: ~
+    Props: null
   refers_to:
     Ends:
     - Dst: file
       Src: publication
     Mul: many_to_many
-    Props: ~
+    Props: null
     Req: 1
   related_to:
     Ends:
@@ -1507,7 +1507,7 @@ Relationships:
     - Dst: diagnosis
       Src: molecular_test
     Mul: many_to_one
-    Props: ~
+    Props: null
   shipped_to:
     Ends:
     - Dst: center
@@ -1515,10 +1515,10 @@ Relationships:
     - Dst: center
       Src: aliquot
     Mul: many_to_one
-    Props: ~
+    Props: null
   submitted_by:
     Ends:
     - Dst: center
       Src: file
     Mul: many_to_one
-    Props: ~
+    Props: null
