@@ -6,7 +6,7 @@ use YAML::XS;
 #use Tie::IxHash;
 use strict;
 
-$ENV{SKIPYAML} = qr/_def|metaschema/;
+$ENV{SKIPYAML} = qr/_def|metaschema|_term/;
 my $schemadir = $ENV{SCHEMADIR} // "gdcdictionary/gdcdictionary/schemas";
 
 my $dict = GDC::Dict->new($schemadir);
@@ -48,18 +48,30 @@ for my $t (sort keys %$edges) {
   } @edges ];
 }
 
+my %props;
+for my $n ($dict->nodes) {
+  for my $p ($n->properties) {
+    push @{$props{$p->name}}, $n;
+  }
+}
 my @props = sort {$a->name cmp $b->name}  map { $_->properties } $dict->nodes;
 
-for my $p (@props) {
-  my $spec = $propdefs->{PropDefinitions}{$p->name} = {};
-  if ($p->type eq 'enum') {
-    $spec->{Enum} = [$p->values];
-  }
-  else {
-    $spec->{Type} = $p->type;
-  }
-  if ($p->req) {
-    $spec->{Req} = 1;
+for my $prop (sort keys %props) {
+  my $dotted = !!( @{$props{$prop}} > 1 );
+  for my $n (sort {$a->name cmp $b->name} @{$props{$prop}}) {
+    my $pname = $dotted ? $n->name.".$prop" : $prop;
+    my $p = $n->property($prop);
+    my $spec = $propdefs->{PropDefinitions}{$pname} = {};
+    if ($p->type eq 'enum') {
+      $spec->{Enum} = [$p->values];
+    }
+    else {
+      
+      $spec->{Type} = ($p->type eq 'not spec' ? 'TBD' : $p->type)
+    }
+    if ($p->req) {
+      $spec->{Req} = 1;
+    }
   }
 }
 
