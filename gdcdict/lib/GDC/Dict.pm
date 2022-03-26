@@ -164,14 +164,26 @@ sub new {
   my $self = bless {}, $class;
   $self->{_name} = $name;
   if (ref $schema eq 'HASH') {
-    $self->{_values} = $schema->{enum};
-    if ($schema->{enumDef}) {
+    if ($self->{_values} = $schema->{enum}) {
       my @terms;
       for my $v (@{$schema->{enum}}) {
-	my $url = $schema->{enumDef}{$v} &&
-	  $schema->{enumDef}{$v}{'$ref'}[0];
-	my ($tag) = $url =~ m|^_terms\.yaml#/([^/]+)/|;
-	my $t = $dict->term($tag);
+	my $t;
+	if ($schema->{enumDef}) {
+	  # there are term defs
+	  my $url = $schema->{enumDef}{$v} &&
+	    $schema->{enumDef}{$v}{'$ref'}[0];
+	  my ($tag) = $url =~ m|^_terms\.yaml#/([^/]+)/|;
+	  $t = $dict->term($tag);
+	}
+	if (!$t) { # didn't have enumDef, or didn't find a term defn in _term
+	  $t = GDC::Dict::Term->new($v, {
+	    description => "Ad hoc term",
+	    termDef => {
+	      term => $v,
+	      source => "GDC",
+	    }});
+	  $dict->{_terms}{$v} = $t;
+	}
 	push @terms, $t if defined $t;
       }
       $self->{_value_set} = \@terms;
