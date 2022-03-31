@@ -97,16 +97,20 @@ sub _parse_edges {
 sub _parse_terms {
   my $self = shift;
   my $yt;
-  my @files = (join('/', $self->{_schema_dir},'_terms.yaml'),
-	       join('/', $self->{_schema_dir},'_terms_enum.yaml'));
+  my @files = ('_terms.yaml','_terms_enum.yaml');
   for my $tyml (@files) {
-    if ( -f $tyml ) {
-      $yt = LoadFile($tyml);
+    my $pth = join('/', $self->{_schema_dir},$tyml);
+    if ( -f $pth  ) {
+      $yt = LoadFile($pth);
     }
     next unless defined $yt;
-    for my $val (keys %$yt) {
-      next unless ref $yt->{$val};
-      $self->{_terms}{$val} = GDC::Dict::Term->new($val => $yt->{$val}{common});
+    for my $key (keys %$yt) {
+      # in the terms yamls, the key is _not_ the term value (i.e., the
+      # data).
+      next unless ref $yt->{$key};
+      # creating the Term object here is setting the key as the term value
+      # but this is a placeholder, until the property enums are read
+      $self->{_terms}{"$tyml#/$key/common"} = GDC::Dict::Term->new($key => $yt->{$key}{common});
     }
   }
 }
@@ -123,12 +127,11 @@ sub _read_yaml_file {
   }
   my $yt;
   try {
-   return Load($ys);
- } catch {
-   carp "$yamlfile: $_";
-   return;
- };
-  
+    return Load($ys);
+  } catch {
+    carp "$yamlfile: $_";
+    return;
+  };
 }
 
 package GDC::Dict::Node;
@@ -166,23 +169,27 @@ sub new {
   if (ref $schema eq 'HASH') {
     if ($self->{_values} = $schema->{enum}) {
       my @terms;
-      for my $v (@{$schema->{enum}}) {
+      for my $val (@{$schema->{enum}}) {
+	# note that here, the key _is_ the term value, according
+	# to "Gen3"
 	my $t;
 	if ($schema->{enumDef}) {
 	  # there are term defs
-	  my $url = $schema->{enumDef}{$v} &&
-	    $schema->{enumDef}{$v}{'$ref'}[0];
-	  my ($tag) = $url =~ m|^_terms\.yaml#/([^/]+)/|;
-	  $t = $dict->term($tag);
+	  my $url = $schema->{enumDef}{$val} &&
+	    $schema->{enumDef}{$val}{'$ref'}[0];
+	  if ($url) {
+	    $t = $dict->term($url);
+	    $t->{value} = $val;
+	  }
 	}
 	if (!$t) { # didn't have enumDef, or didn't find a term defn in _term
-	  $t = GDC::Dict::Term->new($v, {
+	  $t = GDC::Dict::Term->new($val, {
 	    description => "Ad hoc term",
 	    termDef => {
-	      term => $v,
+	      term => $val,
 	      source => "GDC",
 	    }});
-	  $dict->{_terms}{$v} = $t;
+	  $dict->{_terms}{$val} = $t;
 	}
 	push @terms, $t if defined $t;
       }
@@ -260,6 +267,8 @@ sub new {
   $def = $def->{termDef};
   $def->{value} = $value;
   $def->{description} = $desc;
+  $def->{term_id} =~ s/\s+$//;
+  $def->{cde_id} =~ s/\s+$//;  
 
   return bless $def, $class;
 }
