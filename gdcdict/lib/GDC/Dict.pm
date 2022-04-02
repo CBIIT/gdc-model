@@ -27,7 +27,17 @@ sub new {
   $self->{_edges_by_type} = {};
   $self->{_terms} = {};
   $self->{_schema_dir} = $SCHEMADIR;
-  $self->_parse_terms unless $SKIPTERMS;
+  unless ($SKIPTERMS) {
+    if (-e join('/',$self->{_schema_dir},'_terms.yaml')) {
+      $self->_parse_terms;
+    }
+    elsif (-e join('/',$self->{_schema_dir},'dictionary.yaml')) {
+      $self->_parse_pdc_terms;
+    }
+    else {
+      1; # skip terms
+    }
+  }
   $self->_slurp_dict;
   $self->_parse_edges;
   return $self;
@@ -36,12 +46,19 @@ sub new {
 sub _slurp_dict {
   my $self = shift;
   opendir my $d, $self->{_schema_dir};
+  $SKIPYAML= $ENV {SKIPYAML} ? qr/$ENV{SKIPYAML}/ : qr/^_|metaschema/;
   my @yamls = grep { /yaml$/ && !/$SKIPYAML/} readdir($d);
   for my $yf (@yamls) {
     # say $yf;
-    my ($node) = $yf =~ /(.*)\.yaml/;
     my $yt = _read_yaml_file(join('/',$self->{_schema_dir},$yf));
+    my ($node) = $yf =~ /(.*)\.yaml/;
     if (defined $yt) {
+      if ($yt->{id}) {
+	$node = $yt->{id};
+      }
+      elsif ($yt->{title}) {
+	$node = join('_', map { lc } split(/\s+/, $yt->{title}))
+      }
       $self->{_nodes}{$node} = GDC::Dict::Node->new($node, $yt, $self );
     }
     else {
@@ -115,6 +132,49 @@ sub _parse_terms {
   }
 }
 
+# PDC term file is "dictionary_items.yaml", a list.
+# It only defines property concepts with terms, but it also contains the acceptable value
+# lists for the properties. These are not formally defined.
+sub _parse_pdc_terms {
+  my $self = shift;
+  my $yt;
+  my $pth = join('/', $self->{_schema_dir},'dictionary_item.yaml');
+  if ( -f $pth  ) {
+    $yt = LoadFile($pth);
+  }
+  return unless defined $yt;
+  for my $tdef (@$yt) {
+    # $tdef actually defines a property.
+    # $tdef->{type_general} specificies its type
+    next unless $tdef->{column};
+    my $key = $tdef->{column};
+    # property concept term
+    $self->{_terms}{$key} = GDC::Dict::Term->new(
+      $key => {
+	description => $tdef->{ea_description},
+	termDef => {
+	  term => $key,
+	  source => $tdef->{ea_cde_source},
+	  cde_id => $tdef->{ea_cde_id},
+	},
+      }
+     );
+    # value set - needs to be assigned back to the property
+    if ($tdef->{enumeration}) {
+      for my $tm ( split(/\r*\n/, $tdef->{enumeration}) ) {
+	next if $self->{_terms}{$tm}; # dedup
+	$self->{_terms}{$tm} = GDC::Dict::Term->new($tm, {
+	    description => "Ad hoc term",
+	    termDef => {
+	      term => $tm,
+	      source => "PDC",
+	    },
+	  });
+      }
+    }
+  }
+}
+
 sub _read_yaml_file {
   my $yamlfile = shift;
   open my $yf, $yamlfile or die "$yamlfile $!";
@@ -146,7 +206,7 @@ sub new {
     my @req = $self->schema->{required} && @{$self->schema->{required}};
     my $props = $self->schema->{properties};
 
-    for my $k (keys %{$self->schema->{properties}})  {
+    for my $k (keys %{$props})  {
       next if (ref $props->{$k} ne 'HASH') ;
       $props->{$k}{required} = grep /^$k$/,@req;
       $self->{_properties}{$k} = GDC::Dict::Property->new($k, $props->{$k}, $dict);
@@ -182,7 +242,8 @@ sub new {
 	    $t->{value} = $val;
 	  }
 	}
-	if (!$t) { # didn't have enumDef, or didn't find a term defn in _term
+	$t or $t = $dict->terms($val);
+	$t or do {
 	  $t = GDC::Dict::Term->new($val, {
 	    description => "Ad hoc term",
 	    termDef => {
@@ -190,14 +251,15 @@ sub new {
 	      source => "GDC",
 	    }});
 	  $dict->{_terms}{$val} = $t;
-	}
+	};
 	push @terms, $t if defined $t;
       }
       $self->{_value_set} = \@terms;
     }
     $self->{_required} = !!$schema->{required};
-    $self->{_type} = $schema->{type} && (ref $schema->{type} ? join('|',sort @{$schema->{type}}) : $schema->{type});
+    $self->{_type} = $schema->{type} && (ref $schema->{type} ? join('|',sort @{lc $schema->{type}}) : lc $schema->{type});
     $self->{_type} || ($self->{_type} = ($schema->{enum} ? 'enum' : 'not spec'));
+    ($self->{_type} = 'enum') if $self->{_type} eq 'enumeration';     # PDC kludge
     $self->{_term} = ($dict && $dict->{_terms} && $dict->{_terms}{$name}) || ($schema->{term} && ($schema->{'$ref'} || $schema->{term}));
 
   }
@@ -230,7 +292,7 @@ sub new {
   my $self = bless {}, $class;
   $self->{_link} = $link;
   $self->{_src_name} = $src_name;
-  $self->{_dst_name} = $link->{target_type};
+  $self->{_dst_name} = $link->{target_type} || join("_", map { lc } split(/\s+/,$link->{name}));
   $self->{_src} = $dict->node( $self->{_src_name} );
   $self->{_dst} = $dict->node( $self->{_dst_name} );
   unless ($self->{_src}) {
@@ -239,7 +301,13 @@ sub new {
   unless ($self->{_dst}) {
     warn "No node object yet for $$link{target}" if $VERBOSE;
   }
-  $self->{_type} = $link->{label};
+  if ($link->{label} !~ /\s/) {
+    $self->{_type} = $link->{label};
+  }
+  else { # PDC kludge
+    print "hey";
+    $self->{_type} = "of_".$self->{_dst_name};
+  }
   return $self;
 }
 
