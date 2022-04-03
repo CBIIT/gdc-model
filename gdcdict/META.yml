@@ -16,7 +16,7 @@ name: GDC-Dict
 provides:
   GDC::Dict:
     file: lib/GDC/Dict.pm
-    version: '0.3'
+    version: '0.5'
   GDC::Dict::Edge:
     file: lib/GDC/Dict.pm
   GDC::Dict::Node:
@@ -29,5 +29,5 @@ requires:
   JSON::XS: '0'
   Try::Tiny: '0'
   YAML::PP: '0'
-version: '0.3'
+version: '0.5'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

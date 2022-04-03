@@ -5,7 +5,7 @@ use lib '../lib';
 use GDC::Dict;
 my $t = (-d 't' ? 't' : '.');
 
-my $gdcdict = $ENV{GDCSCHEMA} // File::Spec->catdir($ENV{HOME},'Code/GDC/gdcdictionary/gdcdictionary/schemas');
+my $gdcdict = $ENV{GDCSCHEMA} // '../gdcdictionary/gdcdictionary/schemas';
 unless (-d $gdcdict) {
   plan skip_all => "Can't find GDC dictionary schema directory";
 }

@@ -4,6 +4,7 @@ MANIFEST
 META.json
 META.yml
 README
+README.md
 t/001_tests.t
 t/002_test_gdcdict.t
 t/samples/_definitions.yaml

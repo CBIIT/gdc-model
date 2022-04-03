@@ -35,7 +35,7 @@
    "provides" : {
       "GDC::Dict" : {
          "file" : "lib/GDC/Dict.pm",
-         "version" : "0.3"
+         "version" : "0.5"
       },
       "GDC::Dict::Edge" : {
          "file" : "lib/GDC/Dict.pm"
@@ -51,6 +51,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.3",
+   "version" : "0.5",
    "x_serialization_backend" : "JSON::PP version 2.27300_01"
 }

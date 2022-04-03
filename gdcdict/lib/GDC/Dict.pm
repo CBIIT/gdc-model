@@ -6,7 +6,7 @@ use Try::Tiny;
 use Carp qw/carp/;
 use strict;
 
-our $VERSION = "0.4";
+our $VERSION = "0.5";
 our $SKIPYAML= $ENV {SKIPYAML} ? qr/$ENV{SKIPYAML}/ : qr/^_|metaschema/;
 our $SKIPTERMS = $ENV{SKIPTERMS};
 our $VERBOSE = undef;

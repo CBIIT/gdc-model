@@ -26,7 +26,7 @@ is scalar $dict->edges, 7;
 ok my $p = $dict->node('diagnosis')->property('masaoka_stage');
 isa_ok($p, "GDC::Dict::Property");
 is scalar $p->values, 6;
-is $p->term->value, 'masaoka_stage';
+#is $p->term->value, 'masaoka_stage';
 #is $p->source, 'caDSR';
 #is $p->cde_id, 3952848;
 

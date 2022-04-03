@@ -8,4 +8,5 @@ See [script doc](./slurp-gdc.md) for more info.
 
 [model-desc](./model-desc) directory contains model YAML files and additional info.
 
-The GDC dictionary schema repository is included in this repo as a submodule.
+The [GDC dictionary schema repository](https://github.com/NCI-GDC/gdcdictionary.git) 
+is included in this repo as a submodule.
