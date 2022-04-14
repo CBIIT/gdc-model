@@ -78,11 +78,11 @@ for my $prop (sort keys %props) {
 
 for my $t (sort {$a->value cmp $b->value} $dict->terms) {
   $terms->{Terms}{$t->value} = {
-    origin => $t->source,
-    origin_id => $t->source_id,
-    origin_version => $t->source_version,
-    value => $t->{term},
-    origin_definition => uri_escape($t->desc),
+    Origin => $t->source,
+    Code => $t->source_id,
+    Version => $t->source_version,
+    Value => $t->{term},
+    Definition => uri_escape($t->desc),
   }
 }
 

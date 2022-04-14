@@ -873,16 +873,16 @@ PropDefinitions:
   aggregated_somatic_mutation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: 1
+    Req: true
   aggregated_somatic_mutation.data_format:
     Enum:
     - MAF
     - TSV
-    Req: 1
+    Req: true
   aggregated_somatic_mutation.data_type:
     Enum:
     - Aggregated Somatic Mutation
-    Req: 1
+    Req: true
   aggregated_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -893,11 +893,11 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   aggregated_somatic_mutation.projects:
     Type: TBD
   aggregated_somatic_mutation.somatic_aggregation_workflows:
-    Req: 1
+    Req: true
     Type: TBD
   aggregated_somatic_mutations:
     Type: TBD
@@ -1206,15 +1206,15 @@ PropDefinitions:
   aligned_reads.data_category:
     Enum:
     - Sequencing Reads
-    Req: 1
+    Req: true
   aligned_reads.data_format:
     Enum:
     - BAM
-    Req: 1
+    Req: true
   aligned_reads.data_type:
     Enum:
     - Aligned Reads
-    Req: 1
+    Req: true
   aligned_reads.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -1229,9 +1229,9 @@ PropDefinitions:
     - Validation
     - WGS
     - WXS
-    Req: 1
+    Req: true
   aligned_reads.platform:
-    Req: 1
+    Req: true
     Type: TBD
   aligned_reads.submitted_aligned_reads_files:
     Type: TBD
@@ -1244,15 +1244,15 @@ PropDefinitions:
     - Sequencing Data
     - Sequencing Reads
     - Raw Sequencing Data
-    Req: 1
+    Req: true
   aligned_reads_index.data_format:
     Enum:
     - BAI
-    Req: 1
+    Req: true
   aligned_reads_index.data_type:
     Enum:
     - Aligned Reads Index
-    Req: 1
+    Req: true
   aligned_reads_index.submitted_aligned_reads_files:
     Type: TBD
   aligned_reads_indexes:
@@ -1264,7 +1264,7 @@ PropDefinitions:
   alignment_cocleaning_workflow.workflow_type:
     Enum:
     - BWA with Mark Duplicates and Cocleaning
-    Req: 1
+    Req: true
   alignment_cocleaning_workflows:
     Type: TBD
   alignment_workflow.submitted_aligned_reads_files:
@@ -1288,7 +1288,7 @@ PropDefinitions:
     - STAR 2-Pass Genome
     - STAR 2-Pass Transcriptome
     - zUMIs - Smart-Seq2
-    Req: 1
+    Req: true
   alignment_workflows:
     Type: TBD
   aliquot.amount:
@@ -1314,7 +1314,7 @@ PropDefinitions:
     - Sequencing Data
     - Sequencing Reads
     - Raw Sequencing Data
-    Req: 1
+    Req: true
   analysis_metadata.data_format:
     Enum:
     - SRA XML
@@ -1322,11 +1322,11 @@ PropDefinitions:
     - SDRF
     - IDF
     - ADF
-    Req: 1
+    Req: true
   analysis_metadata.data_type:
     Enum:
     - Analysis Metadata
-    Req: 1
+    Req: true
   analysis_metadata.files:
     Type: TBD
   analysis_metadata.submitted_aligned_reads_files:
@@ -1349,7 +1349,7 @@ PropDefinitions:
     - Repli-G X (Qiagen) DNA
     - RNA
     - Total RNA
-    Req: 1
+    Req: true
   analyte.analyte_type_id:
     Enum:
     - D
@@ -1427,17 +1427,17 @@ PropDefinitions:
   annotated_somatic_mutation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: 1
+    Req: true
   annotated_somatic_mutation.data_format:
     Enum:
     - MAF
     - VCF
-    Req: 1
+    Req: true
   annotated_somatic_mutation.data_type:
     Enum:
     - Annotated Somatic Mutation
     - Masked Annotated Somatic Mutation
-    Req: 1
+    Req: true
   annotated_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -1448,7 +1448,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   annotated_somatic_mutation.genomic_profile_harmonization_workflows:
     Type: TBD
   annotation.aligned_reads_files:
@@ -1552,7 +1552,7 @@ PropDefinitions:
     - TCGA DCC Archive
     - TARGET DCC Archive
   archive.projects:
-    Req: 1
+    Req: true
     Type: TBD
   asbestos_exposure:
     Enum:
@@ -1917,7 +1917,7 @@ PropDefinitions:
   biospecimen_supplement.data_category:
     Enum:
     - Biospecimen
-    Req: 1
+    Req: true
   biospecimen_supplement.data_format:
     Enum:
     - BCR Auxiliary XML
@@ -1929,11 +1929,11 @@ PropDefinitions:
     - FoundationOne XML
     - TSV
     - XLSX
-    Req: 1
+    Req: true
   biospecimen_supplement.data_type:
     Enum:
     - Biospecimen Supplement
-    Req: 1
+    Req: true
   biospecimen_supplements:
     Type: TBD
   biospecimen_type:
@@ -2169,7 +2169,7 @@ PropDefinitions:
     - Tumor tissue origin incorrect
     - Tumor type incorrect
     - WGA Failure
-    Req: 1
+    Req: true
   cause_of_death:
     Enum:
     - Cancer Related
@@ -2208,17 +2208,17 @@ PropDefinitions:
   cell_count:
     Type: integer
   center.code:
-    Req: 1
+    Req: true
     Type: string
   center.id:
     Type: TBD
   center.name:
-    Req: 1
+    Req: true
     Type: string
   center.type:
     Type: string
   center_type:
-    Req: 1
+    Req: true
     Type: string
   chemo_concurrent_to_radiation:
     Enum:
@@ -2313,7 +2313,7 @@ PropDefinitions:
   clinical.age_at_diagnosis:
     Type: number
   clinical.cases:
-    Req: 1
+    Req: true
     Type: TBD
   clinical.days_to_death:
     Type: number
@@ -2350,7 +2350,7 @@ PropDefinitions:
   clinical_supplement.data_category:
     Enum:
     - Clinical
-    Req: 1
+    Req: true
   clinical_supplement.data_format:
     Enum:
     - BCR Biotab
@@ -2360,11 +2360,11 @@ PropDefinitions:
     - FoundationOne XML
     - TSV
     - XLSX
-    Req: 1
+    Req: true
   clinical_supplement.data_type:
     Enum:
     - Clinical Supplement
-    Req: 1
+    Req: true
   clinical_supplements:
     Type: TBD
   clonality:
@@ -2646,25 +2646,25 @@ PropDefinitions:
   copy_number_estimate.data_category:
     Enum:
     - Copy Number Variation
-    Req: 1
+    Req: true
   copy_number_estimate.data_format:
     Enum:
     - TSV
     - TXT
-    Req: 1
+    Req: true
   copy_number_estimate.data_type:
     Enum:
     - Gene Level Copy Number
     - Gene Level Copy Number Scores
     - Cohort Level Copy Number Scores
-    Req: 1
+    Req: true
   copy_number_estimate.experimental_strategy:
     Enum:
     - Genotyping Array
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   copy_number_estimate.genomic_profile_harmonization_workflows:
     Type: TBD
   copy_number_estimate.platform:
@@ -2672,7 +2672,7 @@ PropDefinitions:
     - Affymetrix SNP 6.0
     - Illumina
     - Ion Torrent
-    Req: 1
+    Req: true
   copy_number_estimate.somatic_copy_number_workflows:
     Type: TBD
   copy_number_estimates:
@@ -2682,37 +2682,37 @@ PropDefinitions:
   copy_number_liftover_workflow.workflow_type:
     Enum:
     - DNAcopy
-    Req: 1
+    Req: true
   copy_number_segment.copy_number_liftover_workflows:
     Type: TBD
   copy_number_segment.data_category:
     Enum:
     - Copy Number Variation
-    Req: 1
+    Req: true
   copy_number_segment.data_format:
     Enum:
     - TXT
-    Req: 1
+    Req: true
   copy_number_segment.data_type:
     Enum:
     - Allele-specific Copy Number Segment
     - Copy Number Segment
     - Masked Copy Number Segment
-    Req: 1
+    Req: true
   copy_number_segment.experimental_strategy:
     Enum:
     - Genotyping Array
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   copy_number_segment.genomic_profile_harmonization_workflows:
     Type: TBD
   copy_number_segment.platform:
     Enum:
     - Affymetrix SNP 6.0
     - Illumina
-    Req: 1
+    Req: true
   copy_number_segment.somatic_copy_number_workflows:
     Type: TBD
   copy_number_variation_workflow.copy_number_segments:
@@ -2723,7 +2723,7 @@ PropDefinitions:
     - GISTIC - Arm Level Copy Number
     - GISTIC - Focal Deletion
     - GISTIC - Focal Amplification
-    Req: 1
+    Req: true
   copy_number_variation_workflows:
     Type: TBD
   country_of_residence_at_enrollment:
@@ -2971,7 +2971,7 @@ PropDefinitions:
   data_format.id:
     Type: TBD
   data_format.name:
-    Req: 1
+    Req: true
     Type: string
   data_format.type:
     Type: string
@@ -2982,20 +2982,20 @@ PropDefinitions:
   data_release.id:
     Type: TBD
   data_release.name:
-    Req: 1
+    Req: true
     Type: string
   data_release.released:
     Type: boolean
   data_release.type:
     Enum:
     - data_release
-    Req: 1
+    Req: true
   data_release.updated_datetime:
     Type: TBD
   data_subtype.id:
     Type: TBD
   data_subtype.name:
-    Req: 1
+    Req: true
     Type: string
   data_subtype.type:
     Type: string
@@ -3004,12 +3004,12 @@ PropDefinitions:
   data_type.id:
     Type: TBD
   data_type.name:
-    Req: 1
+    Req: true
     Type: string
   data_type.type:
     Type: string
   data_types:
-    Req: 1
+    Req: true
     Type: TBD
   days_to_adverse_event:
     Type: integer
@@ -3026,7 +3026,7 @@ PropDefinitions:
   days_to_diagnosis:
     Type: integer
   days_to_follow_up:
-    Req: 1
+    Req: true
     Type: TBD
   days_to_imaging:
     Type: integer
@@ -3062,7 +3062,7 @@ PropDefinitions:
     - not reported
     - not allowed to collect
     - unknown
-    Req: 1
+    Req: true
   demographic.gender:
     Enum:
     - female
@@ -3070,7 +3070,7 @@ PropDefinitions:
     - unknown
     - unspecified
     - not reported
-    Req: 1
+    Req: true
   demographic.race:
     Enum:
     - white
@@ -3083,14 +3083,14 @@ PropDefinitions:
     - not reported
     - not allowed to collect
     - unknown
-    Req: 1
+    Req: true
   demographic.vital_status:
     Enum:
     - Alive
     - Dead
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   demographics:
     Type: TBD
   derived_files:
@@ -3111,7 +3111,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
   diagnosis.age_at_diagnosis:
-    Req: 1
+    Req: true
     Type: TBD
   diagnosis.cases:
     Type: TBD
@@ -3129,7 +3129,7 @@ PropDefinitions:
   diagnosis.year_of_diagnosis:
     Type: TBD
   diagnosis_is_primary_disease:
-    Req: 1
+    Req: true
     Type: boolean
   diagnosis_pathologically_confirmed:
     Enum:
@@ -3184,7 +3184,7 @@ PropDefinitions:
   dlco_ref_predictive_percent:
     Type: number
   doi:
-    Req: 1
+    Req: true
     Type: string
   dysplasia_degree:
     Enum:
@@ -3284,15 +3284,15 @@ PropDefinitions:
     - Raw Sequencing Data
     - Sequencing Data
     - Sequencing Reads
-    Req: 1
+    Req: true
   experiment_metadata.data_format:
     Enum:
     - SRA XML
-    Req: 1
+    Req: true
   experiment_metadata.data_type:
     Enum:
     - Experiment Metadata
-    Req: 1
+    Req: true
   experiment_metadata.files:
     Type: TBD
   experiment_metadata.read_groups:
@@ -3300,7 +3300,7 @@ PropDefinitions:
   experiment_metadata_files:
     Type: TBD
   experiment_name:
-    Req: 1
+    Req: true
     Type: string
   experimental_protocol_type:
     Enum:
@@ -3321,7 +3321,7 @@ PropDefinitions:
   experimental_strategy.id:
     Type: TBD
   experimental_strategy.name:
-    Req: 1
+    Req: true
     Type: string
   experimental_strategy.type:
     Type: string
@@ -3349,7 +3349,7 @@ PropDefinitions:
     Enum:
     - Seurat - 10x Chromium
     - Seurat - Smart-Seq2
-    Req: 1
+    Req: true
   expression_analysis_workflows:
     Type: TBD
   eye_color:
@@ -3439,20 +3439,20 @@ PropDefinitions:
   filtered_copy_number_segment.data_category:
     Enum:
     - Copy Number Variation
-    Req: 1
+    Req: true
   filtered_copy_number_segment.data_format:
     Enum:
     - TXT
-    Req: 1
+    Req: true
   filtered_copy_number_segment.data_type:
     Enum:
     - Copy Number Segment
     - Masked Copy Number Segment
-    Req: 1
+    Req: true
   filtered_copy_number_segment.experimental_strategy:
     Enum:
     - Genotyping Array
-    Req: 1
+    Req: true
   filtered_copy_number_segments:
     Type: TBD
   first_symptom_prior_to_diagnosis:
@@ -3468,7 +3468,7 @@ PropDefinitions:
   flow_cell_barcode:
     Type: string
   follow_up.cases:
-    Req: 1
+    Req: true
     Type: TBD
   follow_up.days_to_recurrence:
     Type: integer
@@ -3506,7 +3506,7 @@ PropDefinitions:
   gene_expression.data_category:
     Enum:
     - Transcriptome Profiling
-    Req: 1
+    Req: true
   gene_expression.data_format:
     Enum:
     - CSV
@@ -3514,20 +3514,20 @@ PropDefinitions:
     - MEX
     - TSV
     - TXT
-    Req: 1
+    Req: true
   gene_expression.data_type:
     Enum:
     - Exon Expression Quantification
     - Gene Expression Quantification
     - Isoform Expression Quantification
     - Splice Junction Quantification
-    Req: 1
+    Req: true
   gene_expression.experimental_strategy:
     Enum:
     - RNA-Seq
     - scRNA-Seq
     - Total RNA-Seq
-    Req: 1
+    Req: true
   gene_symbol:
     Enum:
     - A1CF
@@ -4252,7 +4252,7 @@ PropDefinitions:
     - ZRSR2
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   genomic_profile_harmonization_workflow.submitted_genomic_profiles:
     Type: TBD
   genomic_profile_harmonization_workflow.workflow_type:
@@ -4265,7 +4265,7 @@ PropDefinitions:
     - GENIE Structural Variation
     - MuTect2
     - VCF LiftOver
-    Req: 1
+    Req: true
   germline_mutation_calling_workflow.aligned_reads_files:
     Type: TBD
   germline_mutation_calling_workflow.submitted_genotyping_arrays:
@@ -4274,7 +4274,7 @@ PropDefinitions:
     Enum:
     - Birdseed
     - HaplotypeCaller
-    Req: 1
+    Req: true
   germline_mutation_calling_workflows:
     Type: TBD
   gleason_grade_group:
@@ -4572,7 +4572,7 @@ PropDefinitions:
   is_legacy:
     Type: boolean
   is_paired_end:
-    Req: 1
+    Req: true
     Type: TBD
   ishak_fibrosis_score:
     Enum:
@@ -4705,7 +4705,7 @@ PropDefinitions:
   legacy_updated_datetime:
     Type: TBD
   library_name:
-    Req: 1
+    Req: true
     Type: string
   library_preparation_kit_catalog_number:
     Type: string
@@ -4725,7 +4725,7 @@ PropDefinitions:
     - Poly-T Enrichment
     - Random
     - rRNA Depletion
-    Req: 1
+    Req: true
   library_strand:
     Enum:
     - Unstranded
@@ -4746,7 +4746,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   loci_abnormal_count:
     Type: integer
   loci_count:
@@ -4804,7 +4804,7 @@ PropDefinitions:
   magnification:
     Type: number
   major_version:
-    Req: 1
+    Req: true
     Type: integer
   margin_distance:
     Type: number
@@ -4839,7 +4839,7 @@ PropDefinitions:
     Enum:
     - Green
     - Red
-    Req: 1
+    Req: true
   masked_methylation_array.chip_id:
     Type: string
   masked_methylation_array.chip_position:
@@ -4847,19 +4847,19 @@ PropDefinitions:
   masked_methylation_array.data_category:
     Enum:
     - DNA Methylation
-    Req: 1
+    Req: true
   masked_methylation_array.data_format:
     Enum:
     - IDAT
-    Req: 1
+    Req: true
   masked_methylation_array.data_type:
     Enum:
     - Masked Intensities
-    Req: 1
+    Req: true
   masked_methylation_array.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: 1
+    Req: true
   masked_methylation_array.methylation_array_harmonization_workflows:
     Type: TBD
   masked_methylation_array.plate_name:
@@ -4871,22 +4871,22 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
-    Req: 1
+    Req: true
   masked_methylation_arrays:
     Type: TBD
   masked_somatic_mutation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: 1
+    Req: true
   masked_somatic_mutation.data_format:
     Enum:
     - MAF
     - TSV
-    Req: 1
+    Req: true
   masked_somatic_mutation.data_type:
     Enum:
     - Masked Somatic Mutation
-    Req: 1
+    Req: true
   masked_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -4897,7 +4897,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   masked_somatic_mutation.genomic_profile_harmonization_workflows:
     Type: TBD
   masked_somatic_mutation.projects:
@@ -5126,23 +5126,23 @@ PropDefinitions:
   methylation_array_harmonization_workflow.workflow_type:
     Enum:
     - SeSAMe Methylation Beta Estimation
-    Req: 1
+    Req: true
   methylation_beta_value.data_category:
     Enum:
     - DNA Methylation
-    Req: 1
+    Req: true
   methylation_beta_value.data_format:
     Enum:
     - TXT
-    Req: 1
+    Req: true
   methylation_beta_value.data_type:
     Enum:
     - Methylation Beta Value
-    Req: 1
+    Req: true
   methylation_beta_value.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: 1
+    Req: true
   methylation_beta_value.methylation_array_harmonization_workflows:
     Type: TBD
   methylation_beta_value.platform:
@@ -5150,7 +5150,7 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
-    Req: 1
+    Req: true
   methylation_beta_values:
     Type: TBD
   methylation_liftover_workflow.submitted_methylation_beta_values:
@@ -5158,7 +5158,7 @@ PropDefinitions:
   methylation_liftover_workflow.workflow_type:
     Enum:
     - Liftover
-    Req: 1
+    Req: true
   methylation_liftover_workflows:
     Type: TBD
   micropapillary_features:
@@ -5168,34 +5168,34 @@ PropDefinitions:
     - Unknown
     - Not Reported
   minor_version:
-    Req: 1
+    Req: true
     Type: integer
   mirna_expression.data_category:
     Enum:
     - Transcriptome Profiling
-    Req: 1
+    Req: true
   mirna_expression.data_format:
     Enum:
     - CSV
     - TSV
     - TXT
-    Req: 1
+    Req: true
   mirna_expression.data_type:
     Enum:
     - Isoform Expression Quantification
     - miRNA Expression Quantification
     - Supplementary Files
-    Req: 1
+    Req: true
   mirna_expression.experimental_strategy:
     Enum:
     - miRNA-Seq
-    Req: 1
+    Req: true
   mirna_expression_workflow.aligned_reads_files:
     Type: TBD
   mirna_expression_workflow.workflow_type:
     Enum:
     - BCGSC miRNA Profiling
-    Req: 1
+    Req: true
   mirna_expression_workflows:
     Type: TBD
   mirna_expressions:
@@ -5239,7 +5239,7 @@ PropDefinitions:
     - WXS
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   molecular_consequence:
     Enum:
     - 3 Prime UTR Variant
@@ -6453,7 +6453,7 @@ PropDefinitions:
     - 9992/3
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   msi_score:
     Type: number
   msi_status:
@@ -6465,7 +6465,7 @@ PropDefinitions:
   nadir_cd4_count:
     Type: number
   namespace:
-    Req: 1
+    Req: true
     Type: string
   necrosis_percent:
     Type: number
@@ -6575,15 +6575,15 @@ PropDefinitions:
   pathology_report.data_category:
     Enum:
     - Clinical
-    Req: 1
+    Req: true
   pathology_report.data_format:
     Enum:
     - PDF
-    Req: 1
+    Req: true
   pathology_report.data_type:
     Enum:
     - Pathology Report
-    Req: 1
+    Req: true
   pathology_report.samples:
     Type: TBD
   pathology_report_uuid:
@@ -6660,7 +6660,7 @@ PropDefinitions:
   platform.id:
     Type: TBD
   platform.name:
-    Req: 1
+    Req: true
     Type: string
   platform.type:
     Type: string
@@ -6677,7 +6677,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
   pmid:
-    Req: 1
+    Req: true
     Type: string
   portion.centers:
     Type: TBD
@@ -9354,7 +9354,7 @@ PropDefinitions:
     - Yolk sac tumor
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   primary_disease:
     Type: boolean
   primary_gleason_grade:
@@ -9388,17 +9388,17 @@ PropDefinitions:
     - Unknown
     - Not Reported
   program.dbgap_accession_number:
-    Req: 1
+    Req: true
     Type: string
   program.id:
     Type: TBD
   program.name:
-    Req: 1
+    Req: true
     Type: string
   program.type:
     Type: string
   programs:
-    Req: 1
+    Req: true
     Type: TBD
   progression_or_recurrence_anatomic_site:
     Enum:
@@ -9745,17 +9745,17 @@ PropDefinitions:
   project:
     Type: string
   project.code:
-    Req: 1
+    Req: true
     Type: string
   project.dbgap_accession_number:
-    Req: 1
+    Req: true
     Type: string
   project.disease_type:
     Type: string
   project.id:
     Type: TBD
   project.name:
-    Req: 1
+    Req: true
     Type: string
   project.primary_site:
     Type: string
@@ -9780,23 +9780,23 @@ PropDefinitions:
   protein_expression.data_category:
     Enum:
     - Proteome Profiling
-    Req: 1
+    Req: true
   protein_expression.data_format:
     Enum:
     - TSV
-    Req: 1
+    Req: true
   protein_expression.data_type:
     Enum:
     - Protein Expression Quantification
-    Req: 1
+    Req: true
   protein_expression.experimental_strategy:
     Enum:
     - Reverse Phase Protein Array
-    Req: 1
+    Req: true
   protein_expression.platform:
     Enum:
     - RPPA
-    Req: 1
+    Req: true
   protein_expression.portions:
     Type: TBD
   protein_expression.samples:
@@ -9806,7 +9806,7 @@ PropDefinitions:
   publication.created_datetime:
     Type: TBD
   publication.files:
-    Req: 1
+    Req: true
     Type: TBD
   publication.id:
     Type: TBD
@@ -9826,7 +9826,7 @@ PropDefinitions:
     Enum:
     - Green
     - Red
-    Req: 1
+    Req: true
   raw_methylation_array.chip_id:
     Type: string
   raw_methylation_array.chip_position:
@@ -9834,19 +9834,19 @@ PropDefinitions:
   raw_methylation_array.data_category:
     Enum:
     - DNA Methylation
-    Req: 1
+    Req: true
   raw_methylation_array.data_format:
     Enum:
     - IDAT
-    Req: 1
+    Req: true
   raw_methylation_array.data_type:
     Enum:
     - Raw Intensities
-    Req: 1
+    Req: true
   raw_methylation_array.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: 1
+    Req: true
   raw_methylation_array.plate_name:
     Type: string
   raw_methylation_array.plate_well:
@@ -9856,9 +9856,9 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
-    Req: 1
+    Req: true
   read_group.aliquots:
-    Req: 1
+    Req: true
     Type: TBD
   read_group.platform:
     Enum:
@@ -9869,9 +9869,9 @@ PropDefinitions:
     - Other
     - PacBio
     - SOLiD
-    Req: 1
+    Req: true
   read_group_name:
-    Req: 1
+    Req: true
     Type: string
   read_group_qc.read_groups:
     Type: TBD
@@ -9885,7 +9885,7 @@ PropDefinitions:
   read_group_qcs:
     Type: TBD
   read_length:
-    Req: 1
+    Req: true
     Type: TBD
   read_pair_number:
     Enum:
@@ -9893,7 +9893,7 @@ PropDefinitions:
     - R1
     - R2
     - R3
-    Req: 1
+    Req: true
   reason_treatment_ended:
     Enum:
     - Adverse Event
@@ -10141,7 +10141,7 @@ PropDefinitions:
     - No
     - Unknown
   revision:
-    Req: 1
+    Req: true
     Type: number
   rhabdoid_percent:
     Type: number
@@ -10338,7 +10338,7 @@ PropDefinitions:
     - STAR - Smart-Seq2 Raw Counts
     - STAR - Smart-Seq2 Filtered Counts
     - zUMIs - Smart-Seq2 Counts
-    Req: 1
+    Req: true
   rna_expression_workflows:
     Type: TBD
   rna_integrity_number:
@@ -10347,7 +10347,7 @@ PropDefinitions:
     Enum:
     - root
   root.type:
-    Req: 1
+    Req: true
     Type: string
   roots:
     Type: TBD
@@ -10361,15 +10361,15 @@ PropDefinitions:
     Enum:
     - Sequencing Data
     - Raw Sequencing Data
-    Req: 1
+    Req: true
   run_metadata.data_format:
     Enum:
     - SRA XML
-    Req: 1
+    Req: true
   run_metadata.data_type:
     Enum:
     - Run Metadata
-    Req: 1
+    Req: true
   run_metadata.files:
     Type: TBD
   run_metadata.read_groups:
@@ -10441,7 +10441,7 @@ PropDefinitions:
     - Xenograft Tissue
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   sample_type_id:
     Enum:
     - '01'
@@ -11218,21 +11218,21 @@ PropDefinitions:
   secondary_expression_analysis.data_category:
     Enum:
     - Transcriptome Profiling
-    Req: 1
+    Req: true
   secondary_expression_analysis.data_format:
     Enum:
     - HDF5
     - TSV
-    Req: 1
+    Req: true
   secondary_expression_analysis.data_type:
     Enum:
     - Differential Gene Expression
     - Single Cell Analysis
-    Req: 1
+    Req: true
   secondary_expression_analysis.experimental_strategy:
     Enum:
     - scRNA-Seq
-    Req: 1
+    Req: true
   secondary_gleason_grade:
     Enum:
     - Pattern 1
@@ -11247,7 +11247,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
   section_location:
-    Req: 1
+    Req: true
     Type: string
   selected_normal_low_pass_wgs:
     Type: boolean
@@ -11262,28 +11262,28 @@ PropDefinitions:
   sequence_length_distribution:
     Type: TBD
   sequencing_center:
-    Req: 1
+    Req: true
     Type: string
   sequencing_date:
     Type: TBD
   short_name:
-    Req: 1
+    Req: true
     Type: string
   shortest_dimension:
     Type: number
   simple_germline_variation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: 1
+    Req: true
   simple_germline_variation.data_format:
     Enum:
     - VCF
     - TSV
-    Req: 1
+    Req: true
   simple_germline_variation.data_type:
     Enum:
     - Simple Germline Variation
-    Req: 1
+    Req: true
   simple_germline_variation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -11294,7 +11294,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   simple_germline_variation.platform:
     Enum:
     - Affymetrix SNP 6.0
@@ -11304,16 +11304,16 @@ PropDefinitions:
     Enum:
     - Combined Nucleotide Variation
     - Simple Nucleotide Variation
-    Req: 1
+    Req: true
   simple_somatic_mutation.data_format:
     Enum:
     - VCF
-    Req: 1
+    Req: true
   simple_somatic_mutation.data_type:
     Enum:
     - Raw CGI Variant
     - Raw Simple Somatic Mutation
-    Req: 1
+    Req: true
   simple_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -11324,7 +11324,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   simple_somatic_mutation.genomic_profile_harmonization_workflows:
     Type: TBD
   single_cell_library:
@@ -11668,7 +11668,7 @@ PropDefinitions:
     - Waldeyer ring
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   sites_of_involvement:
     Type: array
   size_extraocular_nodule:
@@ -11696,26 +11696,26 @@ PropDefinitions:
   slide_image.data_category:
     Enum:
     - Biospecimen
-    Req: 1
+    Req: true
   slide_image.data_format:
     Enum:
     - JPEG
     - JPEG 2000
     - SVS
     - TIFF
-    Req: 1
+    Req: true
   slide_image.data_type:
     Enum:
     - Cell Culture Image
     - Slide Image
     - Tissue Microarray Image
-    Req: 1
+    Req: true
   slide_image.experimental_strategy:
     Enum:
     - Cell Culture
     - Diagnostic Slide
     - Tissue Slide
-    Req: 1
+    Req: true
   slide_image.slides:
     Type: TBD
   slide_images:
@@ -11742,7 +11742,7 @@ PropDefinitions:
     - Pindel Variant Aggregation and Masking
     - SomaticSniper Variant Aggregation and Masking
     - VarScan2 Variant Aggregation and Masking
-    Req: 1
+    Req: true
   somatic_annotation_workflow.simple_somatic_mutations:
     Type: TBD
   somatic_annotation_workflow.workflow_type:
@@ -11755,7 +11755,7 @@ PropDefinitions:
     - Pindel Annotation
     - SomaticSniper Annotation
     - VarScan2 Annotation
-    Req: 1
+    Req: true
   somatic_annotation_workflows:
     Type: TBD
   somatic_copy_number_workflow.aligned_reads_files:
@@ -11766,7 +11766,7 @@ PropDefinitions:
     Enum:
     - ASCAT2
     - AscatNGS
-    Req: 1
+    Req: true
   somatic_mutation_calling_workflow.aligned_reads_files:
     Type: TBD
   somatic_mutation_calling_workflow.workflow_type:
@@ -11779,7 +11779,7 @@ PropDefinitions:
     - SomaticSniper
     - Strelka2 RNA
     - VarScan2
-    Req: 1
+    Req: true
   somatic_mutation_calling_workflows:
     Type: TBD
   somatic_mutation_index.annotated_somatic_mutations:
@@ -11788,15 +11788,15 @@ PropDefinitions:
     Enum:
     - Simple Nucleotide Variation
     - Somatic Structural Variation
-    Req: 1
+    Req: true
   somatic_mutation_index.data_format:
     Enum:
     - TBI
-    Req: 1
+    Req: true
   somatic_mutation_index.data_type:
     Enum:
     - Somatic Mutation Index
-    Req: 1
+    Req: true
   somatic_mutation_index.simple_somatic_mutations:
     Type: TBD
   somatic_mutation_index.structural_variations:
@@ -11826,7 +11826,7 @@ PropDefinitions:
     - processed
     - closed
     - legacy
-    Req: 1
+    Req: true
   status:
     Enum:
     - Approved
@@ -11840,14 +11840,14 @@ PropDefinitions:
     - Fusion Catcher
     - Pizzly
     - STAR-Fusion
-    Req: 1
+    Req: true
   structural_variant_calling_workflows:
     Type: TBD
   structural_variation.data_category:
     Enum:
     - Somatic Structural Variation
     - Structural Variation
-    Req: 1
+    Req: true
   structural_variation.data_format:
     Enum:
     - BEDPE
@@ -11858,13 +11858,13 @@ PropDefinitions:
     - TSV
     - TXT
     - VCF
-    Req: 1
+    Req: true
   structural_variation.data_type:
     Enum:
     - Structural Alteration
     - Structural Rearrangement
     - Transcript Fusion
-    Req: 1
+    Req: true
   structural_variation.experimental_strategy:
     Enum:
     - RNA-Seq
@@ -11878,15 +11878,15 @@ PropDefinitions:
   submitted_aligned_reads.data_category:
     Enum:
     - Sequencing Reads
-    Req: 1
+    Req: true
   submitted_aligned_reads.data_format:
     Enum:
     - BAM
-    Req: 1
+    Req: true
   submitted_aligned_reads.data_type:
     Enum:
     - Aligned Reads
-    Req: 1
+    Req: true
   submitted_aligned_reads.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -11901,27 +11901,27 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   submitted_aligned_reads.read_groups:
     Type: TBD
   submitted_genomic_profile.data_category:
     Enum:
     - Combined Nucleotide Variation
     - Genomic Profiling
-    Req: 1
+    Req: true
   submitted_genomic_profile.data_format:
     Enum:
     - MAF
     - TSV
     - VCF
     - XML
-    Req: 1
+    Req: true
   submitted_genomic_profile.data_type:
     Enum:
     - FoundationOne Report
     - GENIE Report
     - Raw CGI Variant
-    Req: 1
+    Req: true
   submitted_genomic_profile.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -11932,9 +11932,9 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   submitted_genomic_profile.read_groups:
-    Req: 1
+    Req: true
     Type: TBD
   submitted_genomic_profile.type:
     Enum:
@@ -11944,41 +11944,41 @@ PropDefinitions:
   submitted_genotyping_array.data_category:
     Enum:
     - Copy Number Variation
-    Req: 1
+    Req: true
   submitted_genotyping_array.data_format:
     Enum:
     - CEL
-    Req: 1
+    Req: true
   submitted_genotyping_array.data_type:
     Enum:
     - Raw Intensities
-    Req: 1
+    Req: true
   submitted_genotyping_array.experimental_strategy:
     Enum:
     - Genotyping Array
-    Req: 1
+    Req: true
   submitted_genotyping_array.platform:
     Enum:
     - Affymetrix SNP 6.0
-    Req: 1
+    Req: true
   submitted_methylation_beta_value.aliquots:
     Type: TBD
   submitted_methylation_beta_value.data_category:
     Enum:
     - DNA Methylation
-    Req: 1
+    Req: true
   submitted_methylation_beta_value.data_format:
     Enum:
     - TXT
-    Req: 1
+    Req: true
   submitted_methylation_beta_value.data_type:
     Enum:
     - Methylation Beta Value
-    Req: 1
+    Req: true
   submitted_methylation_beta_value.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: 1
+    Req: true
   submitted_methylation_beta_value.platform:
     Enum:
     - Illumina Human Methylation 27
@@ -11988,32 +11988,32 @@ PropDefinitions:
   submitted_tangent_copy_number.data_category:
     Enum:
     - Copy Number Variation
-    Req: 1
+    Req: true
   submitted_tangent_copy_number.data_format:
     Enum:
     - TXT
-    Req: 1
+    Req: true
   submitted_tangent_copy_number.data_type:
     Enum:
     - Copy Number Estimate
-    Req: 1
+    Req: true
   submitted_tangent_copy_number.experimental_strategy:
     Enum:
     - Genotyping Array
-    Req: 1
+    Req: true
   submitted_unaligned_reads.data_category:
     Enum:
     - Sequencing Reads
-    Req: 1
+    Req: true
   submitted_unaligned_reads.data_format:
     Enum:
     - BAM
     - FASTQ
-    Req: 1
+    Req: true
   submitted_unaligned_reads.data_type:
     Enum:
     - Unaligned Reads
-    Req: 1
+    Req: true
   submitted_unaligned_reads.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -12028,7 +12028,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: 1
+    Req: true
   submitted_unaligned_reads.read_groups:
     Type: TBD
   supratentorial_localization:
@@ -12129,7 +12129,7 @@ PropDefinitions:
     - Unpaired_LogR
     - v1
     - v2
-    Req: 1
+    Req: true
   tag.type:
     Type: string
   tags:
@@ -12183,7 +12183,7 @@ PropDefinitions:
     - Twist Human Comprehensive Exome
     - xGen Exome Research Panel v1.0
     - Unknown
-    Req: 1
+    Req: true
   target_capture_kit_catalog_number:
     Type: string
   target_capture_kit_name:
@@ -12219,7 +12219,7 @@ PropDefinitions:
     - Test Value Reported
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   test_units:
     Enum:
     - g/dL
@@ -17096,7 +17096,7 @@ PropDefinitions:
     - Waldeyer ring
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   tissue_source_site.code:
     Type: string
   tissue_source_site.id:
@@ -17114,7 +17114,7 @@ PropDefinitions:
     - Not Allowed To Collect
     - Unknown
     - Not Reported
-    Req: 1
+    Req: true
   to_trim_adapter_sequence:
     Type: boolean
   tobacco_smoking_onset_year:
