@@ -19,6 +19,8 @@ PropDefinitions:
     - Asbestos bodies
     - Benign endocervical polyp
     - Bilateral ovaries with endometriotic cyst and surface adhesions
+    - Bone marrow concordant histology
+    - Bone marrow discordant histology
     - Carcinoma in situ
     - Cirrhosis
     - Clostridioides difficile (c. diff)
@@ -48,6 +50,8 @@ PropDefinitions:
     - Nonkeratinizing dysplasia; moderate
     - Nonkeratinizing dysplasia; severe (carcinoma in situ)
     - Other
+    - Percent follicular component <= 10%
+    - Percent follicular component > 10%
     - PD-L1 CPS (223C LDT) - 20%
     - Platinum-resistant
     - Pleural plaque
@@ -866,6 +870,8 @@ PropDefinitions:
     - Grade 5
   age_at_index:
     Type: TBD
+  age_at_last_exposure:
+    Type: integer
   age_at_onset:
     Type: integer
   age_is_obfuscated:
@@ -873,16 +879,16 @@ PropDefinitions:
   aggregated_somatic_mutation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: true
+    Req: 1
   aggregated_somatic_mutation.data_format:
     Enum:
     - MAF
     - TSV
-    Req: true
+    Req: 1
   aggregated_somatic_mutation.data_type:
     Enum:
     - Aggregated Somatic Mutation
-    Req: true
+    Req: 1
   aggregated_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -893,11 +899,11 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   aggregated_somatic_mutation.projects:
     Type: TBD
   aggregated_somatic_mutation.somatic_aggregation_workflows:
-    Req: true
+    Req: 1
     Type: TBD
   aggregated_somatic_mutations:
     Type: TBD
@@ -1073,6 +1079,7 @@ PropDefinitions:
     - N1c
     - N1mi
     - N2
+    - N2mi
     - N2a
     - N2b
     - N2c
@@ -1134,6 +1141,7 @@ PropDefinitions:
     - T1b1
     - T1b2
     - T1c
+    - T1c2
     - T1mi
     - T2
     - T2a
@@ -1178,6 +1186,10 @@ PropDefinitions:
     Type: number
   alcohol_drinks_per_day:
     Type: number
+  alcohol_frequency:
+    Enum:
+    - Daily Drinker
+    - Weekly Drinker
   alcohol_history:
     Enum:
     - Yes
@@ -1193,6 +1205,7 @@ PropDefinitions:
     - Lifelong Non-Drinker
     - Non-Drinker
     - Occasional Drinker
+    - Social Drinker
     - Unknown
     - Not Reported
   alcohol_type:
@@ -1206,21 +1219,22 @@ PropDefinitions:
   aligned_reads.data_category:
     Enum:
     - Sequencing Reads
-    Req: true
+    Req: 1
   aligned_reads.data_format:
     Enum:
     - BAM
-    Req: true
+    Req: 1
   aligned_reads.data_type:
     Enum:
     - Aligned Reads
-    Req: true
+    Req: 1
   aligned_reads.experimental_strategy:
     Enum:
     - ATAC-Seq
     - Bisulfite-Seq
     - ChIP-Seq
     - HiChIP
+    - m6A MeRIP-Seq
     - miRNA-Seq
     - RNA-Seq
     - scATAC-Seq
@@ -1229,9 +1243,9 @@ PropDefinitions:
     - Validation
     - WGS
     - WXS
-    Req: true
+    Req: 1
   aligned_reads.platform:
-    Req: true
+    Req: 1
     Type: TBD
   aligned_reads.submitted_aligned_reads_files:
     Type: TBD
@@ -1244,15 +1258,15 @@ PropDefinitions:
     - Sequencing Data
     - Sequencing Reads
     - Raw Sequencing Data
-    Req: true
+    Req: 1
   aligned_reads_index.data_format:
     Enum:
     - BAI
-    Req: true
+    Req: 1
   aligned_reads_index.data_type:
     Enum:
     - Aligned Reads Index
-    Req: true
+    Req: 1
   aligned_reads_index.submitted_aligned_reads_files:
     Type: TBD
   aligned_reads_indexes:
@@ -1264,7 +1278,7 @@ PropDefinitions:
   alignment_cocleaning_workflow.workflow_type:
     Enum:
     - BWA with Mark Duplicates and Cocleaning
-    Req: true
+    Req: 1
   alignment_cocleaning_workflows:
     Type: TBD
   alignment_workflow.submitted_aligned_reads_files:
@@ -1288,7 +1302,7 @@ PropDefinitions:
     - STAR 2-Pass Genome
     - STAR 2-Pass Transcriptome
     - zUMIs - Smart-Seq2
-    Req: true
+    Req: 1
   alignment_workflows:
     Type: TBD
   aliquot.amount:
@@ -1314,7 +1328,7 @@ PropDefinitions:
     - Sequencing Data
     - Sequencing Reads
     - Raw Sequencing Data
-    Req: true
+    Req: 1
   analysis_metadata.data_format:
     Enum:
     - SRA XML
@@ -1322,11 +1336,11 @@ PropDefinitions:
     - SDRF
     - IDF
     - ADF
-    Req: true
+    Req: 1
   analysis_metadata.data_type:
     Enum:
     - Analysis Metadata
-    Req: true
+    Req: 1
   analysis_metadata.files:
     Type: TBD
   analysis_metadata.submitted_aligned_reads_files:
@@ -1343,13 +1357,14 @@ PropDefinitions:
     - FFPE DNA
     - FFPE RNA
     - GenomePlex (Rubicon) Amplified DNA
+    - m6A Enriched RNA
     - Nuclei RNA
     - Repli-G (Qiagen) DNA
     - Repli-G Pooled (Qiagen) DNA
     - Repli-G X (Qiagen) DNA
     - RNA
     - Total RNA
-    Req: true
+    Req: 1
   analyte.analyte_type_id:
     Enum:
     - D
@@ -1388,6 +1403,10 @@ PropDefinitions:
     - Sclerosis
     - Unknown
     - Not Reported
+  aneuploidy:
+    Enum:
+    - Monosomy
+    - Trisomy
   ann_arbor_b_symptoms:
     Enum:
     - Yes
@@ -1427,17 +1446,17 @@ PropDefinitions:
   annotated_somatic_mutation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: true
+    Req: 1
   annotated_somatic_mutation.data_format:
     Enum:
     - MAF
     - VCF
-    Req: true
+    Req: 1
   annotated_somatic_mutation.data_type:
     Enum:
     - Annotated Somatic Mutation
     - Masked Annotated Somatic Mutation
-    Req: true
+    Req: 1
   annotated_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -1448,7 +1467,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   annotated_somatic_mutation.genomic_profile_harmonization_workflows:
     Type: TBD
   annotation.aligned_reads_files:
@@ -1531,6 +1550,8 @@ PropDefinitions:
     - CEA
     - FMC-7
     - HLA-DR
+    - Immunoglobulin, Cytoplasmic
+    - Immunoglobulin, Surface
     - Kappa, Surface
     - Ki67
     - Lambda, Surface
@@ -1538,6 +1559,7 @@ PropDefinitions:
     - NSE
     - Prostate-Specific Antigen (PSA)
     - Squamous Cell Carcinoma Antigen (SCCA)
+    - TAG-72
     - Unknown
     - Not Reported
   archive.data_category:
@@ -1552,7 +1574,7 @@ PropDefinitions:
     - TCGA DCC Archive
     - TARGET DCC Archive
   archive.projects:
-    Req: true
+    Req: 1
     Type: TBD
   asbestos_exposure:
     Enum:
@@ -1560,6 +1582,10 @@ PropDefinitions:
     - No
     - Unknown
     - Not Reported
+  asbestos_exposure_type:
+    Enum:
+    - Amosite
+    - Crocidolite
   average_base_quality:
     Type: number
   average_insert_size:
@@ -1917,7 +1943,7 @@ PropDefinitions:
   biospecimen_supplement.data_category:
     Enum:
     - Biospecimen
-    Req: true
+    Req: 1
   biospecimen_supplement.data_format:
     Enum:
     - BCR Auxiliary XML
@@ -1929,11 +1955,11 @@ PropDefinitions:
     - FoundationOne XML
     - TSV
     - XLSX
-    Req: true
+    Req: 1
   biospecimen_supplement.data_type:
     Enum:
     - Biospecimen Supplement
-    Req: true
+    Req: 1
   biospecimen_supplements:
     Type: TBD
   biospecimen_type:
@@ -1985,6 +2011,12 @@ PropDefinitions:
     - Unknown
     - Not Reported
     - Not Allowed To Collect
+  cancer_detection_method:
+    Enum:
+    - Screening
+    - Surveillance
+    - Symptomatic
+    - Not Reported
   case.disease_type:
     Enum:
     - Acinar Cell Neoplasms
@@ -2169,7 +2201,7 @@ PropDefinitions:
     - Tumor tissue origin incorrect
     - Tumor type incorrect
     - WGA Failure
-    Req: true
+    Req: 1
   cause_of_death:
     Enum:
     - Cancer Related
@@ -2208,18 +2240,20 @@ PropDefinitions:
   cell_count:
     Type: integer
   center.code:
-    Req: true
+    Req: 1
     Type: string
   center.id:
     Type: TBD
   center.name:
-    Req: true
+    Req: 1
     Type: string
   center.type:
     Type: string
   center_type:
-    Req: true
+    Req: 1
     Type: string
+  chemical_exposure_type:
+    Type: array
   chemo_concurrent_to_radiation:
     Enum:
     - Yes
@@ -2256,6 +2290,17 @@ PropDefinitions:
     - H3K27ac
     - Input Control
     - Unknown
+  chromosomal_translocation:
+    Enum:
+    - t(6;9)
+    - t(8;21)
+    - t(3;5)(q25;q34)
+    - t(6;11)(q27;q23)
+    - t(9;11)(p22;q23)
+    - t(10;11)(p11.2;q23)
+    - t(11;19)(q23;p13.1)
+    - Unknown
+    - Not Reported
   chromosome:
     Enum:
     - chr1
@@ -2286,6 +2331,11 @@ PropDefinitions:
     - chrY
     - Unknown
     - Not Reported
+  chromosome_arm:
+    Enum:
+    - p
+    - q
+    - Not Reported
   cigarettes_per_day:
     Type: number
   circumferential_resection_margin:
@@ -2305,15 +2355,17 @@ PropDefinitions:
     - other
     - Premalignant
     - primary
+    - Prior primary
     - Progression
     - recurrence
+    - Synchronous primary
     - Unknown
     - not reported
     - Not Allowed To Collect
   clinical.age_at_diagnosis:
     Type: number
   clinical.cases:
-    Req: true
+    Req: 1
     Type: TBD
   clinical.days_to_death:
     Type: number
@@ -2350,7 +2402,7 @@ PropDefinitions:
   clinical_supplement.data_category:
     Enum:
     - Clinical
-    Req: true
+    Req: 1
   clinical_supplement.data_format:
     Enum:
     - BCR Biotab
@@ -2360,13 +2412,18 @@ PropDefinitions:
     - FoundationOne XML
     - TSV
     - XLSX
-    Req: true
+    Req: 1
   clinical_supplement.data_type:
     Enum:
     - Clinical Supplement
-    Req: true
+    Req: 1
   clinical_supplements:
     Type: TBD
+  clinical_trial_indicator:
+    Enum:
+    - Yes
+    - No
+    - Not Reported
   clonality:
     Enum:
     - Clonal
@@ -2412,6 +2469,8 @@ PropDefinitions:
     - No
     - Unknown
     - Not Reported
+  comorbidities:
+    Type: array
   comorbidity:
     Enum:
     - Abnormal Glucose Level
@@ -2445,12 +2504,15 @@ PropDefinitions:
     - Celiac Disease
     - Cerebrovascular Disease
     - Chlamydia
+    - Chloroma
     - Cholelithiasis
     - Chronic Fatigue Syndrome
+    - Chronic Pancreatitis
     - Chronic Renal Failure
     - Chronic Systemic Steroid Use
     - Cirrhosis, Unknown Etiology
     - Clonal Hematopoiesis
+    - CNS Infection
     - Colon Polyps
     - Common Variable Immunodeficiency
     - Congestive Heart Failure (CHF)
@@ -2470,8 +2532,10 @@ PropDefinitions:
     - Diabetic Neuropathy
     - Diet Controlled Diabetes
     - Diverticulitis
+    - Down Syndrome
     - DVT/PE
     - Dyslipidemia
+    - EBV Lymphoproliferation
     - Eczema
     - Epilepsy
     - Epstein-Barr Virus
@@ -2503,6 +2567,7 @@ PropDefinitions:
     - Herpes Zoster
     - High Grade Liver Dysplastic Nodule
     - HIV / AIDS
+    - Hodgkin Lymphoma
     - Human Papillomavirus Infection
     - HUS/TTP
     - Hypercalcemia
@@ -2526,11 +2591,13 @@ PropDefinitions:
     - Liver Toxicity (Non-Infectious)
     - Low Grade Liver Dysplastic Nodule
     - Lupus
+    - Lymphamatoid Papulosis
     - Lymphocytic Meningitis
     - Lynch Syndrome
     - MAI
     - Malaria
     - Metabolic Syndrome
+    - Methicillin-Resistant Staphylococcus aureus (MRSA)
     - Myasthenia Gravis
     - Mycobacterium avium Complex
     - Myocardial Infarction
@@ -2569,16 +2636,19 @@ PropDefinitions:
     - Sjogren's Syndrome
     - Sleep apnea
     - Smoking
+    - Staph Osteomyelitis
     - Staphylococcus aureus
     - Steatosis
     - Stroke
     - Syphilis
+    - Thyroid Disease, Non-Cancer
     - Transient Ischemic Attack
     - Treponema pallidum
     - Tuberculosis
     - Turcot Syndrome
     - Tyrosinemia
     - Ulcerative Colitis
+    - Urinary Tract Infection
     - Varicella Zoster Virus
     - Wagr Syndrome
     - Unknown
@@ -2643,28 +2713,52 @@ PropDefinitions:
     Type: number
   copy_number:
     Type: number
+  copy_number_auxiliary_file.data_category:
+    Enum:
+    - Copy Number Variation
+    Req: 1
+  copy_number_auxiliary_file.data_format:
+    Enum:
+    - TAR
+    Req: 1
+  copy_number_auxiliary_file.data_type:
+    Enum:
+    - Intermediate Analysis Archive
+    Req: 1
+  copy_number_auxiliary_file.experimental_strategy:
+    Enum:
+    - WGS
+    Req: 1
+  copy_number_auxiliary_file.platform:
+    Enum:
+    - Illumina
+    Req: 1
+  copy_number_auxiliary_file.somatic_copy_number_workflows:
+    Type: TBD
+  copy_number_auxiliary_files:
+    Type: TBD
   copy_number_estimate.data_category:
     Enum:
     - Copy Number Variation
-    Req: true
+    Req: 1
   copy_number_estimate.data_format:
     Enum:
     - TSV
     - TXT
-    Req: true
+    Req: 1
   copy_number_estimate.data_type:
     Enum:
     - Gene Level Copy Number
     - Gene Level Copy Number Scores
     - Cohort Level Copy Number Scores
-    Req: true
+    Req: 1
   copy_number_estimate.experimental_strategy:
     Enum:
     - Genotyping Array
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   copy_number_estimate.genomic_profile_harmonization_workflows:
     Type: TBD
   copy_number_estimate.platform:
@@ -2672,7 +2766,7 @@ PropDefinitions:
     - Affymetrix SNP 6.0
     - Illumina
     - Ion Torrent
-    Req: true
+    Req: 1
   copy_number_estimate.somatic_copy_number_workflows:
     Type: TBD
   copy_number_estimates:
@@ -2682,37 +2776,37 @@ PropDefinitions:
   copy_number_liftover_workflow.workflow_type:
     Enum:
     - DNAcopy
-    Req: true
+    Req: 1
   copy_number_segment.copy_number_liftover_workflows:
     Type: TBD
   copy_number_segment.data_category:
     Enum:
     - Copy Number Variation
-    Req: true
+    Req: 1
   copy_number_segment.data_format:
     Enum:
     - TXT
-    Req: true
+    Req: 1
   copy_number_segment.data_type:
     Enum:
     - Allele-specific Copy Number Segment
     - Copy Number Segment
     - Masked Copy Number Segment
-    Req: true
+    Req: 1
   copy_number_segment.experimental_strategy:
     Enum:
     - Genotyping Array
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   copy_number_segment.genomic_profile_harmonization_workflows:
     Type: TBD
   copy_number_segment.platform:
     Enum:
     - Affymetrix SNP 6.0
     - Illumina
-    Req: true
+    Req: 1
   copy_number_segment.somatic_copy_number_workflows:
     Type: TBD
   copy_number_variation_workflow.copy_number_segments:
@@ -2723,7 +2817,7 @@ PropDefinitions:
     - GISTIC - Arm Level Copy Number
     - GISTIC - Focal Deletion
     - GISTIC - Focal Amplification
-    Req: true
+    Req: 1
   copy_number_variation_workflows:
     Type: TBD
   country_of_residence_at_enrollment:
@@ -2960,6 +3054,8 @@ PropDefinitions:
     - Yemen
     - Zambia
     - Zimbabwe
+  course_number:
+    Type: number
   creation_datetime:
     Type: number
   creator:
@@ -2971,7 +3067,7 @@ PropDefinitions:
   data_format.id:
     Type: TBD
   data_format.name:
-    Req: true
+    Req: 1
     Type: string
   data_format.type:
     Type: string
@@ -2982,20 +3078,20 @@ PropDefinitions:
   data_release.id:
     Type: TBD
   data_release.name:
-    Req: true
+    Req: 1
     Type: string
   data_release.released:
     Type: boolean
   data_release.type:
     Enum:
     - data_release
-    Req: true
+    Req: 1
   data_release.updated_datetime:
     Type: TBD
   data_subtype.id:
     Type: TBD
   data_subtype.name:
-    Req: true
+    Req: 1
     Type: string
   data_subtype.type:
     Type: string
@@ -3004,12 +3100,12 @@ PropDefinitions:
   data_type.id:
     Type: TBD
   data_type.name:
-    Req: true
+    Req: 1
     Type: string
   data_type.type:
     Type: string
   data_types:
-    Req: true
+    Req: 1
     Type: TBD
   days_to_adverse_event:
     Type: integer
@@ -3025,8 +3121,10 @@ PropDefinitions:
     Type: integer
   days_to_diagnosis:
     Type: integer
+  days_to_first_event:
+    Type: integer
   days_to_follow_up:
-    Req: true
+    Req: 1
     Type: TBD
   days_to_imaging:
     Type: integer
@@ -3039,6 +3137,8 @@ PropDefinitions:
   days_to_progression:
     Type: integer
   days_to_progression_free:
+    Type: integer
+  days_to_risk_factor:
     Type: integer
   days_to_sample_procurement:
     Type: integer
@@ -3062,7 +3162,7 @@ PropDefinitions:
     - not reported
     - not allowed to collect
     - unknown
-    Req: true
+    Req: 1
   demographic.gender:
     Enum:
     - female
@@ -3070,7 +3170,9 @@ PropDefinitions:
     - unknown
     - unspecified
     - not reported
-    Req: true
+    Req: 1
+  demographic.occupation_duration_years:
+    Type: integer
   demographic.race:
     Enum:
     - white
@@ -3083,14 +3185,14 @@ PropDefinitions:
     - not reported
     - not allowed to collect
     - unknown
-    Req: true
+    Req: 1
   demographic.vital_status:
     Enum:
     - Alive
     - Dead
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   demographics:
     Type: TBD
   derived_files:
@@ -3104,6 +3206,7 @@ PropDefinitions:
     - Diet
     - Injected Insulin
     - Insulin
+    - Linagliptin
     - Oral Hypoglycemic
     - Other
     - Sulfonylurea
@@ -3111,7 +3214,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
   diagnosis.age_at_diagnosis:
-    Req: true
+    Req: 1
     Type: TBD
   diagnosis.cases:
     Type: TBD
@@ -3126,10 +3229,18 @@ PropDefinitions:
     - unknown
     - not reported
     - Not Allowed To Collect
+  diagnosis.residual_disease:
+    Enum:
+    - R0
+    - R1
+    - R2
+    - RX
+    - Unknown
+    - Not Reported
   diagnosis.year_of_diagnosis:
     Type: TBD
   diagnosis_is_primary_disease:
-    Req: true
+    Req: 1
     Type: boolean
   diagnosis_pathologically_confirmed:
     Enum:
@@ -3184,8 +3295,23 @@ PropDefinitions:
   dlco_ref_predictive_percent:
     Type: number
   doi:
-    Req: true
+    Req: 1
     Type: string
+  double_expressor_lymphoma:
+    Enum:
+    - Yes
+    - No
+    - Not Reported
+  double_hit_lymphoma:
+    Enum:
+    - Yes
+    - No
+    - Not Reported
+  drug_category:
+    Enum:
+    - Glucocorticoid
+    - Growth factor
+    - PARP inhibitor
   dysplasia_degree:
     Enum:
     - High Grade
@@ -3201,6 +3327,7 @@ PropDefinitions:
     Enum:
     - Epithelial
     - Esophageal Columnar Dysplasia
+    - Esophageal Mucosa Columnar Dysplasia
     - Keratinizing
     - Nonkeratinizing
     - Other
@@ -3223,6 +3350,16 @@ PropDefinitions:
     - Intermediate
     - Unknown
     - Not Reported
+  embolic_agent:
+    Enum:
+    - Gelfoam
+    - Lipiodol
+    - Plastic Beads
+    - PVA Particles
+    - Spherical Particles
+    - Y-90 Sirsphere
+    - Y-90 Therasphere
+    - Other
   encoding:
     Type: string
   enneking_msts_grade:
@@ -3271,10 +3408,15 @@ PropDefinitions:
     - No
     - Unknown
     - Not Reported
+  evidence_of_progression_type:
+    Enum:
+    - Convincing Image Source
+    - Histologic Confirmation
   evidence_of_recurrence_type:
     Enum:
     - Biopsy with Histologic Confirmation
     - Convincing Image Source
+    - Histologic Confirmation
     - Physical Examination
     - Positive Biomarker(s)
   exon:
@@ -3284,15 +3426,15 @@ PropDefinitions:
     - Raw Sequencing Data
     - Sequencing Data
     - Sequencing Reads
-    Req: true
+    Req: 1
   experiment_metadata.data_format:
     Enum:
     - SRA XML
-    Req: true
+    Req: 1
   experiment_metadata.data_type:
     Enum:
     - Experiment Metadata
-    Req: true
+    Req: 1
   experiment_metadata.files:
     Type: TBD
   experiment_metadata.read_groups:
@@ -3300,7 +3442,7 @@ PropDefinitions:
   experiment_metadata_files:
     Type: TBD
   experiment_name:
-    Req: true
+    Req: 1
     Type: string
   experimental_protocol_type:
     Enum:
@@ -3321,12 +3463,14 @@ PropDefinitions:
   experimental_strategy.id:
     Type: TBD
   experimental_strategy.name:
-    Req: true
+    Req: 1
     Type: string
   experimental_strategy.type:
     Type: string
   exposure.cases:
     Type: TBD
+  exposure.occupation_duration_years:
+    Type: integer
   exposure_duration:
     Enum:
     - Six Weeks or More
@@ -3334,11 +3478,22 @@ PropDefinitions:
     - Not Reported
   exposure_duration_years:
     Type: integer
+  exposure_source:
+    Enum:
+    - Occupational
+    - Secondary
+    - Unknown
   exposure_type:
     Enum:
+    - Asbestos
+    - Chemical
+    - Coal Dust
     - Marijuana
     - Radiation
     - Smoke
+    - Radon
+    - Respirable Crystalline Silica
+    - Smokeless Tobacco
     - Tobacco
     - Wood Dust
   exposures:
@@ -3349,9 +3504,21 @@ PropDefinitions:
     Enum:
     - Seurat - 10x Chromium
     - Seurat - Smart-Seq2
-    Req: true
+    Req: 1
   expression_analysis_workflows:
     Type: TBD
+  extracapsular_extension:
+    Enum:
+    - Extensive
+    - Focal
+    - Not Reported
+  extranodal_extension:
+    Enum:
+    - Gross Extension
+    - Microscopic Extension
+    - No Extranodal Extension
+  extrascleral_extension:
+    Type: boolean
   eye_color:
     Enum:
     - Amber
@@ -3363,6 +3530,17 @@ PropDefinitions:
     - Red & Violet
     - Other
     - Not Reported
+  fab_morphology_code:
+    Enum:
+    - M0
+    - M1
+    - M2
+    - M3
+    - M4
+    - M5
+    - M6
+    - M7
+    - Not Classified
   family_histories:
     Type: TBD
   family_history.cases:
@@ -3439,22 +3617,36 @@ PropDefinitions:
   filtered_copy_number_segment.data_category:
     Enum:
     - Copy Number Variation
-    Req: true
+    Req: 1
   filtered_copy_number_segment.data_format:
     Enum:
     - TXT
-    Req: true
+    Req: 1
   filtered_copy_number_segment.data_type:
     Enum:
     - Copy Number Segment
     - Masked Copy Number Segment
-    Req: true
+    Req: 1
   filtered_copy_number_segment.experimental_strategy:
     Enum:
     - Genotyping Array
-    Req: true
+    Req: 1
   filtered_copy_number_segments:
     Type: TBD
+  first_event:
+    Enum:
+    - Censored
+    - Death
+    - Death without Remission
+    - Event
+    - Induction Death
+    - Induction Failure
+    - None
+    - Progression
+    - Other
+    - Relapse
+    - Second Malignant Neoplasm
+    - Not Reported
   first_symptom_prior_to_diagnosis:
     Enum:
     - Altered Mental Status
@@ -3468,7 +3660,7 @@ PropDefinitions:
   flow_cell_barcode:
     Type: string
   follow_up.cases:
-    Req: true
+    Req: 1
     Type: TBD
   follow_up.days_to_recurrence:
     Type: integer
@@ -3479,6 +3671,25 @@ PropDefinitions:
     - Yes
     - No
     - Unknown
+    - Not Reported
+  follow_up.timepoint_category:
+    Enum:
+    - Adolescence
+    - Adjuvant Therapy
+    - Adulthood
+    - Childhood
+    - Follow-up
+    - Initial Diagnosis
+    - Last Contact
+    - Post Adjuvant Therapy
+    - Post Hormone Therapy
+    - Post Secondary Therapy
+    - Postoperative
+    - Preoperative
+    - Prior to Diagnosis
+    - Prior to Treatment
+    - Recurrence/Progression
+    - Other
     - Not Reported
   follow_up.weight:
     Type: number
@@ -3506,7 +3717,7 @@ PropDefinitions:
   gene_expression.data_category:
     Enum:
     - Transcriptome Profiling
-    Req: true
+    Req: 1
   gene_expression.data_format:
     Enum:
     - CSV
@@ -3514,20 +3725,21 @@ PropDefinitions:
     - MEX
     - TSV
     - TXT
-    Req: true
+    Req: 1
   gene_expression.data_type:
     Enum:
     - Exon Expression Quantification
     - Gene Expression Quantification
     - Isoform Expression Quantification
     - Splice Junction Quantification
-    Req: true
+    Req: 1
   gene_expression.experimental_strategy:
     Enum:
+    - m6A MeRIP-Seq
     - RNA-Seq
     - scRNA-Seq
     - Total RNA-Seq
-    Req: true
+    Req: 1
   gene_symbol:
     Enum:
     - A1CF
@@ -4192,6 +4404,7 @@ PropDefinitions:
     - TFRC
     - TGFBR2
     - THRAP3
+    - TLR2
     - TLX1
     - TLX3
     - TMEM127
@@ -4252,7 +4465,7 @@ PropDefinitions:
     - ZRSR2
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   genomic_profile_harmonization_workflow.submitted_genomic_profiles:
     Type: TBD
   genomic_profile_harmonization_workflow.workflow_type:
@@ -4265,7 +4478,7 @@ PropDefinitions:
     - GENIE Structural Variation
     - MuTect2
     - VCF LiftOver
-    Req: true
+    Req: 1
   germline_mutation_calling_workflow.aligned_reads_files:
     Type: TBD
   germline_mutation_calling_workflow.submitted_genotyping_arrays:
@@ -4274,7 +4487,7 @@ PropDefinitions:
     Enum:
     - Birdseed
     - HaplotypeCaller
-    Req: true
+    Req: 1
   germline_mutation_calling_workflows:
     Type: TBD
   gleason_grade_group:
@@ -4290,6 +4503,8 @@ PropDefinitions:
     - Pattern 4
     - Pattern 5
   gleason_patterns_percent:
+    Type: integer
+  gleason_score:
     Type: integer
   goblet_cells_columnar_mucosa_present:
     Enum:
@@ -4354,6 +4569,8 @@ PropDefinitions:
     - Not Reported
   history_of_tumor_type:
     Enum:
+    - Colorectal Cancer
+    - Lower Grade Glioma
     - Phenochromocytoma or Paraganglioma
   hiv_viral_load:
     Type: number
@@ -4402,6 +4619,23 @@ PropDefinitions:
     - Other
     - Unknown
     - Not Reported
+  hpv_strain:
+    Enum:
+    - HPV16
+    - HPV18
+    - HPV31
+    - HPV33
+    - HPV35
+    - HPV39
+    - HPV45
+    - HPV51
+    - HPV52
+    - HPV56
+    - HPV58
+    - HPV59
+    - HPV66
+    - HPV68
+    - HPV73
   hysterectomy_margins_involved:
     Enum:
     - Bladder
@@ -4430,8 +4664,20 @@ PropDefinitions:
     - Poor Prognosis
     - Unknown
     - Not Reported
+  imaging_anatomic_site:
+    Type: array
   imaging_date:
     Type: TBD
+  imaging_findings:
+    Enum:
+    - Carcinomatosis
+    - Kidney Involvement
+    - Lung Involvement
+    - Liver Involvement
+    - Normal
+    - Retroperitoneal Lymph Node Involvement
+    - Vena Cava Involvement/Thrombus
+    - Not Reported
   imaging_result:
     Enum:
     - Positive
@@ -4440,6 +4686,10 @@ PropDefinitions:
     - Not Performed
     - Unknown
     - Not Reported
+  imaging_suv:
+    Type: number
+  imaging_suv_max:
+    Type: number
   imaging_type:
     Enum:
     - 99mTc Bone Scintigraphy
@@ -4472,8 +4722,10 @@ PropDefinitions:
   initial_disease_status:
     Enum:
     - Initial Diagnosis
+    - Persistent Disease
     - Progressive Disease
     - Recurrent Disease
+    - Refractory Disease
     - Residual Disease
     - Unknown
     - Not Reported
@@ -4484,6 +4736,7 @@ PropDefinitions:
     - Differentiating
     - Poorly Differentiated
     - Undifferentiated
+    - Undifferentiated or Poorly Differentiated
     - Unknown
     - Not Reported
   inpc_histologic_group:
@@ -4572,7 +4825,7 @@ PropDefinitions:
   is_legacy:
     Type: boolean
   is_paired_end:
-    Req: true
+    Req: 1
     Type: TBD
   ishak_fibrosis_score:
     Enum:
@@ -4617,6 +4870,7 @@ PropDefinitions:
     - Basophil
     - Beta 2 Microglobulin
     - BG8
+    - Blast Count
     - Blood Urea Nitrogen
     - C-Reactive Protein
     - Calcium
@@ -4632,6 +4886,7 @@ PropDefinitions:
     - Eosinophil
     - Epinephrine-Secreting
     - Epstein-Barr Virus
+    - Erythrocyte Sedimentation Rate
     - Gamma-Enolase
     - Glucose
     - Hematocrit
@@ -4650,8 +4905,11 @@ PropDefinitions:
     - M Protein
     - Metamyelocytes
     - Metanephrine-Secreting
+    - Metaphase Nucleus Count
     - Methoxytyramine-Secreting
     - Microsatellite Instability
+    - Minimal Residual Disease
+    - Monocytes
     - Myeloblasts
     - Myelocytes
     - Neutrophil Bands
@@ -4661,6 +4919,7 @@ PropDefinitions:
     - Prolymphocytes
     - Promonocytes
     - Promyelocytes
+    - Prothrombin Time
     - Segmented Neutrophil
     - Serum Free Immunoglobulin Light Chain, Kappa
     - Serum Free Immunoglobulin Light Chain, Lambda
@@ -4704,8 +4963,10 @@ PropDefinitions:
     Type: TBD
   legacy_updated_datetime:
     Type: TBD
+  lesions_treated_number:
+    Type: number
   library_name:
-    Req: true
+    Req: 1
     Type: string
   library_preparation_kit_catalog_number:
     Type: string
@@ -4725,7 +4986,7 @@ PropDefinitions:
     - Poly-T Enrichment
     - Random
     - rRNA Depletion
-    Req: true
+    Req: 1
   library_strand:
     Enum:
     - Unstranded
@@ -4738,7 +4999,7 @@ PropDefinitions:
     - Bisulfite-Seq
     - ChIP-Seq
     - HiChIP
-    - m6A RNA Methylation
+    - m6A MeRIP-Seq
     - miRNA-Seq
     - RNA-Seq
     - scATAC-Seq
@@ -4746,7 +5007,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   loci_abnormal_count:
     Type: integer
   loci_count:
@@ -4760,8 +5021,19 @@ PropDefinitions:
     - Yes
     - No
     - Unknown
+  lymph_node_dissection_method:
+    Enum:
+    - Functional (Limited) Neck Dissection
+    - Modified Radical Neck Dissection
+    - Radical Neck Dissection
+  lymph_node_dissection_site:
+    Enum:
+    - Neck, Left
+    - Neck, Right
+    - Neck, NOS
   lymph_node_involved_site:
     Enum:
+    - Aortic
     - Axillary
     - Cervical
     - Epitrochlear
@@ -4777,6 +5049,7 @@ PropDefinitions:
     - Occipital
     - Paraaortic
     - Parotid
+    - Pelvis, NOS
     - Popliteal
     - Retroperitoneal
     - Splenic
@@ -4793,6 +5066,11 @@ PropDefinitions:
     - Not Reported
   lymph_nodes_positive:
     Type: integer
+  lymph_nodes_removed:
+    Enum:
+    - No
+    - Yes
+    - Not Reported
   lymph_nodes_tested:
     Type: integer
   lymphatic_invasion_present:
@@ -4804,7 +5082,7 @@ PropDefinitions:
   magnification:
     Type: number
   major_version:
-    Req: true
+    Req: 1
     Type: integer
   margin_distance:
     Type: number
@@ -4825,8 +5103,6 @@ PropDefinitions:
     - Renal Sinus
     - Renal Vein
     - Ureter
-  marijuana_use_per_week:
-    Type: number
   masaoka_stage:
     Enum:
     - Stage I
@@ -4839,7 +5115,7 @@ PropDefinitions:
     Enum:
     - Green
     - Red
-    Req: true
+    Req: 1
   masked_methylation_array.chip_id:
     Type: string
   masked_methylation_array.chip_position:
@@ -4847,19 +5123,19 @@ PropDefinitions:
   masked_methylation_array.data_category:
     Enum:
     - DNA Methylation
-    Req: true
+    Req: 1
   masked_methylation_array.data_format:
     Enum:
     - IDAT
-    Req: true
+    Req: 1
   masked_methylation_array.data_type:
     Enum:
     - Masked Intensities
-    Req: true
+    Req: 1
   masked_methylation_array.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: true
+    Req: 1
   masked_methylation_array.methylation_array_harmonization_workflows:
     Type: TBD
   masked_methylation_array.plate_name:
@@ -4871,22 +5147,22 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
-    Req: true
+    Req: 1
   masked_methylation_arrays:
     Type: TBD
   masked_somatic_mutation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: true
+    Req: 1
   masked_somatic_mutation.data_format:
     Enum:
     - MAF
     - TSV
-    Req: true
+    Req: 1
   masked_somatic_mutation.data_type:
     Enum:
     - Masked Somatic Mutation
-    Req: true
+    Req: 1
   masked_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -4897,7 +5173,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   masked_somatic_mutation.genomic_profile_harmonization_workflows:
     Type: TBD
   masked_somatic_mutation.projects:
@@ -4906,6 +5182,46 @@ PropDefinitions:
     Type: TBD
   masked_somatic_mutations:
     Type: TBD
+  max_tumor_bulk_site:
+    Enum:
+    - Adrenal
+    - Appendix
+    - Ascites/peritoneum
+    - Axillary lymph nodes
+    - Bone marrow
+    - Brain
+    - Breast
+    - Cervical lymph nodes
+    - Colon
+    - Iliac
+    - Iliac-external
+    - Inguinal
+    - Kidney
+    - Liver
+    - Lung
+    - Mandible
+    - Maxilla
+    - Mediastinal lymph nodes
+    - Mediastinal soft tissue
+    - Mesenteric lymph nodes
+    - Neck
+    - No known nodal involvement
+    - Oropharynx
+    - Other
+    - Ovary
+    - Pancreas
+    - Paraaortic lymph nodes
+    - Parotid gland
+    - Pericardium
+    - Peri-orbital soft tissue
+    - Retroperitoneal lymph nodes
+    - Small intestine
+    - Soft tissue (muscle, ligaments, subcutaneous)
+    - Splenic lymph nodes
+    - Stomach
+    - Submandibular lymph nodes
+    - Supraclavicular lymph nodes
+    - Thyroid
   mean_coverage:
     Type: number
   medulloblastoma_molecular_classification:
@@ -4918,9 +5234,9 @@ PropDefinitions:
     - Not Reported
   menopause_status:
     Enum:
-    - Premenopausal
     - Perimenopausal
     - Postmenopausal
+    - Premenopausal
     - Unknown
     - Not Reported
   metaplasia_present:
@@ -4979,7 +5295,9 @@ PropDefinitions:
     - Skin
     - Small Intestine
     - Soft Tissue
+    - Spleen
     - Spinal Cord
+    - Stomach
     - Urethra
     - Uterine Adnexa
     - Vertebral Canal
@@ -5126,23 +5444,23 @@ PropDefinitions:
   methylation_array_harmonization_workflow.workflow_type:
     Enum:
     - SeSAMe Methylation Beta Estimation
-    Req: true
+    Req: 1
   methylation_beta_value.data_category:
     Enum:
     - DNA Methylation
-    Req: true
+    Req: 1
   methylation_beta_value.data_format:
     Enum:
     - TXT
-    Req: true
+    Req: 1
   methylation_beta_value.data_type:
     Enum:
     - Methylation Beta Value
-    Req: true
+    Req: 1
   methylation_beta_value.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: true
+    Req: 1
   methylation_beta_value.methylation_array_harmonization_workflows:
     Type: TBD
   methylation_beta_value.platform:
@@ -5150,7 +5468,7 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
-    Req: true
+    Req: 1
   methylation_beta_values:
     Type: TBD
   methylation_liftover_workflow.submitted_methylation_beta_values:
@@ -5158,7 +5476,7 @@ PropDefinitions:
   methylation_liftover_workflow.workflow_type:
     Enum:
     - Liftover
-    Req: true
+    Req: 1
   methylation_liftover_workflows:
     Type: TBD
   micropapillary_features:
@@ -5168,34 +5486,34 @@ PropDefinitions:
     - Unknown
     - Not Reported
   minor_version:
-    Req: true
+    Req: 1
     Type: integer
   mirna_expression.data_category:
     Enum:
     - Transcriptome Profiling
-    Req: true
+    Req: 1
   mirna_expression.data_format:
     Enum:
     - CSV
     - TSV
     - TXT
-    Req: true
+    Req: 1
   mirna_expression.data_type:
     Enum:
     - Isoform Expression Quantification
     - miRNA Expression Quantification
     - Supplementary Files
-    Req: true
+    Req: 1
   mirna_expression.experimental_strategy:
     Enum:
     - miRNA-Seq
-    Req: true
+    Req: 1
   mirna_expression_workflow.aligned_reads_files:
     Type: TBD
   mirna_expression_workflow.workflow_type:
     Enum:
     - BCGSC miRNA Profiling
-    Req: true
+    Req: 1
   mirna_expression_workflows:
     Type: TBD
   mirna_expressions:
@@ -5239,7 +5557,7 @@ PropDefinitions:
     - WXS
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   molecular_consequence:
     Enum:
     - 3 Prime UTR Variant
@@ -5287,6 +5605,12 @@ PropDefinitions:
     Type: number
   molecular_test.slides:
     Type: TBD
+  molecular_test.timepoint_category:
+    Enum:
+    - End of Consolidation Therapy
+    - End of Treatment Course 1
+    - End of Treatment Course 2
+    - Not Reported
   molecular_tests:
     Type: TBD
   morphologic_architectural_pattern:
@@ -5473,6 +5797,7 @@ PropDefinitions:
     - 8210/3
     - 8211/0
     - 8211/3
+    - 8211/6
     - 8212/0
     - 8213/0
     - 8213/3
@@ -5654,6 +5979,7 @@ PropDefinitions:
     - 8460/0
     - 8460/2
     - 8460/3
+    - 8460/6
     - 8461/0
     - 8461/3
     - 8461/6
@@ -5704,6 +6030,7 @@ PropDefinitions:
     - 8519/2
     - 8520/2
     - 8520/3
+    - 8520/6
     - 8521/1
     - 8521/3
     - 8522/1
@@ -6331,6 +6658,7 @@ PropDefinitions:
     - 9712/3
     - 9714/3
     - 9716/3
+    - 9715/3
     - 9717/3
     - 9718/3
     - 9719/3
@@ -6453,7 +6781,7 @@ PropDefinitions:
     - 9992/3
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   msi_score:
     Type: number
   msi_status:
@@ -6462,10 +6790,15 @@ PropDefinitions:
     - MSS
   multiplex_barcode:
     Type: string
+  mutation_codon:
+    Enum:
+    - '12'
+    - '13'
+    - '61'
   nadir_cd4_count:
     Type: number
   namespace:
-    Req: true
+    Req: 1
     Type: string
   necrosis_percent:
     Type: number
@@ -6508,22 +6841,24 @@ PropDefinitions:
     Type: integer
   number_of_cycles:
     Type: integer
-  occupation_duration_years:
-    Type: integer
+  number_of_fractions:
+    Type: number
+  occupation_type:
+    Type: array
   oct_embedded:
     Type: string
   ovarian_specimen_status:
     Enum:
+    - Ovarian Capsule Fragmented
     - Ovarian Capsule Intact
     - Ovarian Capsule Ruptured
-    - Ovarian Capsule Fragmented
     - Unknown
     - Not Reported
   ovarian_surface_involvement:
     Enum:
     - Absent
-    - Present
     - Indeterminate
+    - Present
     - Unknown
     - Not Reported
   overrepresented_sequences:
@@ -6564,6 +6899,8 @@ PropDefinitions:
     Type: TBD
   pathology_detail.number_proliferating_cells:
     Type: integer
+  pathology_detail.percent_tumor_nuclei:
+    Type: number
   pathology_detail.prostatic_chips_positive_count:
     Type: number
   pathology_detail.prostatic_chips_total_count:
@@ -6575,21 +6912,38 @@ PropDefinitions:
   pathology_report.data_category:
     Enum:
     - Clinical
-    Req: true
+    Req: 1
   pathology_report.data_format:
     Enum:
     - PDF
-    Req: true
+    Req: 1
   pathology_report.data_type:
     Enum:
     - Pathology Report
-    Req: true
+    Req: 1
   pathology_report.samples:
     Type: TBD
   pathology_report_uuid:
     Type: string
   pathology_reports:
     Type: TBD
+  pediatric_kidney_staging:
+    Enum:
+    - Nephrectomy specimen with tumor confined to the kidney; distant metastasis identified
+      at diagnosis
+    - Nephrectomy specimen with tumor confined to the kidney; no distant metastasis
+    - Nephrectomy specimen with tumor that penetrates the renal capsule or involves
+      the renal sinus with negative margins and negative lymph nodes; distant metastasis
+      identified at diagnosis
+    - Nephrectomy specimen with tumor that penetrates the renal capsule or involves
+      the renal sinus with negative margins and negative lymph nodes; no distant metastasis
+    - Nephrectomy specimen with tumor that is present at the surgical margin of resection
+      or within regional lymph nodes; distant metastasis identified at diagnosis
+    - Nephrectomy specimen with tumor that is present at the surgical margin of resection
+      or within regional lymph nodes; no distant metastasis
+    - Tumor biopsied only at diagnosis; distant metastasis identified at diagnosis
+    - Tumor biopsied only at diagnosis; no distant metastasis
+    - Not Reported
   per_base_n_content:
     Type: TBD
   per_base_sequence_content:
@@ -6632,8 +6986,6 @@ PropDefinitions:
     Type: number
   percent_tumor_invasion:
     Type: number
-  percent_tumor_nuclei:
-    Type: number
   perineural_invasion_present:
     Enum:
     - Yes
@@ -6657,10 +7009,15 @@ PropDefinitions:
     - Unsatisfactory
     - Unknown
     - Not Reported
+  peritoneal_washing_results:
+    Enum:
+    - Negative
+    - Positive
+    - Not Reported
   platform.id:
     Type: TBD
   platform.name:
-    Req: true
+    Req: 1
     Type: string
   platform.type:
     Type: string
@@ -6677,7 +7034,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
   pmid:
-    Req: true
+    Req: 1
     Type: string
   portion.centers:
     Type: TBD
@@ -6689,12 +7046,15 @@ PropDefinitions:
     Type: number
   portion_number:
     Type: string
+  pregnancy_count:
+    Type: integer
   pregnancy_outcome:
     Enum:
     - Ectopic Pregnancy
     - Induced Abortion
     - Live Birth
     - Miscarriage
+    - Spontaneous Abortion
     - Stillbirth
     - Unknown
     - Not Reported
@@ -6710,6 +7070,8 @@ PropDefinitions:
     - No
     - Unknown
     - Not Reported
+  prescribed_dose:
+    Type: number
   preservation_method:
     Enum:
     - Cryopreserved
@@ -6721,6 +7083,7 @@ PropDefinitions:
     - Snap Frozen
     - Unknown
     - Not Reported
+    Req: 1
   primary_diagnosis:
     Enum:
     - Abdominal desmoid
@@ -7074,6 +7437,7 @@ PropDefinitions:
     - Blue nevus, NOS
     - Botryoid sarcoma
     - Bowen disease
+    - Breast implant-associated anaplastic large cell lymphoma
     - Brenner tumor, borderline malignancy
     - Brenner tumor, malignant
     - Brenner tumor, NOS
@@ -7842,6 +8206,7 @@ PropDefinitions:
     - Immunoproliferative small intestinal disease
     - Indeterminate dendritic cell tumor
     - Indolent systemic mastocytosis
+    - Indolent T-cell lymphoproliferative disorder of gastrointestinal tract
     - Infantile fibrosarcoma
     - Infantile hemangioma
     - Infantile myofibromatosis
@@ -9354,7 +9719,7 @@ PropDefinitions:
     - Yolk sac tumor
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   primary_disease:
     Type: boolean
   primary_gleason_grade:
@@ -9388,17 +9753,17 @@ PropDefinitions:
     - Unknown
     - Not Reported
   program.dbgap_accession_number:
-    Req: true
+    Req: 1
     Type: string
   program.id:
     Type: TBD
   program.name:
-    Req: true
+    Req: 1
     Type: string
   program.type:
     Type: string
   programs:
-    Req: true
+    Req: 1
     Type: TBD
   progression_or_recurrence_anatomic_site:
     Enum:
@@ -9739,23 +10104,24 @@ PropDefinitions:
     - Biochemical
     - Distant
     - Local
+    - Locoregional
     - Regional
     - Unknown
     - Not Reported
   project:
     Type: string
   project.code:
-    Req: true
+    Req: 1
     Type: string
   project.dbgap_accession_number:
-    Req: true
+    Req: 1
     Type: string
   project.disease_type:
     Type: string
   project.id:
     Type: TBD
   project.name:
-    Req: true
+    Req: 1
     Type: string
   project.primary_site:
     Type: string
@@ -9780,33 +10146,159 @@ PropDefinitions:
   protein_expression.data_category:
     Enum:
     - Proteome Profiling
-    Req: true
+    Req: 1
   protein_expression.data_format:
     Enum:
     - TSV
-    Req: true
+    Req: 1
   protein_expression.data_type:
     Enum:
     - Protein Expression Quantification
-    Req: true
+    Req: 1
   protein_expression.experimental_strategy:
     Enum:
     - Reverse Phase Protein Array
-    Req: true
+    Req: 1
   protein_expression.platform:
     Enum:
     - RPPA
-    Req: true
+    Req: 1
   protein_expression.portions:
     Type: TBD
   protein_expression.samples:
     Type: TBD
   protein_expressions:
     Type: TBD
+  protocol_identifier:
+    Enum:
+    - '901'
+    - '911'
+    - '914'
+    - '925'
+    - '935'
+    - '937'
+    - '3881'
+    - '3891'
+    - '4941'
+    - '8605'
+    - '9047'
+    - '9082'
+    - '9340'
+    - '9341'
+    - '9342'
+    - '9343'
+    - '9464'
+    - '9640'
+    - '9906'
+    - 321P2
+    - 321P3
+    - 323P
+    - A081105
+    - A081801
+    - A3961
+    - A3973
+    - AADM01P1
+    - AALL0031
+    - AALL0232
+    - AALL0331
+    - AALL03B1
+    - AALL0434
+    - AALL07P4
+    - AALL08P1
+    - AALL1131
+    - AAML00P2
+    - AAML03P1
+    - AAML0531
+    - AAML0631
+    - AAML1031
+    - AB9804
+    - ACCL0331
+    - ACCL0431
+    - ACCL05C1
+    - ACCL0934
+    - ACCL1031
+    - ADVL0018
+    - ADVL0212
+    - ADVL0214
+    - ADVL0215
+    - ADVL0421
+    - ADVL0524
+    - ADVL0525
+    - ADVL06B1
+    - ADVL0714
+    - ADVL0812
+    - ADVL0813
+    - ADVL0821
+    - ADVL0911
+    - ADVL0912
+    - ADVL0918
+    - ADVL0921
+    - ADVL1011
+    - ADVL1111
+    - ADVL1112
+    - ADVL1115
+    - ADVL1213
+    - ADVL1412
+    - AEPI07N1
+    - ALTE03N1
+    - ALTE05N1
+    - ANBL0032
+    - ANBL00B1
+    - ANBL00P1
+    - ANBL00P3
+    - ANBL02P1
+    - ANBL0321
+    - ANBL0322
+    - ANBL0421
+    - ANBL0531
+    - ANBL0532
+    - ANBL0621
+    - ANBL0931
+    - ANBL09P1
+    - ANBL1021
+    - ANBL1221
+    - ANUR1131
+    - AOST0121
+    - AOST0331
+    - AOST06B1
+    - AOST06P1
+    - AREN03B2
+    - B003
+    - B903
+    - B947
+    - B954
+    - B973
+    - BCM
+    - CCG2961
+    - D9902
+    - E04
+    - E18
+    - E4512
+    - EA5142
+    - GBCTTO/99
+    - GLATO 2006
+    - I03
+    - IHRT
+    - INT-0133
+    - N891
+    - NWTS-4
+    - NWTS-5
+    - OSTEO 2006
+    - Not Reported
+    - P9462
+    - P9641
+    - P9754
+    - P9851
+    - P9906
+    - P9963
+    - R9702
+    - S31
+    - S921
+    - STB
   publication.created_datetime:
     Type: TBD
   publication.files:
-    Req: true
+    Req: 1
     Type: TBD
   publication.id:
     Type: TBD
@@ -9826,7 +10318,7 @@ PropDefinitions:
     Enum:
     - Green
     - Red
-    Req: true
+    Req: 1
   raw_methylation_array.chip_id:
     Type: string
   raw_methylation_array.chip_position:
@@ -9834,19 +10326,19 @@ PropDefinitions:
   raw_methylation_array.data_category:
     Enum:
     - DNA Methylation
-    Req: true
+    Req: 1
   raw_methylation_array.data_format:
     Enum:
     - IDAT
-    Req: true
+    Req: 1
   raw_methylation_array.data_type:
     Enum:
     - Raw Intensities
-    Req: true
+    Req: 1
   raw_methylation_array.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: true
+    Req: 1
   raw_methylation_array.plate_name:
     Type: string
   raw_methylation_array.plate_well:
@@ -9856,9 +10348,9 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
-    Req: true
+    Req: 1
   read_group.aliquots:
-    Req: true
+    Req: 1
     Type: TBD
   read_group.platform:
     Enum:
@@ -9869,9 +10361,9 @@ PropDefinitions:
     - Other
     - PacBio
     - SOLiD
-    Req: true
+    Req: 1
   read_group_name:
-    Req: true
+    Req: 1
     Type: string
   read_group_qc.read_groups:
     Type: TBD
@@ -9885,7 +10377,7 @@ PropDefinitions:
   read_group_qcs:
     Type: TBD
   read_length:
-    Req: true
+    Req: 1
     Type: TBD
   read_pair_number:
     Enum:
@@ -9893,7 +10385,7 @@ PropDefinitions:
     - R1
     - R2
     - R3
-    Req: true
+    Req: 1
   reason_treatment_ended:
     Enum:
     - Adverse Event
@@ -10008,6 +10500,7 @@ PropDefinitions:
     - Female Sibling of Adopted Child
     - First Cousin
     - First Cousin Once Removed
+    - First Degree Relative, NOS
     - Foster Brother
     - Foster Daughter
     - Foster Father
@@ -10121,27 +10614,25 @@ PropDefinitions:
     Type: boolean
   request_submission:
     Type: boolean
-  residual_disease:
-    Enum:
-    - R0
-    - R1
-    - R2
-    - RX
-    - Unknown
-    - Not Reported
   residual_tumor:
     Enum:
     - RX
     - R0
     - R1
     - R2
+  residual_tumor_measurement:
+    Enum:
+    - 1-10 mm
+    - 11-20 mm
+    - '>20 mm'
+    - No macroscopic disease
   respirable_crystalline_silica_exposure:
     Enum:
     - Yes
     - No
     - Unknown
   revision:
-    Req: true
+    Req: 1
     Type: number
   rhabdoid_percent:
     Type: number
@@ -10157,6 +10648,7 @@ PropDefinitions:
   risk_factor:
     Enum:
     - Abnormal Glucose Level
+    - Adenomyosis
     - Adenosis (Atypical Adenomatous Hyperplasia)
     - Alcohol Consumption
     - Alcoholic Liver Disease
@@ -10176,6 +10668,10 @@ PropDefinitions:
     - Allergy, Seafood
     - Allergy, Wasp
     - Alpha-1 Antitrypsin Deficiency
+    - Altered Mental Status
+    - Androgen Excess
+    - Anemia
+    - Asthma
     - Ataxia-telangiectasia
     - Autoimmune Atrophic Chronic Gastritis
     - Autoimmune Lymphoproliferative Syndrome (ALPS)
@@ -10189,15 +10685,18 @@ PropDefinitions:
     - BRCA Family History
     - Cancer
     - Chlamydia
+    - Chloroma
     - Cholelithiasis
     - Chronic Hepatitis
     - Chronic Kidney Disease
+    - Chronic Pancreatitis
     - Chronic Systemic Steroid Use
     - Cirrhosis
     - Colon Polyps
     - Colonization, Bacterial
     - Colonization, Fungal
     - Common variable immune deficiency (CVID)
+    - Cortisol Excess
     - Cowden Syndrome
     - Cryptococcal Meningitis
     - Cyst(s)
@@ -10209,6 +10708,8 @@ PropDefinitions:
     - Diabetes, Type II
     - Diet
     - Diverticulitis
+    - Down Syndrome
+    - EBV Lymphoproliferation
     - Eczema
     - Endometriosis
     - Endosalpingiosis
@@ -10216,6 +10717,7 @@ PropDefinitions:
     - Epithelial Hyperplasia
     - Epstein-Barr Virus
     - Escherichia coli
+    - Estrogen Excess
     - Familial Adenomatous Polyposis
     - Fanconi Anemia
     - Fibrosis
@@ -10224,6 +10726,7 @@ PropDefinitions:
     - Gilbert's Syndrome
     - Glomerular Disease
     - Gorlin Syndrome
+    - H. pylori Infection
     - Hashimoto's Thyroiditis
     - Hay Fever
     - Headache
@@ -10232,10 +10735,12 @@ PropDefinitions:
     - Hemihypertrophy
     - Hemochromatosis
     - Hepatic Encephalopathy
+    - Hepatitis A Infection
     - Hepatitis B Infection
     - Hepatitis C Infection
     - Hepatitis, NOS
     - Hereditary Breast Cancer
+    - Hereditary Hemorrhagic Telangiectasia
     - Hereditary Kidney Oncocytoma
     - Hereditary Leiomyomatosis and Renal Cell Carcinoma
     - Hereditary Ovarian Cancer
@@ -10246,24 +10751,34 @@ PropDefinitions:
     - High Grade Dysplasia
     - High-grade Prostatic Intraepithelial Neoplasia (PIN)
     - HIV
+    - Hodgkin Lymphoma
+    - Human Herpesvirus-6 (HHV-6)
+    - Human Herpesvirus-8 (HHV-8)
     - Human Papillomavirus Infection
     - Hypospadias
     - Inflammation
     - Inflammation, Hyperkeratosis
+    - Inherited Genetic Syndrome, NOS
     - Intestinal Metaplasia
     - Iron Overload
     - Li-Fraumeni Syndrome
     - Low Grade Dysplasia
+    - Lymphamatoid Papulosis
     - Lymphocytic Meningitis
     - Lymphocytic Thyroiditis
     - Lynch Syndrome
     - Malaria
     - Metabolic Syndrome
+    - Mineralcorticoids Excess
+    - Motor / Movement Change
     - Myasthenia Gravis
     - Mycobacterium avium Complex
+    - Myelodysplastic Syndrome
+    - Neurocystericerosis
     - Nodular Prostatic Hyperplasia
     - Nonalcoholic Fatty Liver Disease
     - Nonalcoholic Steatohepatitis
+    - None
     - Obesity
     - Oral Contraceptives
     - Pancreatitis
@@ -10274,6 +10789,7 @@ PropDefinitions:
     - Recurrent Pyogenic Cholangitis
     - Reflux Disease
     - Rheumatoid Arthritis
+    - Rubella
     - Rubinstein-Taybi Syndrome
     - Sarcoidosis
     - Seizure
@@ -10307,12 +10823,20 @@ PropDefinitions:
     - Wagr Syndrome
     - Unknown
     - Not Reported
+  risk_factor_method_of_diagnosis:
+    Enum:
+    - Biochemical Assessment
+    - Both Clinical and Biochemical Assessments
+    - Clinical Assessment
+    - Not Reported
   risk_factor_treatment:
     Enum:
     - Yes
     - No
     - Unknown
     - Not Reported
+  risk_factors:
+    Type: array
   rna_expression_workflow.aligned_reads_files:
     Type: TBD
   rna_expression_workflow.submitted_aligned_reads_files:
@@ -10338,7 +10862,7 @@ PropDefinitions:
     - STAR - Smart-Seq2 Raw Counts
     - STAR - Smart-Seq2 Filtered Counts
     - zUMIs - Smart-Seq2 Counts
-    Req: true
+    Req: 1
   rna_expression_workflows:
     Type: TBD
   rna_integrity_number:
@@ -10347,29 +10871,25 @@ PropDefinitions:
     Enum:
     - root
   root.type:
-    Req: true
+    Req: 1
     Type: string
   roots:
     Type: TBD
   route_of_administration:
-    Enum:
-    - Intrathecal
-    - Intravenous
-    - Oral
-    - Not Reported
+    Type: array
   run_metadata.data_category:
     Enum:
     - Sequencing Data
     - Raw Sequencing Data
-    Req: true
+    Req: 1
   run_metadata.data_format:
     Enum:
     - SRA XML
-    Req: true
+    Req: 1
   run_metadata.data_type:
     Enum:
     - Run Metadata
-    Req: true
+    Req: 1
   run_metadata.files:
     Type: TBD
   run_metadata.read_groups:
@@ -10441,7 +10961,6 @@ PropDefinitions:
     - Xenograft Tissue
     - Unknown
     - Not Reported
-    Req: true
   sample_type_id:
     Enum:
     - '01'
@@ -11153,6 +11672,7 @@ PropDefinitions:
     - TFRC
     - TGFBR2
     - THRAP3
+    - TLR2
     - TLX1
     - TLX3
     - TMEM127
@@ -11218,21 +11738,21 @@ PropDefinitions:
   secondary_expression_analysis.data_category:
     Enum:
     - Transcriptome Profiling
-    Req: true
+    Req: 1
   secondary_expression_analysis.data_format:
     Enum:
     - HDF5
     - TSV
-    Req: true
+    Req: 1
   secondary_expression_analysis.data_type:
     Enum:
     - Differential Gene Expression
     - Single Cell Analysis
-    Req: true
+    Req: 1
   secondary_expression_analysis.experimental_strategy:
     Enum:
     - scRNA-Seq
-    Req: true
+    Req: 1
   secondary_gleason_grade:
     Enum:
     - Pattern 1
@@ -11247,7 +11767,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
   section_location:
-    Req: true
+    Req: 1
     Type: string
   selected_normal_low_pass_wgs:
     Type: boolean
@@ -11262,39 +11782,40 @@ PropDefinitions:
   sequence_length_distribution:
     Type: TBD
   sequencing_center:
-    Req: true
+    Req: 1
     Type: string
   sequencing_date:
     Type: TBD
   short_name:
-    Req: true
+    Req: 1
     Type: string
   shortest_dimension:
     Type: number
   simple_germline_variation.data_category:
     Enum:
     - Simple Nucleotide Variation
-    Req: true
+    Req: 1
   simple_germline_variation.data_format:
     Enum:
     - VCF
     - TSV
-    Req: true
+    Req: 1
   simple_germline_variation.data_type:
     Enum:
     - Simple Germline Variation
-    Req: true
+    Req: 1
   simple_germline_variation.experimental_strategy:
     Enum:
     - ATAC-Seq
     - Bisulfite-Seq
     - ChIP-Seq
+    - Genotyping Array
     - miRNA-Seq
     - RNA-Seq
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   simple_germline_variation.platform:
     Enum:
     - Affymetrix SNP 6.0
@@ -11304,16 +11825,16 @@ PropDefinitions:
     Enum:
     - Combined Nucleotide Variation
     - Simple Nucleotide Variation
-    Req: true
+    Req: 1
   simple_somatic_mutation.data_format:
     Enum:
     - VCF
-    Req: true
+    Req: 1
   simple_somatic_mutation.data_type:
     Enum:
     - Raw CGI Variant
     - Raw Simple Somatic Mutation
-    Req: true
+    Req: 1
   simple_somatic_mutation.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -11324,7 +11845,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   simple_somatic_mutation.genomic_profile_harmonization_workflows:
     Type: TBD
   single_cell_library:
@@ -11668,9 +12189,11 @@ PropDefinitions:
     - Waldeyer ring
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   sites_of_involvement:
     Type: array
+  sites_of_involvement_count:
+    Type: integer
   size_extraocular_nodule:
     Type: number
   size_selection_range:
@@ -11683,6 +12206,8 @@ PropDefinitions:
     - Not Reported
   slide.number_proliferating_cells:
     Type: integer
+  slide.percent_tumor_nuclei:
+    Type: number
   slide.portions:
     Type: TBD
   slide.prostatic_chips_positive_count:
@@ -11696,32 +12221,30 @@ PropDefinitions:
   slide_image.data_category:
     Enum:
     - Biospecimen
-    Req: true
+    Req: 1
   slide_image.data_format:
     Enum:
     - JPEG
     - JPEG 2000
     - SVS
     - TIFF
-    Req: true
+    Req: 1
   slide_image.data_type:
     Enum:
     - Cell Culture Image
     - Slide Image
     - Tissue Microarray Image
-    Req: true
+    Req: 1
   slide_image.experimental_strategy:
     Enum:
     - Cell Culture
     - Diagnostic Slide
     - Tissue Slide
-    Req: true
+    Req: 1
   slide_image.slides:
     Type: TBD
   slide_images:
     Type: TBD
-  smokeless_tobacco_quit_age:
-    Type: integer
   smoking_frequency:
     Enum:
     - Every day
@@ -11742,7 +12265,7 @@ PropDefinitions:
     - Pindel Variant Aggregation and Masking
     - SomaticSniper Variant Aggregation and Masking
     - VarScan2 Variant Aggregation and Masking
-    Req: true
+    Req: 1
   somatic_annotation_workflow.simple_somatic_mutations:
     Type: TBD
   somatic_annotation_workflow.workflow_type:
@@ -11750,12 +12273,13 @@ PropDefinitions:
     - CaVEMan Annotation
     - FoundationOne Annotation
     - GATK4 MuTect2 Annotation
+    - GATK4 MuTect2 Tumor-Only Annotation
     - MuSE Annotation
     - MuTect2 Annotation
     - Pindel Annotation
     - SomaticSniper Annotation
     - VarScan2 Annotation
-    Req: true
+    Req: 1
   somatic_annotation_workflows:
     Type: TBD
   somatic_copy_number_workflow.aligned_reads_files:
@@ -11764,22 +12288,26 @@ PropDefinitions:
     Type: TBD
   somatic_copy_number_workflow.workflow_type:
     Enum:
+    - ABSOLUTE LiftOver
+    - ASCAT3
     - ASCAT2
     - AscatNGS
-    Req: true
+    - GATK4 CNV
+    Req: 1
   somatic_mutation_calling_workflow.aligned_reads_files:
     Type: TBD
   somatic_mutation_calling_workflow.workflow_type:
     Enum:
     - CaVEMan
     - GATK4 MuTect2
+    - GATK4 MuTect2 Tumor-Only
     - MuSE
     - MuTect2
     - Pindel
     - SomaticSniper
     - Strelka2 RNA
     - VarScan2
-    Req: true
+    Req: 1
   somatic_mutation_calling_workflows:
     Type: TBD
   somatic_mutation_index.annotated_somatic_mutations:
@@ -11788,15 +12316,15 @@ PropDefinitions:
     Enum:
     - Simple Nucleotide Variation
     - Somatic Structural Variation
-    Req: true
+    Req: 1
   somatic_mutation_index.data_format:
     Enum:
     - TBI
-    Req: true
+    Req: 1
   somatic_mutation_index.data_type:
     Enum:
     - Somatic Mutation Index
-    Req: true
+    Req: 1
   somatic_mutation_index.simple_somatic_mutations:
     Type: TBD
   somatic_mutation_index.structural_variations:
@@ -11807,6 +12335,44 @@ PropDefinitions:
     Type: string
   specialized_molecular_test:
     Type: string
+  specimen_type:
+    Enum:
+    - 2D Classical Conditionally Reprogrammed Cells
+    - 2D Modified Conditionally Reprogrammed Cells
+    - 3D Air-Liquid Interface Organoid
+    - 3D Neurosphere
+    - 3D Organoid
+    - Adherent Cell Line
+    - Bone Marrow Components NOS
+    - Bone Marrow NOS
+    - Buccal Cells
+    - Buffy Coat
+    - Cell
+    - Control Analyte
+    - Derived Cell Line
+    - EBV Immortalized
+    - Fibroblasts from Bone Marrow
+    - Granulocytes
+    - Human Original Cells
+    - Liquid Suspension Cell Line
+    - Lymphocytes
+    - Lymphoid
+    - Mixed Adherent Suspension
+    - Mononuclear Cells from Bone Marrow
+    - Peripheral Blood Components NOS
+    - Peripheral Blood NOS
+    - Peripheral Whole Blood
+    - Plasma
+    - Pleural Effusion
+    - Saliva
+    - Serum
+    - Solid Tissue
+    - Sorted Cells
+    - Sputum
+    - Whole Bone Marrow
+    - Unknown
+    - Not Reported
+    Req: 1
   spectrophotometer_method:
     Type: string
   spike_ins_concentration:
@@ -11826,7 +12392,7 @@ PropDefinitions:
     - processed
     - closed
     - legacy
-    Req: true
+    Req: 1
   status:
     Enum:
     - Approved
@@ -11840,14 +12406,15 @@ PropDefinitions:
     - Fusion Catcher
     - Pizzly
     - STAR-Fusion
-    Req: true
+    - SvABA
+    Req: 1
   structural_variant_calling_workflows:
     Type: TBD
   structural_variation.data_category:
     Enum:
     - Somatic Structural Variation
     - Structural Variation
-    Req: true
+    Req: 1
   structural_variation.data_format:
     Enum:
     - BEDPE
@@ -11858,13 +12425,13 @@ PropDefinitions:
     - TSV
     - TXT
     - VCF
-    Req: true
+    Req: 1
   structural_variation.data_type:
     Enum:
     - Structural Alteration
     - Structural Rearrangement
     - Transcript Fusion
-    Req: true
+    Req: 1
   structural_variation.experimental_strategy:
     Enum:
     - RNA-Seq
@@ -11878,22 +12445,22 @@ PropDefinitions:
   submitted_aligned_reads.data_category:
     Enum:
     - Sequencing Reads
-    Req: true
+    Req: 1
   submitted_aligned_reads.data_format:
     Enum:
     - BAM
-    Req: true
+    Req: 1
   submitted_aligned_reads.data_type:
     Enum:
     - Aligned Reads
-    Req: true
+    Req: 1
   submitted_aligned_reads.experimental_strategy:
     Enum:
     - ATAC-Seq
     - Bisulfite-Seq
     - ChIP-Seq
     - HiChIP
-    - m6A RNA Methylation
+    - m6A MeRIP-Seq
     - miRNA-Seq
     - RNA-Seq
     - scATAC-Seq
@@ -11901,27 +12468,27 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   submitted_aligned_reads.read_groups:
     Type: TBD
   submitted_genomic_profile.data_category:
     Enum:
     - Combined Nucleotide Variation
     - Genomic Profiling
-    Req: true
+    Req: 1
   submitted_genomic_profile.data_format:
     Enum:
     - MAF
     - TSV
     - VCF
     - XML
-    Req: true
+    Req: 1
   submitted_genomic_profile.data_type:
     Enum:
     - FoundationOne Report
     - GENIE Report
     - Raw CGI Variant
-    Req: true
+    Req: 1
   submitted_genomic_profile.experimental_strategy:
     Enum:
     - ATAC-Seq
@@ -11932,9 +12499,9 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   submitted_genomic_profile.read_groups:
-    Req: true
+    Req: 1
     Type: TBD
   submitted_genomic_profile.type:
     Enum:
@@ -11944,41 +12511,41 @@ PropDefinitions:
   submitted_genotyping_array.data_category:
     Enum:
     - Copy Number Variation
-    Req: true
+    Req: 1
   submitted_genotyping_array.data_format:
     Enum:
     - CEL
-    Req: true
+    Req: 1
   submitted_genotyping_array.data_type:
     Enum:
     - Raw Intensities
-    Req: true
+    Req: 1
   submitted_genotyping_array.experimental_strategy:
     Enum:
     - Genotyping Array
-    Req: true
+    Req: 1
   submitted_genotyping_array.platform:
     Enum:
     - Affymetrix SNP 6.0
-    Req: true
+    Req: 1
   submitted_methylation_beta_value.aliquots:
     Type: TBD
   submitted_methylation_beta_value.data_category:
     Enum:
     - DNA Methylation
-    Req: true
+    Req: 1
   submitted_methylation_beta_value.data_format:
     Enum:
     - TXT
-    Req: true
+    Req: 1
   submitted_methylation_beta_value.data_type:
     Enum:
     - Methylation Beta Value
-    Req: true
+    Req: 1
   submitted_methylation_beta_value.experimental_strategy:
     Enum:
     - Methylation Array
-    Req: true
+    Req: 1
   submitted_methylation_beta_value.platform:
     Enum:
     - Illumina Human Methylation 27
@@ -11988,39 +12555,39 @@ PropDefinitions:
   submitted_tangent_copy_number.data_category:
     Enum:
     - Copy Number Variation
-    Req: true
+    Req: 1
   submitted_tangent_copy_number.data_format:
     Enum:
     - TXT
-    Req: true
+    Req: 1
   submitted_tangent_copy_number.data_type:
     Enum:
     - Copy Number Estimate
-    Req: true
+    Req: 1
   submitted_tangent_copy_number.experimental_strategy:
     Enum:
     - Genotyping Array
-    Req: true
+    Req: 1
   submitted_unaligned_reads.data_category:
     Enum:
     - Sequencing Reads
-    Req: true
+    Req: 1
   submitted_unaligned_reads.data_format:
     Enum:
     - BAM
     - FASTQ
-    Req: true
+    Req: 1
   submitted_unaligned_reads.data_type:
     Enum:
     - Unaligned Reads
-    Req: true
+    Req: 1
   submitted_unaligned_reads.experimental_strategy:
     Enum:
     - ATAC-Seq
     - Bisulfite-Seq
     - ChIP-Seq
     - HiChIP
-    - m6A RNA Methylation
+    - m6A MeRIP-Seq
     - miRNA-Seq
     - RNA-Seq
     - scATAC-Seq
@@ -12028,7 +12595,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
-    Req: true
+    Req: 1
   submitted_unaligned_reads.read_groups:
     Type: TBD
   supratentorial_localization:
@@ -12129,7 +12696,7 @@ PropDefinitions:
     - Unpaired_LogR
     - v1
     - v2
-    Req: true
+    Req: 1
   tag.type:
     Type: string
   tags:
@@ -12150,11 +12717,13 @@ PropDefinitions:
     - Custom Personalis ACEcp VAREPOP-APOLLO Panel v2
     - Custom PGDX SureSelect CancerSelect VAREPOP-APOLLO Panel - 203 Genes
     - Custom PGDX SureSelect CancerSelect VAREPOP-APOLLO Panel - 88 Genes
+    - Custom SeqCap EZ BeatAML Panel - 12.5 Mb
     - Custom SeqCap EZ HGSC VCRome v2.1 ER Augmented v1
     - Custom SeqCap EZ HGSC VCRome v2.1 ER Augmented v2
     - Custom SeqCap EZ TARGET-OS Panel - 7.0 Mb
     - Custom Solid Tumor GENIE-VICC Panel - 34 Genes
     - Custom SureSelect CGCI-BLGSP Panel - 4.6 Mb
+    - Custom SureSelect CGCI-BLGSP Panel - 7.8 Mb
     - Custom SureSelect CGCI-HTMCP-CC KMT2D And Hotspot Panel - 37.0 Kb
     - Custom SureSelect CGCI-HTMCP-CC Panel - 19.7 Mb
     - Custom SureSelect GENIE-UHN Panel - 555 Genes
@@ -12162,6 +12731,7 @@ PropDefinitions:
     - Custom SureSelect TARGET-AML_NBL_WT Panel - 2.8 Mb
     - Custom Twist Broad Exome v1.0 - 35.0 Mb
     - Custom Twist Broad PanCancer Panel - 396 Genes
+    - Custom Twist MP2PRT-WT Panel - 52 Kb
     - Foundation Medicine T5a Panel - 322 Genes
     - Foundation Medicine T7 Panel - 429 Genes
     - Ion AmpliSeq Cancer Hotspot Panel v2
@@ -12183,7 +12753,7 @@ PropDefinitions:
     - Twist Human Comprehensive Exome
     - xGen Exome Research Panel v1.0
     - Unknown
-    Req: true
+    Req: 1
   target_capture_kit_catalog_number:
     Type: string
   target_capture_kit_name:
@@ -12206,7 +12776,9 @@ PropDefinitions:
   test_result:
     Enum:
     - Abnormal, NOS
+    - Amplified
     - Copy Number Reported
+    - Elevated
     - Equivocal
     - High
     - Intermediate
@@ -12214,17 +12786,23 @@ PropDefinitions:
     - Low
     - Negative
     - Normal
+    - Not Amplified
     - Overexpressed
     - Positive
+    - Stable
     - Test Value Reported
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   test_units:
     Enum:
+    - cells/mL
+    - count x10^9/L
     - g/dL
     - g/L
+    - mcg/L
     - mcg/mL
+    - mg/24 hr
     - mg/dL
     - mg/L
     - mm^2
@@ -12241,9 +12819,15 @@ PropDefinitions:
     - x10^9 cells/L
     - Not Reported
     - Unknown
-    - count x10^9/L
   test_value:
     Type: number
+  test_value_range:
+    Enum:
+    - 0-25
+    - 26-50
+    - 51-75
+    - 76-100
+    - Not Reported
   therapeutic_agents:
     Enum:
     - 10-Deacetyltaxol
@@ -13497,6 +14081,7 @@ PropDefinitions:
     - Canertinib Dihydrochloride
     - Canfosfamide
     - Canfosfamide Hydrochloride
+    - Canakinumab
     - Cannabidiol
     - Cantrixil
     - Cantuzumab Ravtansine
@@ -15960,6 +16545,7 @@ PropDefinitions:
     - Rituximab
     - Rituximab and Hyaluronidase Human
     - Rituximab Conjugate CON-4619
+    - Rivaroxaban
     - Riviciclib
     - Rivoceranib
     - Rivoceranib Mesylate
@@ -16416,6 +17002,7 @@ PropDefinitions:
     - TLR7/8/9 Antagonist IMO-8400
     - TLR8 Agonist DN1508052
     - TLR9 Agonist AST-008
+    - TLR9 Agonist SD-101
     - TM4SF1-CAR/EpCAM-CAR-expressing Autologous T Cells
     - Tocilizumab
     - Tocladesine
@@ -16744,6 +17331,11 @@ PropDefinitions:
     - Zuclomiphene Citrate
     - Unknown
     - Not Reported
+  therapeutic_level_achieved:
+    Type: boolean
+  therapeutic_target_level:
+    Enum:
+    - '>14 mg/L'
   time_between_clamping_and_freezing:
     Type: number
   time_between_excision_and_freezing:
@@ -17096,7 +17688,7 @@ PropDefinitions:
     - Waldeyer ring
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   tissue_source_site.code:
     Type: string
   tissue_source_site.id:
@@ -17114,7 +17706,7 @@ PropDefinitions:
     - Not Allowed To Collect
     - Unknown
     - Not Reported
-    Req: true
+    Req: 1
   to_trim_adapter_sequence:
     Type: boolean
   tobacco_smoking_onset_year:
@@ -17123,6 +17715,15 @@ PropDefinitions:
     Type: integer
   tobacco_smoking_status:
     Enum:
+    - Current Reformed Smoker, Duration Not Specified
+    - Current Reformed Smoker for < or = 15 yrs
+    - Current Reformed Smoker for > 15 yrs
+    - Current Smoker
+    - Lifelong Non-Smoker
+    - Smoker at Diagnosis
+    - Smoking history not documented
+    - Unknown
+    - Not Reported
     - '1'
     - '2'
     - '3'
@@ -17130,11 +17731,7 @@ PropDefinitions:
     - '5'
     - '6'
     - '7'
-    - Unknown
-    - Not Reported
     - Not Allowed To Collect
-  tobacco_use_per_day:
-    Type: number
   total_reads:
     Type: integer
   total_sequences:
@@ -17149,6 +17746,26 @@ PropDefinitions:
     - Not Reported
   treatment.diagnoses:
     Type: TBD
+  treatment.residual_disease:
+    Enum:
+    - R0
+    - R1
+    - R2
+    - RX
+    - Not Reported
+  treatment.timepoint_category:
+    Enum:
+    - End of Consolidation Therapy
+    - End of Treatment Course
+    - First Complete Response
+    - Postoperative
+    - Preoperative
+    - Prior to Diagnosis
+    - Prior to Procurement
+    - Prior to Study Registration
+    - Progression
+    - Recurrence
+    - Not Reported
   treatment_anatomic_site:
     Enum:
     - Abdomen, total
@@ -17298,6 +17915,7 @@ PropDefinitions:
     - Ligament
     - Lip
     - Liver
+    - Locoregional Site
     - Lumbar Spine
     - Lung
     - Lymph Node
@@ -17460,11 +18078,36 @@ PropDefinitions:
     - EA5142
   treatment_dose:
     Type: integer
+  treatment_dose_max:
+    Type: number
   treatment_dose_units:
     Enum:
+    - AUC
     - cGy
+    - g/day
+    - g/m2
     - Gy
+    - IU/kg
+    - IU/mg
+    - mCi
+    - mEq
     - mg
+    - mg/day
+    - mg/dL
+    - mg/kg
+    - mg/kg/day
+    - mg/m2
+    - mg/m2/day
+    - mg/m2/wk
+    - mg/mL
+    - mg/wk
+    - mIU
+    - mL
+    - ug
+    - ug/m2
+    - Wafer
+  treatment_duration:
+    Type: integer
   treatment_effect:
     Enum:
     - Complete Necrosis (No Viable Tumor)
@@ -17481,13 +18124,13 @@ PropDefinitions:
     - Unknown
   treatment_frequency:
     Enum:
+    - Every 24 Hours
     - Every Hour
+    - Every Other Day
     - Five Times Daily
     - Four Times Daily
     - Three Times Daily
     - Twice Daily
-    - Every 24 Hours
-    - Every Other Day
     - Twice Weekly
     - Once Weekly
     - Unknown
@@ -17497,11 +18140,15 @@ PropDefinitions:
     - Adjuvant
     - Androgen Deprivation Therapy (ADT)
     - Cancer Control
+    - Consolidation Therapy
     - Cure
+    - First-Line Therapy
+    - Induction
     - Maintenance Therapy
     - Neoadjuvant
     - Palliative
     - Prevention
+    - Radiation Boost
     - Unknown
     - Not Reported
   treatment_or_therapy:
@@ -17516,6 +18163,7 @@ PropDefinitions:
     - Mixed Response
     - No Measurable Disease
     - No Response
+    - Normalization of Tumor Markers
     - Partial Response
     - Persistent Disease
     - Progressive Disease
@@ -17525,6 +18173,8 @@ PropDefinitions:
     - Very Good Partial Response
     - Unknown
     - Not Reported
+  treatment_outcome_duration:
+    Type: integer
   treatment_type:
     Enum:
     - Ablation, Cryo
@@ -17535,6 +18185,8 @@ PropDefinitions:
     - Ablation, Radiosurgical
     - Ancillary Treatment
     - Antiseizure Treatment
+    - Biopsy, Excisional
+    - Biopsy, Incisional
     - Bisphosphonate Therapy
     - Blinded Study, Treatment Unknown
     - Brachytherapy, High Dose
@@ -17545,6 +18197,7 @@ PropDefinitions:
     - Chemotherapy
     - Concurrent Chemoradiation
     - Cryoablation
+    - Distal Pancreatectomy
     - Embolization
     - Ethanol Injection Ablation
     - External Beam Radiation
@@ -17556,6 +18209,7 @@ PropDefinitions:
     - Not Allowed To Collect
     - Organ Transplantation
     - Other
+    - Peptide Receptor Radionuclide Therapy (PRRT)
     - Pharmaceutical Therapy, NOS
     - Pleurodesis
     - Pleurodesis, Talc
@@ -17590,7 +18244,12 @@ PropDefinitions:
     - Stereotactic Radiosurgery
     - Steroid Therapy
     - Surgery
+    - Surgery, NOS
+    - Surgery, Minimally Invasive
+    - Surgery, Open
     - Targeted Molecular Therapy
+    - Total Pancreatectomy
+    - Whipple
     - Unknown
     - Not Reported
   treatments:
@@ -17660,6 +18319,7 @@ PropDefinitions:
   tumor_descriptor:
     Enum:
     - Metastatic
+    - New Primary
     - NOS
     - Not Allowed To Collect
     - Not Applicable
@@ -17669,6 +18329,7 @@ PropDefinitions:
     - Xenograft
     - Unknown
     - Not Reported
+    Req: 1
   tumor_focality:
     Enum:
     - Multifocal
@@ -17689,8 +18350,15 @@ PropDefinitions:
     - Unknown
     - Not Reported
     - not reported
+  tumor_grade_category:
+    Enum:
+    - Four Tier
+    - Three Tier
+    - Not Reported
   tumor_largest_dimension_diameter:
     Type: number
+  tumor_level_prostate:
+    Type: array
   tumor_ploidy:
     Type: number
   tumor_purity:
@@ -17765,6 +18433,250 @@ PropDefinitions:
     - Other
     - Pipe
     - Smokeless Tobacco
+  uicc_clinical_m:
+    Enum:
+    - M0
+    - M1
+    - M1a
+    - M1b
+    - M1c
+    - MX
+    - cM0 (i+)
+    - Unknown
+    - Not Reported
+  uicc_clinical_n:
+    Enum:
+    - N0
+    - N0 (i+)
+    - N0 (i-)
+    - N0 (mol+)
+    - N0 (mol-)
+    - N1
+    - N1a
+    - N1b
+    - N1bI
+    - N1bII
+    - N1bIII
+    - N1bIV
+    - N1c
+    - N1mi
+    - N2
+    - N2a
+    - N2b
+    - N2c
+    - N3
+    - N3a
+    - N3b
+    - N3c
+    - N4
+    - NX
+    - Unknown
+    - Not Reported
+  uicc_clinical_stage:
+    Enum:
+    - Stage 0
+    - Stage 0a
+    - Stage 0is
+    - Stage I
+    - Stage IA
+    - Stage IA1
+    - Stage IA2
+    - Stage IA3
+    - Stage IB
+    - Stage IB1
+    - Stage IB2
+    - Stage IC
+    - Stage II
+    - Stage IIA
+    - Stage IIA1
+    - Stage IIA2
+    - Stage IIB
+    - Stage IIC
+    - Stage IIC1
+    - Stage III
+    - Stage IIIA
+    - Stage IIIB
+    - Stage IIIC
+    - Stage IIIC1
+    - Stage IIIC2
+    - Stage IS
+    - Stage IV
+    - Stage IVA
+    - Stage IVB
+    - Stage IVC
+    - Stage Tis
+    - Stage X
+    - Unknown
+    - Not Reported
+  uicc_clinical_t:
+    Enum:
+    - T0
+    - T1
+    - T1a
+    - T1a1
+    - T1a2
+    - T1b
+    - T1b1
+    - T1b2
+    - T1c
+    - T1mi
+    - T2
+    - T2a
+    - T2a1
+    - T2a2
+    - T2b
+    - T2c
+    - T2d
+    - T3
+    - T3a
+    - T3b
+    - T3c
+    - T3d
+    - T4
+    - T4a
+    - T4b
+    - T4c
+    - T4d
+    - T4e
+    - TX
+    - Ta
+    - Tis
+    - Tis (DCIS)
+    - Tis (LCIS)
+    - Tis (Paget's)
+    - Unknown
+    - Not Reported
+  uicc_pathologic_m:
+    Enum:
+    - M0
+    - M1
+    - M1a
+    - M1b
+    - M1c
+    - M1d
+    - M2
+    - MX
+    - cM0 (i+)
+    - Unknown
+    - Not Reported
+  uicc_pathologic_n:
+    Enum:
+    - N0
+    - N0 (i+)
+    - N0 (i-)
+    - N0 (mol+)
+    - N0 (mol-)
+    - N1
+    - N1a
+    - N1b
+    - N1bI
+    - N1bII
+    - N1bIII
+    - N1bIV
+    - N1c
+    - N1mi
+    - N2
+    - N2mi
+    - N2a
+    - N2b
+    - N2c
+    - N3
+    - N3a
+    - N3b
+    - N3c
+    - N4
+    - NX
+    - Unknown
+    - Not Reported
+  uicc_pathologic_stage:
+    Enum:
+    - Stage 0
+    - Stage 0a
+    - Stage 0is
+    - Stage I
+    - Stage IA
+    - Stage IA1
+    - Stage IA2
+    - Stage IA3
+    - Stage IB
+    - Stage IB1
+    - Stage IB2
+    - Stage IC
+    - Stage II
+    - Stage IS
+    - Stage IIA
+    - Stage IIA1
+    - Stage IIA2
+    - Stage IIB
+    - Stage IIC
+    - Stage III
+    - Stage IIIA
+    - Stage IIIA1
+    - Stage IIIA2
+    - Stage IIIB
+    - Stage IIIC
+    - Stage IIIC1
+    - Stage IIIC2
+    - Stage IIID
+    - Stage IV
+    - Stage IVA
+    - Stage IVB
+    - Stage IVC
+    - Stage Tis
+    - Stage X
+    - Unknown
+    - Not Reported
+  uicc_pathologic_t:
+    Enum:
+    - T0
+    - T1
+    - T1a
+    - T1a1
+    - T1a2
+    - T1b
+    - T1b1
+    - T1b2
+    - T1c
+    - T1c2
+    - T1mi
+    - T2
+    - T2a
+    - T2a1
+    - T2a2
+    - T2b
+    - T2c
+    - T2d
+    - T3
+    - T3a
+    - T3b
+    - T3c
+    - T3d
+    - T4
+    - T4a
+    - T4b
+    - T4c
+    - T4d
+    - T4e
+    - TX
+    - Ta
+    - Tis
+    - Tis (DCIS)
+    - Tis (LCIS)
+    - Tis (Paget's)
+    - Unknown
+    - Not Reported
+  uicc_staging_system_edition:
+    Enum:
+    - 1st
+    - 2nd
+    - 3rd
+    - 4th
+    - 5th
+    - 6th
+    - 7th
+    - 8th
+    - Unknown
+    - Not Reported
   undescended_testis_corrected:
     Enum:
     - Yes
@@ -17774,15 +18686,15 @@ PropDefinitions:
     Type: integer
   undescended_testis_corrected_laterality:
     Enum:
+    - Bilateral
     - Left
     - Right
-    - Bilateral
     - Not Reported
   undescended_testis_corrected_method:
     Enum:
-    - Spontaneous Descent
-    - Orchiopexy
     - Hormones
+    - Orchiopexy
+    - Spontaneous Descent
     - Testis Removed
     - Not Reported
   undescended_testis_history:
@@ -17792,10 +18704,12 @@ PropDefinitions:
     - Not Reported
   undescended_testis_history_laterality:
     Enum:
+    - Bilateral
     - Left
     - Right
-    - Bilateral
     - Not Reported
+  use_per_day:
+    Type: number
   variant_origin:
     Enum:
     - Germline
@@ -17811,13 +18725,17 @@ PropDefinitions:
     - Deletion-Insertion
     - Duplication
     - Extension
+    - Fusion
     - Gain
+    - Genetic Polymorphism
     - Hypermethylation
     - Insertion
+    - Internal Tandem Duplication
     - Inversion
     - Loss
     - Methylation
     - Mosaicism
+    - Mutation, NOS
     - Other
     - Partial Methylation
     - Rearrangement
@@ -17856,6 +18774,8 @@ PropDefinitions:
     - Not Reported
   weeks_gestation_at_birth:
     Type: number
+  weiss_assessment_findings:
+    Type: array
   weiss_assessment_score:
     Enum:
     - '0'
@@ -17897,8 +18817,17 @@ PropDefinitions:
     Type: TBD
   year_of_death:
     Type: integer
+  year_of_follow_up:
+    Type: integer
   years_smoked:
     Type: number
+  zone_of_origin_prostate:
+    Enum:
+    - Peripheral zone
+    - Transition zone
+    - Central zone
+    - Overlapping/multiple zones
+    - Unknown zone
   zygosity:
     Enum:
     - Hemizygous

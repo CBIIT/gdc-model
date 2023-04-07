@@ -7,7 +7,7 @@ use YAML::XS;
 use strict;
 
 $ENV{SKIPYAML} = qr/_def|metaschema|_term/;
-my $schemadir = $ENV{SCHEMADIR} // "gdcdictionary/gdcdictionary/schemas";
+my $schemadir = $ENV{SCHEMADIR} // "gdcdictionary/src/gdcdictionary/schemas";
 
 my $dict = GDC::Dict->new($schemadir);
 
