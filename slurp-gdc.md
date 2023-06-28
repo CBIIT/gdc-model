@@ -23,10 +23,9 @@ GDC repo and outputs three files
 These may need futzing with, depending on the downstream YAML parser, because
 of inconsistent escaping of single quotes (apostrophes, e.g.) in the GDC source.
 
-Because the Term definitions have many issues of this type, 
-this script url-escapes the term 
-definitions before writing them to the term.yaml file (see ["model-desc/gdc-model-terms.yaml" in .](./model-desc/gdc-model-terms.yaml)).
-Need to unescape these before using the text downstream.
+Because the Term definitions have many issues with inconsistent use of single- and 
+double-quotes, this script removes any quotes surrounding these definitions and
+then precedes every quote character with a backslash before writing to YAML.
 
 # DEPENDENCIES
 

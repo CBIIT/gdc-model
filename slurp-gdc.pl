@@ -6,6 +6,15 @@ use YAML::XS;
 #use Tie::IxHash;
 use strict;
 
+sub fix_quotes {
+  $_ = shift;
+  s/^\s*["](.*)["]\s*$/$1/;
+  s/^\s*['](.*)[']\s*$/$1/;
+  s/'/\\'/g;
+  s/"/\\"/g;
+  return $_;
+}
+
 $ENV{SKIPYAML} = qr/_def|metaschema|_term/;
 my $schemadir = $ENV{SCHEMADIR} // "gdcdictionary/src/gdcdictionary/schemas";
 
@@ -63,7 +72,9 @@ for my $prop (sort keys %props) {
     my $p = $n->property($prop);
     my $spec = $propdefs->{PropDefinitions}{$pname} = {};
     if ($p->type eq 'enum') {
-      $spec->{Enum} = [$p->values];
+      my @vals = $p->values;
+      for (@vals) { s/^([Yy]es|[Nn]o)$/"$1"/; }
+      $spec->{Enum} = [@vals];
     }
     else {
       
@@ -81,8 +92,8 @@ for my $t (sort {$a->value cmp $b->value} $dict->terms) {
     Origin => $t->source,
     Code => $t->source_id,
     Version => $t->source_version,
-    Value => $t->{term},
-    Definition => uri_escape($t->desc),
+    Value => ($t->{term} =~ /^[^Yy]es|[Nn]o$/) ? "'$t->{term}'" : $t->{term},
+    Definition => fix_quotes($t->desc),
   }
 }
 
@@ -97,6 +108,7 @@ open my $gdct, ">gdc-model-terms.yaml.new" or die $!;
 print $gdct Dump($terms);
 close $gdct;
 1;
+
 
 
 =head1 NAME

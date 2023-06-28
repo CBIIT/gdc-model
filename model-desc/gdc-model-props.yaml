@@ -13,10 +13,10 @@ PropDefinitions:
   additional_pathology_findings:
     Enum:
     - Adenomyosis
+    - Asbestos bodies
     - Atrophic endometrium
     - Atypical hyperplasia/Endometrial intraepithelial neoplasia (EIN)
     - Autoimmune atrophic chronic gastritis
-    - Asbestos bodies
     - Benign endocervical polyp
     - Bilateral ovaries with endometriotic cyst and surface adhesions
     - Bone marrow concordant histology
@@ -36,6 +36,7 @@ PropDefinitions:
     - Endosalpingiosis
     - Epithelial dysplasia
     - Epithelial hyperplasia
+    - Extravascular Matrix Loops
     - Gallbladder adenomyomatosis
     - Glomerular disease
     - Hyperkeratosis
@@ -49,12 +50,13 @@ PropDefinitions:
     - Nonkeratinizing dysplasia; mild
     - Nonkeratinizing dysplasia; moderate
     - Nonkeratinizing dysplasia; severe (carcinoma in situ)
-    - Other
+    - Other Complex Extravascular Matrix Patterns
+    - PD-L1 CPS (223C LDT) - 20%
     - Percent follicular component <= 10%
     - Percent follicular component > 10%
-    - PD-L1 CPS (223C LDT) - 20%
     - Platinum-resistant
     - Pleural plaque
+    - Poorly Differentiated
     - Pulmonary interstitial fibrosis
     - Sialadenitis
     - Sinonasal papilloma
@@ -62,12 +64,14 @@ PropDefinitions:
     - Squamous papilloma; solitary
     - Squamous papillomatosis
     - Tubular (papillary) adenoma(s)
-    - Tumor-associated lymphoid proliferation
     - Tumor has rough spikey edges
+    - Tumor-associated lymphoid proliferation
+    - Well Differentiated
+    - Other
   adrenal_hormone:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   adverse_event:
     Enum:
@@ -930,13 +934,13 @@ PropDefinitions:
     - Wasting Syndrome
   ajcc_clinical_m:
     Enum:
+    - cM0 (i+)
     - M0
     - M1
     - M1a
     - M1b
     - M1c
     - MX
-    - cM0 (i+)
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -980,9 +984,9 @@ PropDefinitions:
     - Stage IA2
     - Stage IA3
     - Stage IB
-    - Stage IB Cervix
     - Stage IB1
     - Stage IB2
+    - Stage IB Cervix
     - Stage IC
     - Stage II
     - Stage II Cervix
@@ -1039,17 +1043,18 @@ PropDefinitions:
     - T4c
     - T4d
     - T4e
-    - TX
     - Ta
     - Tis
     - Tis (DCIS)
     - Tis (LCIS)
     - Tis (Paget's)
+    - TX
     - Unknown
     - Not Reported
     - Not Allowed To Collect
   ajcc_pathologic_m:
     Enum:
+    - cM0 (i+)
     - M0
     - M1
     - M1a
@@ -1058,7 +1063,6 @@ PropDefinitions:
     - M1d
     - M2
     - MX
-    - cM0 (i+)
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -1079,10 +1083,10 @@ PropDefinitions:
     - N1c
     - N1mi
     - N2
-    - N2mi
     - N2a
     - N2b
     - N2c
+    - N2mi
     - N3
     - N3a
     - N3b
@@ -1107,7 +1111,6 @@ PropDefinitions:
     - Stage IB2
     - Stage IC
     - Stage II
-    - Stage IS
     - Stage IIA
     - Stage IIA1
     - Stage IIA2
@@ -1122,6 +1125,7 @@ PropDefinitions:
     - Stage IIIC1
     - Stage IIIC2
     - Stage IIID
+    - Stage IS
     - Stage IV
     - Stage IVA
     - Stage IVB
@@ -1161,12 +1165,12 @@ PropDefinitions:
     - T4c
     - T4d
     - T4e
-    - TX
     - Ta
     - Tis
     - Tis (DCIS)
     - Tis (LCIS)
     - Tis (Paget's)
+    - TX
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -1192,12 +1196,12 @@ PropDefinitions:
     - Weekly Drinker
   alcohol_history:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
+    - '"yes"'
+    - '"no"'
     - Unknown
     - Not Reported
-    - no
-    - yes
   alcohol_intensity:
     Enum:
     - Drinker
@@ -1212,8 +1216,8 @@ PropDefinitions:
     Enum:
     - Beer
     - Liquor
-    - Other
     - Wine
+    - Other
     - Unknown
     - Not Reported
   aligned_reads.data_category:
@@ -1389,8 +1393,8 @@ PropDefinitions:
     Type: number
   anaplasia_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   anaplasia_present_type:
@@ -1409,8 +1413,8 @@ PropDefinitions:
     - Trisomy
   ann_arbor_b_symptoms:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -1418,8 +1422,8 @@ PropDefinitions:
     Enum:
     - Fever
     - Night Sweats
-    - Other
     - Weight Loss
+    - Other
   ann_arbor_clinical_stage:
     Enum:
     - Stage I
@@ -1430,8 +1434,8 @@ PropDefinitions:
     - Not Reported
   ann_arbor_extranodal_involvement:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -1525,12 +1529,13 @@ PropDefinitions:
   antigen:
     Enum:
     - BCL6
-    - CA-125
     - CA19-9
+    - CA-125
     - CCND1
+    - CD3
+    - CD5
+    - CD7
     - CD10
-    - CD117
-    - CD138
     - CD14
     - CD15
     - CD19
@@ -1538,15 +1543,14 @@ PropDefinitions:
     - CD22
     - CD23
     - CD25
-    - CD3
     - CD30
     - CD33
     - CD34
     - CD45
-    - CD5
     - CD56
-    - CD7
     - CD79A
+    - CD117
+    - CD138
     - CEA
     - FMC-7
     - HLA-DR
@@ -1578,8 +1582,8 @@ PropDefinitions:
     Type: TBD
   asbestos_exposure:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   asbestos_exposure_type:
@@ -1596,8 +1600,8 @@ PropDefinitions:
     Type: boolean
   barretts_esophagus_goblet_cells_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   base_caller_name:
@@ -1752,8 +1756,8 @@ PropDefinitions:
     - Gum
     - Hand
     - Hard Palate
-    - Head - Face Or Neck, Nos
     - Head & Neck
+    - Head - Face Or Neck, Nos
     - Heart
     - Hepatic
     - Hepatic Duct
@@ -1826,14 +1830,12 @@ PropDefinitions:
     - Neck
     - Nerve
     - Nerve(s) Cranial
-    - Not Allowed To Collect
     - Occipital Cortex
     - Ocular Orbits
     - Omentum
     - Oral Cavity
     - Oral Cavity - Mucosa Only
     - Oropharynx
-    - Other
     - Ovary
     - Palate
     - Pancreas
@@ -1927,8 +1929,10 @@ PropDefinitions:
     - Vulva
     - White Blood Cells
     - Wrist
+    - Other
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
   biospecimen_laterality:
     Enum:
     - Bilateral
@@ -2056,8 +2060,8 @@ PropDefinitions:
     - Myeloid Leukemias
     - Myomatous Neoplasms
     - Myxomatous Neoplasms
-    - Neoplasms, NOS
     - Neoplasms of Histiocytes and Accessory Lymphoid Cells
+    - Neoplasms, NOS
     - Nerve Sheath Tumors
     - Neuroepitheliomatous Neoplasms
     - Nevi and Melanomas
@@ -2078,6 +2082,7 @@ PropDefinitions:
     - Unknown
     - Not Reported
     - Not Applicable
+    Req: 1
   case.primary_site:
     Enum:
     - Accessory sinuses
@@ -2151,6 +2156,8 @@ PropDefinitions:
     - Vulva
     - Unknown
     - Not Reported
+    - Not Applicable
+    Req: 1
   case.projects:
     Type: TBD
   case.tissue_source_sites:
@@ -2256,8 +2263,8 @@ PropDefinitions:
     Type: array
   chemo_concurrent_to_radiation:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   child_pugh_classification:
@@ -2292,10 +2299,10 @@ PropDefinitions:
     - Unknown
   chromosomal_translocation:
     Enum:
-    - t(6;9)
-    - t(8;21)
     - t(3;5)(q25;q34)
+    - t(6;9)
     - t(6;11)(q27;q23)
+    - t(8;21)
     - t(9;11)(p22;q23)
     - t(10;11)(p11.2;q23)
     - t(11;19)(q23;p13.1)
@@ -2340,6 +2347,14 @@ PropDefinitions:
     Type: number
   circumferential_resection_margin:
     Type: number
+  clark_level:
+    Enum:
+    - I
+    - II
+    - III
+    - IV
+    - V
+    - Not Reported
   classification:
     Enum:
     - Blocking Release
@@ -2352,13 +2367,13 @@ PropDefinitions:
   classification_of_tumor:
     Enum:
     - metastasis
-    - other
     - Premalignant
     - primary
     - Prior primary
     - Progression
     - recurrence
     - Synchronous primary
+    - other
     - Unknown
     - not reported
     - Not Allowed To Collect
@@ -2421,8 +2436,8 @@ PropDefinitions:
     Type: TBD
   clinical_trial_indicator:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   clonality:
     Enum:
@@ -2430,8 +2445,8 @@ PropDefinitions:
     - Non-clonal
   coal_dust_exposure:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
   cog_liver_stage:
     Enum:
@@ -2465,8 +2480,8 @@ PropDefinitions:
     - Not Reported
   columnar_mucosa_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   comorbidities:
@@ -2520,13 +2535,13 @@ PropDefinitions:
     - COPD
     - Coronary Artery Disease
     - Crohn's Disease
-    - Cryptogenic Organizing Pneumonia
     - Cryptococcal Meningitis
+    - Cryptogenic Organizing Pneumonia
     - Cytomegalovirus (CMV)
     - Deep Vein Thrombosis / Thromboembolism
     - Denys-Drash Syndrome
-    - Dermatomyosis
     - Depression
+    - Dermatomyosis
     - Diabetes
     - Diabetes, Type II
     - Diabetic Neuropathy
@@ -2607,7 +2622,6 @@ PropDefinitions:
     - Organ transplant (site)
     - Osteoarthritis
     - Osteoporosis or Osteopenia
-    - Other
     - Other Cancer Within 5 Years
     - Other Nonmalignant Systemic Disease
     - Other Pulmonary Complications
@@ -2651,6 +2665,7 @@ PropDefinitions:
     - Urinary Tract Infection
     - Varicella Zoster Virus
     - Wagr Syndrome
+    - Other
     - Unknown
     - Not Reported
   comorbidity_method_of_diagnosis:
@@ -2683,7 +2698,6 @@ PropDefinitions:
     - Lymphocytes
     - Mixed Adherent Suspension
     - Mononuclear Cells from Bone Marrow Normal
-    - Not Allowed To Collect
     - Peripheral Blood Components NOS
     - Peripheral Whole Blood
     - Plasma
@@ -2696,6 +2710,7 @@ PropDefinitions:
     - Whole Bone Marrow
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
   consent_type:
     Enum:
     - Consent by Death
@@ -2704,13 +2719,24 @@ PropDefinitions:
     - Informed Consent
   consistent_pathology_review:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   contamination:
     Type: number
   contamination_error:
     Type: number
+  contiguous_organ_invaded:
+    Enum:
+    - Adrenal
+    - Bladder
+    - Colon
+    - Inferior Vena Cava
+    - Kidney
+    - Liver
+    - Small Bowel
+    - Spleen
+    - Not Reported
   copy_number:
     Type: number
   copy_number_auxiliary_file.data_category:
@@ -2820,6 +2846,240 @@ PropDefinitions:
     Req: 1
   copy_number_variation_workflows:
     Type: TBD
+  country_of_birth:
+    Enum:
+    - Afghanistan
+    - Albania
+    - Algeria
+    - Andorra
+    - Angola
+    - Anguilla
+    - Antigua and Barbuda
+    - Argentina
+    - Armenia
+    - Aruba
+    - Australia
+    - Austria
+    - Azerbaijan
+    - Bahamas
+    - Bahrain
+    - Bangladesh
+    - Barbados
+    - Belarus
+    - Belgium
+    - Belize
+    - Benin
+    - Bermuda
+    - Bhutan
+    - Bolivia
+    - Bosnia and Herzegovina
+    - Botswana
+    - Brazil
+    - Brunei
+    - Bulgaria
+    - Burkina Faso
+    - Burundi
+    - Cambodia
+    - Cameroon
+    - Canada
+    - Cape Verde
+    - Cayman Islands
+    - Central African Republic
+    - Chad
+    - Chile
+    - China
+    - Colombia
+    - Comoros
+    - Congo
+    - Cook Islands
+    - Costa Rica
+    - Cote d'Ivoire
+    - Croatia
+    - Cuba
+    - Curacao
+    - Cyprus
+    - Czech Republic (Czechia)
+    - Democratic Republic of the Congo
+    - Denmark
+    - Djibouti
+    - Dominica
+    - Dominican Republic
+    - Ecuador
+    - Egypt
+    - El Salvador
+    - Equatorial Guinea
+    - Eritrea
+    - Estonia
+    - Eswatini
+    - Ethiopia
+    - Falkland Islands (Malvinas)
+    - Faroe Islands
+    - Federated States of Micronesia
+    - Fiji
+    - Finland
+    - France
+    - French Guiana
+    - French Polynesia
+    - Gabon
+    - Gambia
+    - Georgia
+    - Germany
+    - Ghana
+    - Gibraltar
+    - Greece
+    - Greenland
+    - Grenada
+    - Guadeloupe
+    - Guam
+    - Guatemala
+    - Guernsey
+    - Guinea
+    - Guinea-Bissau
+    - Guyana
+    - Haiti
+    - Holy See
+    - Honduras
+    - Hong Kong
+    - Hungary
+    - Iceland
+    - India
+    - Indonesia
+    - Iran
+    - Iraq
+    - Ireland
+    - Isle of Man
+    - Israel
+    - Italy
+    - Jamaica
+    - Japan
+    - Jersey
+    - Jordan
+    - Kazakhstan
+    - Kenya
+    - Kiribati
+    - Kosovo
+    - Kuwait
+    - Kyrgyzstan
+    - Laos
+    - Latvia
+    - Lebanon
+    - Lesotho
+    - Liberia
+    - Libya
+    - Liechtenstein
+    - Lithuania
+    - Luxembourg
+    - Macau
+    - Madagascar
+    - Malawi
+    - Malaysia
+    - Maldives
+    - Mali
+    - Malta
+    - Marshall Islands
+    - Martinique
+    - Mauritania
+    - Mauritius
+    - Mayotte
+    - Mexico
+    - Moldova
+    - Monaco
+    - Mongolia
+    - Montenegro
+    - Montserrat
+    - Morocco
+    - Mozambique
+    - Myanmar
+    - Namibia
+    - Nauru
+    - Nepal
+    - Netherlands
+    - New Caledonia
+    - New Zealand
+    - Nicaragua
+    - Niger
+    - Nigeria
+    - Niue
+    - North Korea
+    - North Macedonia
+    - Northern Mariana Islands
+    - Norway
+    - Oman
+    - Pakistan
+    - Palau
+    - Panama
+    - Papua New Guinea
+    - Paraguay
+    - Peru
+    - Philippines
+    - Poland
+    - Portugal
+    - Puerto Rico
+    - Qatar
+    - Reunion
+    - Romania
+    - Russia
+    - Rwanda
+    - Saint Helena, Ascension and Tristan da Cunha
+    - Saint Kitts and Nevis
+    - Saint Lucia
+    - Saint Pierre and Miquelon
+    - Saint Vincent and the Grenadines
+    - Samoa
+    - San Marino
+    - Sao Tome and Principe
+    - Saudi Arabia
+    - Senegal
+    - Serbia
+    - Seychelles
+    - Sierra Leone
+    - Singapore
+    - Slovakia
+    - Slovenia
+    - Solomon Islands
+    - Somalia
+    - South Africa
+    - South Korea
+    - South Sudan
+    - Spain
+    - Sri Lanka
+    - State of Palestine
+    - Sudan
+    - Suriname
+    - Svalbard & Jan Mayen Islands
+    - Sweden
+    - Switzerland
+    - Syria
+    - Taiwan
+    - Tajikistan
+    - Tanzania
+    - Thailand
+    - Timor-Leste
+    - Togo
+    - Tokelau
+    - Tonga
+    - Trinidad and Tobago
+    - Tunisia
+    - Turkey
+    - Turkmenistan
+    - Tuvalu
+    - Uganda
+    - Ukraine
+    - United Arab Emirates
+    - United Kingdom
+    - United States
+    - Uruguay
+    - Uzbekistan
+    - Vanuatu
+    - Venezuela
+    - Vietnam
+    - Virgin Islands, British
+    - Virgin Islands, U.S.
+    - Wallis and Futuna
+    - Western Sahara
+    - Yemen
+    - Zambia
+    - Zimbabwe
   country_of_residence_at_enrollment:
     Enum:
     - Afghanistan
@@ -3159,32 +3419,32 @@ PropDefinitions:
     - hispanic or latino
     - not hispanic or latino
     - Unknown
+    - unknown
     - not reported
     - not allowed to collect
-    - unknown
     Req: 1
   demographic.gender:
     Enum:
     - female
     - male
-    - unknown
     - unspecified
+    - unknown
     - not reported
     Req: 1
   demographic.occupation_duration_years:
     Type: integer
   demographic.race:
     Enum:
-    - white
     - american indian or alaska native
-    - black or african american
     - asian
+    - black or african american
     - native hawaiian or other pacific islander
+    - white
     - other
     - Unknown
+    - unknown
     - not reported
     - not allowed to collect
-    - unknown
     Req: 1
   demographic.vital_status:
     Enum:
@@ -3208,9 +3468,9 @@ PropDefinitions:
     - Insulin
     - Linagliptin
     - Oral Hypoglycemic
-    - Other
     - Sulfonylurea
     - Thiazolidinedione
+    - Other
     - Unknown
     - Not Reported
   diagnosis.age_at_diagnosis:
@@ -3220,12 +3480,16 @@ PropDefinitions:
     Type: TBD
   diagnosis.days_to_recurrence:
     Type: TBD
+  diagnosis.measurement_type:
+    Enum:
+    - Pathologic
+    - Radiologic
   diagnosis.mitotic_count:
     Type: integer
   diagnosis.progression_or_recurrence:
     Enum:
-    - yes
-    - no
+    - '"yes"'
+    - '"no"'
     - unknown
     - not reported
     - Not Allowed To Collect
@@ -3244,11 +3508,13 @@ PropDefinitions:
     Type: boolean
   diagnosis_pathologically_confirmed:
     Enum:
-    - Not Allowed To Collect
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
+  discontiguous_lesion_count:
+    Type: integer
   disease_response:
     Enum:
     - AJ-Adjuvant Therapy
@@ -3299,13 +3565,13 @@ PropDefinitions:
     Type: string
   double_expressor_lymphoma:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   double_hit_lymphoma:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   drug_category:
     Enum:
@@ -3342,6 +3608,14 @@ PropDefinitions:
     - '4'
     - '5'
     - Unknown
+    - Not Reported
+  education_level:
+    Enum:
+    - College Degree
+    - High School Graduate or GED
+    - Professional or Graduate Degree
+    - Some High School or Less
+    - Vocational College or Some College
     - Not Reported
   eln_risk_classification:
     Enum:
@@ -3389,11 +3663,33 @@ PropDefinitions:
     - Intracompartmental (T1)
     - Unknown
     - Not Reported
+  ensat_clinical_m:
+    Enum:
+    - M0
+    - M1
+  ensat_pathologic_n:
+    Enum:
+    - N0
+    - N1
+  ensat_pathologic_stage:
+    Enum:
+    - Stage I
+    - Stage II
+    - Stage III
+    - Stage IV
+  ensat_pathologic_t:
+    Enum:
+    - T1
+    - T2
+    - T3
+    - T4
   environmental_tobacco_smoke_exposure:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
+  epithelioid_cell_percent:
+    Type: number
   esophageal_columnar_dysplasia_degree:
     Enum:
     - High Grade Dysplasia
@@ -3404,8 +3700,8 @@ PropDefinitions:
     - Not Reported
   esophageal_columnar_metaplasia_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   evidence_of_progression_type:
@@ -3476,6 +3772,8 @@ PropDefinitions:
     - Six Weeks or More
     - Unknown
     - Not Reported
+  exposure_duration_hrs_per_day:
+    Type: number
   exposure_duration_years:
     Type: integer
   exposure_source:
@@ -3488,11 +3786,12 @@ PropDefinitions:
     - Asbestos
     - Chemical
     - Coal Dust
+    - Dust, NOS
     - Marijuana
     - Radiation
-    - Smoke
     - Radon
     - Respirable Crystalline Silica
+    - Smoke
     - Smokeless Tobacco
     - Tobacco
     - Wood Dust
@@ -3642,11 +3941,18 @@ PropDefinitions:
     - Induction Death
     - Induction Failure
     - None
+    - Presented with Metastases
     - Progression
-    - Other
     - Relapse
     - Second Malignant Neoplasm
+    - Other
     - Not Reported
+  first_symptom_longest_duration:
+    Enum:
+    - 0-30 Days
+    - 31-90 Days
+    - 91-180 Days
+    - '>=181 Days'
   first_symptom_prior_to_diagnosis:
     Enum:
     - Altered Mental Status
@@ -3668,14 +3974,14 @@ PropDefinitions:
     Type: TBD
   follow_up.progression_or_recurrence:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   follow_up.timepoint_category:
     Enum:
-    - Adolescence
     - Adjuvant Therapy
+    - Adolescence
     - Adulthood
     - Childhood
     - Follow-up
@@ -3689,6 +3995,7 @@ PropDefinitions:
     - Prior to Diagnosis
     - Prior to Treatment
     - Recurrence/Progression
+    - Within 3 Months of Surgery
     - Other
     - Not Reported
   follow_up.weight:
@@ -3710,8 +4017,8 @@ PropDefinitions:
     Type: string
   gastric_esophageal_junction_involvement:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   gene_expression.data_category:
@@ -3746,6 +4053,7 @@ PropDefinitions:
     - ABI1
     - ABL1
     - ABL2
+    - ACACA
     - ACKR3
     - ACSL3
     - ACSL6
@@ -3767,8 +4075,8 @@ PropDefinitions:
     - AQP1
     - AR
     - ARAF
-    - ARHGAP26
     - ARHGAP5
+    - ARHGAP26
     - ARHGEF12
     - ARID1A
     - ARID1B
@@ -3789,9 +4097,6 @@ PropDefinitions:
     - B2M
     - BAP1
     - BARD1
-    - BCL10
-    - BCL11A
-    - BCL11B
     - BCL2
     - BCL2L12
     - BCL3
@@ -3799,6 +4104,9 @@ PropDefinitions:
     - BCL7A
     - BCL9
     - BCL9L
+    - BCL10
+    - BCL11A
+    - BCL11B
     - BCLAF1
     - BCOR
     - BCORL1
@@ -3811,9 +4119,11 @@ PropDefinitions:
     - BRAF
     - BRCA1
     - BRCA2
+    - BRD1
     - BRD3
     - BRD4
     - BRIP1
+    - BTBD18
     - BTG1
     - BTK
     - BUB1B
@@ -3826,6 +4136,7 @@ PropDefinitions:
     - CARD11
     - CARS
     - CASP8
+    - CBFA2T2
     - CBFA2T3
     - CBFB
     - CBL
@@ -3840,21 +4151,21 @@ PropDefinitions:
     - CCNE1
     - CCR4
     - CCR7
-    - CD209
-    - CD274
     - CD28
     - CD74
     - CD79A
     - CD79B
     - CD99
+    - CD209
+    - CD274
     - CDC73
     - CDH1
     - CDH10
     - CDH11
     - CDH17
-    - CDK12
     - CDK4
     - CDK6
+    - CDK12
     - CDKN1A
     - CDKN1B
     - CDKN2A
@@ -3862,6 +4173,8 @@ PropDefinitions:
     - CDX2
     - CEBPA
     - CEP89
+    - CEP164
+    - CEP170B
     - CHCHD7
     - CHD2
     - CHD4
@@ -3896,6 +4209,7 @@ PropDefinitions:
     - CSF3R
     - CSMD3
     - CTCF
+    - CTDP1
     - CTNNA2
     - CTNNB1
     - CTNND1
@@ -3913,10 +4227,10 @@ PropDefinitions:
     - DDB2
     - DDIT3
     - DDR2
-    - DDX10
     - DDX3X
     - DDX5
     - DDX6
+    - DDX10
     - DEK
     - DGCR8
     - DICER1
@@ -3924,6 +4238,7 @@ PropDefinitions:
     - DNM2
     - DNMT3A
     - DNTT
+    - DOT1L
     - DROSHA
     - DUX4L1
     - EBF1
@@ -3965,10 +4280,10 @@ PropDefinitions:
     - EXT2
     - EZH2
     - EZR
-    - FAM131B
-    - FAM135B
     - FAM46C
     - FAM47C
+    - FAM131B
+    - FAM135B
     - FANCA
     - FANCC
     - FANCD2
@@ -4009,6 +4324,7 @@ PropDefinitions:
     - FOXO4
     - FOXP1
     - FOXR1
+    - FRYL
     - FSTL3
     - FUBP1
     - FUS
@@ -4018,6 +4334,7 @@ PropDefinitions:
     - GATA3
     - GCET1
     - GLI1
+    - GLIS2
     - GMPS
     - GNA11
     - GNAQ
@@ -4040,13 +4357,15 @@ PropDefinitions:
     - HLF
     - HMGA1
     - HMGA2
+    - HMGB3
     - HMGN2P46
     - HNF1A
     - HNRNPA2B1
+    - HNRNPH1
     - HOOK3
+    - HOXA9
     - HOXA11
     - HOXA13
-    - HOXA9
     - HOXB1
     - HOXC11
     - HOXC13
@@ -4065,9 +4384,10 @@ PropDefinitions:
     - IKBKB
     - IKZF1
     - IL2
-    - IL21R
     - IL6ST
     - IL7R
+    - IL21R
+    - INO80D
     - IRF4
     - IRS4
     - ISX
@@ -4076,6 +4396,7 @@ PropDefinitions:
     - JAK1
     - JAK2
     - JAK3
+    - JARID2
     - JAZF1
     - JUN
     - KAT6A
@@ -4100,8 +4421,8 @@ PropDefinitions:
     - KNL1
     - KNSTRN
     - KRAS
-    - KRT20
     - KRT7
+    - KRT20
     - KTN1
     - LARP4B
     - LASP1
@@ -4148,11 +4469,11 @@ PropDefinitions:
     - MLH1
     - MLH2
     - MLLT1
-    - MLLT10
-    - MLLT11
     - MLLT3
     - MLLT4
     - MLLT6
+    - MLLT10
+    - MLLT11
     - MN1
     - MNX1
     - MPL
@@ -4163,16 +4484,16 @@ PropDefinitions:
     - MTCP1
     - MTOR
     - MUC1
-    - MUC16
     - MUC4
+    - MUC16
     - MUTYH
     - MYB
     - MYC
     - MYCL
     - MYCN
     - MYD88
-    - MYH11
     - MYH9
+    - MYH11
     - MYO5A
     - MYOD1
     - NAB2
@@ -4196,7 +4517,6 @@ PropDefinitions:
     - NIN
     - NKX2-1
     - NONO
-    - Not Applicable
     - NOTCH1
     - NOTCH2
     - NPM1
@@ -4211,8 +4531,8 @@ PropDefinitions:
     - NTRK1
     - NTRK3
     - NUMA1
-    - NUP214
     - NUP98
+    - NUP214
     - NUTM1
     - NUTM2A
     - NUTM2B
@@ -4240,12 +4560,14 @@ PropDefinitions:
     - PER1
     - PGR
     - PHF6
+    - PHF23
     - PHOX2B
     - PICALM
     - PIK3CA
     - PIK3CB
     - PIK3R1
     - PIM1
+    - PIM3
     - PLAG1
     - PLCG1
     - PML
@@ -4265,8 +4587,8 @@ PropDefinitions:
     - PPP6C
     - PRCC
     - PRDM1
-    - PRDM16
     - PRDM2
+    - PRDM16
     - PREX2
     - PRF1
     - PRKACA
@@ -4279,9 +4601,10 @@ PropDefinitions:
     - PTEN
     - PTGS2
     - PTK6
+    - PTP4A1
+    - PTPN6
     - PTPN11
     - PTPN13
-    - PTPN6
     - PTPRB
     - PTPRC
     - PTPRK
@@ -4308,14 +4631,15 @@ PropDefinitions:
     - RHOA
     - RHOH
     - RMI2
-    - RNF213
     - RNF43
+    - RNF213
     - ROBO2
     - ROS1
+    - RPL5
     - RPL10
     - RPL22
-    - RPL5
     - RPN1
+    - RPS15
     - RSPO2
     - RSPO3
     - RUNX1
@@ -4334,6 +4658,7 @@ PropDefinitions:
     - SEPT9
     - SET
     - SETBP1
+    - SETD1A
     - SETD2
     - SF3B1
     - SFPQ
@@ -4346,6 +4671,7 @@ PropDefinitions:
     - SKI
     - SLC34A2
     - SLC45A3
+    - SLC66A2 (aka PQLC1)
     - SMAD2
     - SMAD3
     - SMAD4
@@ -4389,9 +4715,9 @@ PropDefinitions:
     - TBL1XR1
     - TBX3
     - TCEA1
-    - TCF12
     - TCF3
     - TCF7L2
+    - TCF12
     - TCL1A
     - TEC
     - TERT
@@ -4414,6 +4740,7 @@ PropDefinitions:
     - TNFRSF14
     - TNFRSF17
     - TOP1
+    - TOP2B
     - TP53
     - TP63
     - TPM3
@@ -4432,6 +4759,7 @@ PropDefinitions:
     - TSC2
     - TSHR
     - U2AF1
+    - UBB
     - UBR5
     - USP6
     - USP8
@@ -4452,6 +4780,7 @@ PropDefinitions:
     - ZBTB16
     - ZCCHC8
     - ZEB1
+    - ZEB2
     - ZFHX3
     - ZMYM3
     - ZNF198
@@ -4465,6 +4794,7 @@ PropDefinitions:
     - ZRSR2
     - Unknown
     - Not Reported
+    - Not Applicable
     Req: 1
   genomic_profile_harmonization_workflow.submitted_genomic_profiles:
     Type: TBD
@@ -4508,8 +4838,8 @@ PropDefinitions:
     Type: integer
   goblet_cells_columnar_mucosa_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   greatest_tumor_dimension:
@@ -4520,16 +4850,16 @@ PropDefinitions:
     Type: integer
   haart_treatment_indicator:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   height:
     Type: number
   hepatitis_sustained_virological_response:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   histone_family:
@@ -4564,8 +4894,8 @@ PropDefinitions:
     - Not Reported
   history_of_tumor:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   history_of_tumor_type:
     Enum:
@@ -4672,18 +5002,18 @@ PropDefinitions:
     Enum:
     - Carcinomatosis
     - Kidney Involvement
-    - Lung Involvement
     - Liver Involvement
+    - Lung Involvement
     - Normal
     - Retroperitoneal Lymph Node Involvement
     - Vena Cava Involvement/Thrombus
     - Not Reported
   imaging_result:
     Enum:
-    - Positive
     - Indeterminate
     - Negative
     - Not Performed
+    - Positive
     - Unknown
     - Not Reported
   imaging_suv:
@@ -4793,10 +5123,10 @@ PropDefinitions:
     Type: number
   international_prognostic_index:
     Enum:
+    - High Risk
+    - High-Intermediate Risk
     - Low Risk
     - Low-Intermediate Risk
-    - High-Intermediate Risk
-    - High Risk
   intron:
     Type: string
   irs_group:
@@ -4841,8 +5171,8 @@ PropDefinitions:
     - I
     - II
     - III
-    - Not Reported
     - Unknown
+    - Not Reported
   karnofsky_performance_status:
     Enum:
     - '0'
@@ -4942,9 +5272,9 @@ PropDefinitions:
     - Not Reported
   last_known_disease_status:
     Enum:
+    - Biochemical evidence of disease without structural correlate
     - Distant met recurrence/progression
     - Loco-regional recurrence/progression
-    - Biochemical evidence of disease without structural correlate
     - Tumor free
     - Unknown tumor status
     - With tumor
@@ -5018,8 +5348,8 @@ PropDefinitions:
     Type: number
   lost_to_followup:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
   lymph_node_dissection_method:
     Enum:
@@ -5029,8 +5359,8 @@ PropDefinitions:
   lymph_node_dissection_site:
     Enum:
     - Neck, Left
-    - Neck, Right
     - Neck, NOS
+    - Neck, Right
   lymph_node_involved_site:
     Enum:
     - Aortic
@@ -5039,9 +5369,9 @@ PropDefinitions:
     - Epitrochlear
     - Femoral
     - Hilar
+    - Iliac, NOS
     - Iliac-common
     - Iliac-external
-    - Iliac, NOS
     - Inguinal
     - Mediastinal
     - Mesenteric
@@ -5068,15 +5398,15 @@ PropDefinitions:
     Type: integer
   lymph_nodes_removed:
     Enum:
-    - No
-    - Yes
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   lymph_nodes_tested:
     Type: integer
   lymphatic_invasion_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   magnification:
@@ -5088,9 +5418,9 @@ PropDefinitions:
     Type: number
   margin_status:
     Enum:
+    - Indeterminant
     - Involved
     - Uninvolved
-    - Indeterminant
     - Unknown
     - Not Reported
   margins_involved_site:
@@ -5103,6 +5433,14 @@ PropDefinitions:
     - Renal Sinus
     - Renal Vein
     - Ureter
+  marital_status:
+    Enum:
+    - Divorced
+    - Domestic Partnership
+    - Married
+    - Never Married
+    - Separated
+    - Widowed
   masaoka_stage:
     Enum:
     - Stage I
@@ -5147,6 +5485,7 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
+    - Illumina Methylation Epic v2
     Req: 1
   masked_methylation_arrays:
     Type: TBD
@@ -5207,13 +5546,12 @@ PropDefinitions:
     - Neck
     - No known nodal involvement
     - Oropharynx
-    - Other
     - Ovary
     - Pancreas
     - Paraaortic lymph nodes
     - Parotid gland
-    - Pericardium
     - Peri-orbital soft tissue
+    - Pericardium
     - Retroperitoneal lymph nodes
     - Small intestine
     - Soft tissue (muscle, ligaments, subcutaneous)
@@ -5222,15 +5560,25 @@ PropDefinitions:
     - Submandibular lymph nodes
     - Supraclavicular lymph nodes
     - Thyroid
+    - Other
   mean_coverage:
     Type: number
+  measurement_unit:
+    Enum:
+    - Centimeters
+    - Millimeters
   medulloblastoma_molecular_classification:
     Enum:
-    - Not Determined
     - Non-WNT/non-SHH Activated
+    - Not Determined
     - SHH-Activated
     - WNT-Activated
     - Unknown
+    - Not Reported
+  melanoma_known_primary:
+    Enum:
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   menopause_status:
     Enum:
@@ -5241,8 +5589,8 @@ PropDefinitions:
     - Not Reported
   metaplasia_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   metastasis_at_diagnosis:
@@ -5295,8 +5643,8 @@ PropDefinitions:
     - Skin
     - Small Intestine
     - Soft Tissue
-    - Spleen
     - Spinal Cord
+    - Spleen
     - Stomach
     - Urethra
     - Uterine Adnexa
@@ -5311,8 +5659,8 @@ PropDefinitions:
     - Blood Draw
     - Bone Marrow Aspirate
     - Core Biopsy
-    - Cytology
     - Cystoscopy
+    - Cytology
     - Debulking
     - Diagnostic Imaging
     - Dilation and Curettage Procedure
@@ -5324,13 +5672,13 @@ PropDefinitions:
     - Incisional Biopsy
     - Laparoscopy
     - Laparotomy
-    - Other
     - Pap Smear
-    - Physical Exam
     - Pathologic Review
+    - Physical Exam
     - Surgical Resection
     - Thoracentesis
     - Ultrasound Guided Biopsy
+    - Other
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -5380,7 +5728,6 @@ PropDefinitions:
     - Metastasectomy
     - Modified Radical Mastectomy
     - Needle Biopsy
-    - Not Allowed To Collect
     - Omentectomy
     - Oophorectomy
     - Open Craniotomy
@@ -5388,7 +5735,6 @@ PropDefinitions:
     - Open Radical Nephrectomy
     - Open Radical Prostatectomy
     - Orchiectomy
-    - Other
     - Other Surgical Resection
     - Palatectomy
     - Pan-Procto Colectomy
@@ -5437,8 +5783,10 @@ PropDefinitions:
     - Vertical Hemilaryngectomy
     - Wedge Resection
     - Whipple Procedure
+    - Other
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
   methylation_array_harmonization_workflow.raw_methylation_arrays:
     Type: TBD
   methylation_array_harmonization_workflow.workflow_type:
@@ -5468,6 +5816,7 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
+    - Illumina Methylation Epic v2
     Req: 1
   methylation_beta_values:
     Type: TBD
@@ -5520,8 +5869,8 @@ PropDefinitions:
     Type: TBD
   mismatch_repair_mutation:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   mitosis_karyorrhexis_index:
@@ -5546,7 +5895,6 @@ PropDefinitions:
     - Microarray
     - Microsatellite Analysis
     - Nuclear Staining
-    - Other
     - PCR
     - RNA Sequencing
     - RT-PCR
@@ -5555,6 +5903,7 @@ PropDefinitions:
     - Targeted Sequencing
     - WGS
     - WXS
+    - Other
     - Unknown
     - Not Reported
     Req: 1
@@ -5610,6 +5959,7 @@ PropDefinitions:
     - End of Consolidation Therapy
     - End of Treatment Course 1
     - End of Treatment Course 2
+    - Preoperative
     - Not Reported
   molecular_tests:
     Type: TBD
@@ -5664,8 +6014,8 @@ PropDefinitions:
     - 8040/1
     - 8040/3
     - 8041/3
-    - 8041/34
     - 8041/6
+    - 8041/34
     - 8042/3
     - 8043/3
     - 8044/3
@@ -5684,8 +6034,8 @@ PropDefinitions:
     - 8060/0
     - 8070/2
     - 8070/3
-    - 8070/33
     - 8070/6
+    - 8070/33
     - 8071/2
     - 8071/3
     - 8072/3
@@ -5739,8 +6089,8 @@ PropDefinitions:
     - 8140/1
     - 8140/2
     - 8140/3
-    - 8140/33
     - 8140/6
+    - 8140/33
     - 8141/3
     - 8142/3
     - 8143/3
@@ -6657,8 +7007,8 @@ PropDefinitions:
     - 9709/3
     - 9712/3
     - 9714/3
-    - 9716/3
     - 9715/3
+    - 9716/3
     - 9717/3
     - 9718/3
     - 9719/3
@@ -6804,8 +7154,8 @@ PropDefinitions:
     Type: number
   necrosis_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   no_matched_normal_low_pass_wgs:
     Type: boolean
@@ -6824,14 +7174,14 @@ PropDefinitions:
     - Not Reported
   non_nodal_tumor_deposits:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   normal_tumor_genotype_snp_match:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -6877,8 +7227,8 @@ PropDefinitions:
     Type: TBD
   parent_with_radiation_exposure:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   passage_count:
     Type: integer
@@ -6891,12 +7241,16 @@ PropDefinitions:
     - Uncertain Significance
   pathology_detail.bone_marrow_malignant_cells:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   pathology_detail.diagnoses:
     Type: TBD
+  pathology_detail.measurement_type:
+    Enum:
+    - Pathologic
+    - Radiologic
   pathology_detail.number_proliferating_cells:
     Type: integer
   pathology_detail.percent_tumor_nuclei:
@@ -6932,15 +7286,15 @@ PropDefinitions:
     - Nephrectomy specimen with tumor confined to the kidney; distant metastasis identified
       at diagnosis
     - Nephrectomy specimen with tumor confined to the kidney; no distant metastasis
+    - Nephrectomy specimen with tumor that is present at the surgical margin of resection
+      or within regional lymph nodes; distant metastasis identified at diagnosis
+    - Nephrectomy specimen with tumor that is present at the surgical margin of resection
+      or within regional lymph nodes; no distant metastasis
     - Nephrectomy specimen with tumor that penetrates the renal capsule or involves
       the renal sinus with negative margins and negative lymph nodes; distant metastasis
       identified at diagnosis
     - Nephrectomy specimen with tumor that penetrates the renal capsule or involves
       the renal sinus with negative margins and negative lymph nodes; no distant metastasis
-    - Nephrectomy specimen with tumor that is present at the surgical margin of resection
-      or within regional lymph nodes; distant metastasis identified at diagnosis
-    - Nephrectomy specimen with tumor that is present at the surgical margin of resection
-      or within regional lymph nodes; no distant metastasis
     - Tumor biopsied only at diagnosis; distant metastasis identified at diagnosis
     - Tumor biopsied only at diagnosis; no distant metastasis
     - Not Reported
@@ -6988,8 +7342,8 @@ PropDefinitions:
     Type: number
   perineural_invasion_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   peripancreatic_lymph_nodes_positive:
@@ -7060,14 +7414,14 @@ PropDefinitions:
     - Not Reported
   pregnant_at_diagnosis:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   premature_at_birth:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   prescribed_dose:
@@ -7075,14 +7429,15 @@ PropDefinitions:
   preservation_method:
     Enum:
     - Cryopreserved
+    - EDTA
     - FFPE
     - Fresh
     - Frozen
-    - Not Allowed To Collect
     - OCT
     - Snap Frozen
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
     Req: 1
   primary_diagnosis:
     Enum:
@@ -7118,11 +7473,11 @@ PropDefinitions:
     - Acute leukemia, Burkitt type
     - Acute leukemia, NOS
     - Acute lymphatic leukemia
-    - Acute lymphoblastic leukemia-lymphoma, NOS
     - Acute lymphoblastic leukemia, L2 type, NOS
     - Acute lymphoblastic leukemia, mature B-cell type
     - Acute lymphoblastic leukemia, NOS
     - Acute lymphoblastic leukemia, precursor cell type
+    - Acute lymphoblastic leukemia-lymphoma, NOS
     - Acute lymphocytic leukemia
     - Acute lymphoid leukemia
     - Acute megakaryoblastic leukaemia
@@ -7381,9 +7736,9 @@ PropDefinitions:
     - B lymphoblastic leukemia/lymphoma with hyperdiploidy
     - B lymphoblastic leukemia/lymphoma with hypodiploidy (Hypodiploid ALL)
     - B lymphoblastic leukemia/lymphoma with t(1;19)(q23;p13.3); E2A-PBX1 (TCF3-PBX1)
-    - B lymphoblastic leukemia/lymphoma with t(12;21)(p13;q22); TEL-AML1 (ETV6-RUNX1)
     - B lymphoblastic leukemia/lymphoma with t(5;14)(q31;q32); IL3-IGH
     - B lymphoblastic leukemia/lymphoma with t(9;22)(q34;q11.2); BCR-ABL1
+    - B lymphoblastic leukemia/lymphoma with t(12;21)(p13;q22); TEL-AML1 (ETV6-RUNX1)
     - B lymphoblastic leukemia/lymphoma with t(v;11q23); MLL rearranged
     - B lymphoblastic leukemia/lymphoma, NOS
     - B-ALL
@@ -8409,8 +8764,8 @@ PropDefinitions:
     - Lipoblastomatosis
     - Lipoid cell tumor of ovary
     - Lipoleiomyoma
-    - Lipoma-like liposarcoma
     - Lipoma, NOS
+    - Lipoma-like liposarcoma
     - Lipomatous medulloblastoma
     - Liposarcoma, differentiated
     - Liposarcoma, NOS
@@ -9188,10 +9543,10 @@ PropDefinitions:
     - Preleukemic syndrome
     - Primary amyloidosis
     - Primary cutaneous anaplastic large cell lymphoma
-    - Primary cutaneous CD30+ large T-cell lymphoma
-    - Primary cutaneous CD30+ T-cell lymphoproliferative disorder
     - Primary cutaneous CD4-positive small/medium T-cell lymphoma
     - Primary cutaneous CD8-positive aggressive epidermotropic cytotoxic T-cell lymphoma
+    - Primary cutaneous CD30+ large T-cell lymphoma
+    - Primary cutaneous CD30+ T-cell lymphoproliferative disorder
     - Primary cutaneous DLBCL, leg type
     - Primary cutaneous follicle centre lymphoma
     - Primary cutaneous gamma-delta T-cell lymphoma
@@ -9731,15 +10086,15 @@ PropDefinitions:
     - Pattern 5
   prior_malignancy:
     Enum:
-    - yes
-    - no
+    - '"yes"'
+    - '"no"'
     - unknown
     - not reported
     - Not Allowed To Collect
   prior_treatment:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
     - Not Allowed To Collect
@@ -10171,6 +10526,9 @@ PropDefinitions:
     Type: TBD
   protocol_identifier:
     Enum:
+    - 321P2
+    - 321P3
+    - 323P
     - '901'
     - '911'
     - '914'
@@ -10190,21 +10548,18 @@ PropDefinitions:
     - '9464'
     - '9640'
     - '9906'
-    - 321P2
-    - 321P3
-    - 323P
-    - A081105
-    - A081801
     - A3961
     - A3973
+    - A081105
+    - A081801
     - AADM01P1
+    - AALL03B1
+    - AALL07P4
+    - AALL08P1
     - AALL0031
     - AALL0232
     - AALL0331
-    - AALL03B1
     - AALL0434
-    - AALL07P4
-    - AALL08P1
     - AALL1131
     - AAML00P2
     - AAML03P1
@@ -10212,11 +10567,12 @@ PropDefinitions:
     - AAML0631
     - AAML1031
     - AB9804
+    - ACCL05C1
     - ACCL0331
     - ACCL0431
-    - ACCL05C1
     - ACCL0934
     - ACCL1031
+    - ADVL06B1
     - ADVL0018
     - ADVL0212
     - ADVL0214
@@ -10224,7 +10580,6 @@ PropDefinitions:
     - ADVL0421
     - ADVL0524
     - ADVL0525
-    - ADVL06B1
     - ADVL0714
     - ADVL0812
     - ADVL0813
@@ -10242,11 +10597,12 @@ PropDefinitions:
     - AEPI07N1
     - ALTE03N1
     - ALTE05N1
-    - ANBL0032
     - ANBL00B1
     - ANBL00P1
     - ANBL00P3
     - ANBL02P1
+    - ANBL09P1
+    - ANBL0032
     - ANBL0321
     - ANBL0322
     - ANBL0421
@@ -10254,14 +10610,13 @@ PropDefinitions:
     - ANBL0532
     - ANBL0621
     - ANBL0931
-    - ANBL09P1
     - ANBL1021
     - ANBL1221
     - ANUR1131
-    - AOST0121
-    - AOST0331
     - AOST06B1
     - AOST06P1
+    - AOST0121
+    - AOST0331
     - AREN03B2
     - B003
     - B903
@@ -10283,8 +10638,9 @@ PropDefinitions:
     - N891
     - NWTS-4
     - NWTS-5
-    - OSTEO 2006
     - Not Reported
+    - OSTEO 2006
+    - P9407
     - P9462
     - P9641
     - P9754
@@ -10308,8 +10664,8 @@ PropDefinitions:
     Type: TBD
   radon_exposure:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   raw_methylation_array.aliquots:
@@ -10348,6 +10704,7 @@ PropDefinitions:
     - Illumina Human Methylation 27
     - Illumina Human Methylation 450
     - Illumina Methylation Epic
+    - Illumina Methylation Epic v2
     Req: 1
   read_group.aliquots:
     Req: 1
@@ -10392,8 +10749,8 @@ PropDefinitions:
     - Course of Therapy Completed
     - Death
     - Disease Progression
-    - Other
     - Withdrawal by Subject
+    - Other
   recist_targeted_regions_number:
     Type: integer
   recist_targeted_regions_sum:
@@ -10404,11 +10761,11 @@ PropDefinitions:
     - H2 Blockers
     - Medically Treated
     - No Treatment
-    - Not Applicable
     - Proton Pump Inhibitors
     - Surgically Treated
     - Unknown
     - Not Reported
+    - Not Applicable
   regimen_or_line_of_therapy:
     Type: string
   related_files:
@@ -10421,8 +10778,8 @@ PropDefinitions:
     Enum:
     - female
     - male
-    - unknown
     - unspecified
+    - unknown
     - not reported
   relationship_primary_diagnosis:
     Enum:
@@ -10562,7 +10919,6 @@ PropDefinitions:
     - Nephew
     - Niece
     - Niece Second Degree Relative
-    - Other
     - Parent
     - Paternal Aunt
     - Paternal First Cousin
@@ -10596,12 +10952,23 @@ PropDefinitions:
     - Unrelated
     - Ward
     - Wife
+    - Other
     - Unknown
+    - Not Reported
+  relative_deceased:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Not Reported
+  relative_smoker:
+    Enum:
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   relative_with_cancer_history:
     Enum:
-    - yes
-    - no
+    - '"yes"'
+    - '"no"'
     - unknown
     - not reported
   relatives_with_cancer_history_count:
@@ -10616,10 +10983,10 @@ PropDefinitions:
     Type: boolean
   residual_tumor:
     Enum:
-    - RX
     - R0
     - R1
     - R2
+    - RX
   residual_tumor_measurement:
     Enum:
     - 1-10 mm
@@ -10628,8 +10995,8 @@ PropDefinitions:
     - No macroscopic disease
   respirable_crystalline_silica_exposure:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
   revision:
     Req: 1
@@ -10638,8 +11005,8 @@ PropDefinitions:
     Type: number
   rhabdoid_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   ribosomal_rna_28s_16s_ratio:
     Type: number
@@ -10831,8 +11198,8 @@ PropDefinitions:
     - Not Reported
   risk_factor_treatment:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   risk_factors:
@@ -10939,7 +11306,6 @@ PropDefinitions:
     - Neoplasms of Uncertain and Unknown Behavior
     - Next Generation Cancer Model
     - Next Generation Cancer Model Expanded Under Non-conforming Conditions
-    - Not Allowed To Collect
     - Pleural Effusion
     - Post neo-adjuvant therapy
     - Primary Blood Derived Cancer - Bone Marrow
@@ -10961,6 +11327,7 @@ PropDefinitions:
     - Xenograft Tissue
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
   sample_type_id:
     Enum:
     - '01'
@@ -10999,8 +11366,8 @@ PropDefinitions:
     Type: number
   sarcomatoid_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   satellite_nodule_present:
     Enum:
@@ -11026,6 +11393,7 @@ PropDefinitions:
     - ABI1
     - ABL1
     - ABL2
+    - ACACA
     - ACKR3
     - ACSL3
     - ACSL6
@@ -11046,8 +11414,8 @@ PropDefinitions:
     - APOBEC3B
     - AR
     - ARAF
-    - ARHGAP26
     - ARHGAP5
+    - ARHGAP26
     - ARHGEF12
     - ARID1A
     - ARID1B
@@ -11068,9 +11436,6 @@ PropDefinitions:
     - B2M
     - BAP1
     - BARD1
-    - BCL10
-    - BCL11A
-    - BCL11B
     - BCL2
     - BCL2L12
     - BCL3
@@ -11078,6 +11443,9 @@ PropDefinitions:
     - BCL7A
     - BCL9
     - BCL9L
+    - BCL10
+    - BCL11A
+    - BCL11B
     - BCLAF1
     - BCOR
     - BCORL1
@@ -11090,9 +11458,11 @@ PropDefinitions:
     - BRAF
     - BRCA1
     - BRCA2
+    - BRD1
     - BRD3
     - BRD4
     - BRIP1
+    - BTBD18
     - BTG1
     - BTK
     - BUB1B
@@ -11104,6 +11474,7 @@ PropDefinitions:
     - CARD11
     - CARS
     - CASP8
+    - CBFA2T2
     - CBFA2T3
     - CBFB
     - CBL
@@ -11118,21 +11489,21 @@ PropDefinitions:
     - CCNE1
     - CCR4
     - CCR7
-    - CD209
-    - CD274
     - CD28
     - CD74
     - CD79A
     - CD79B
     - CD99
+    - CD209
+    - CD274
     - CDC73
     - CDH1
     - CDH10
     - CDH11
     - CDH17
-    - CDK12
     - CDK4
     - CDK6
+    - CDK12
     - CDKN1A
     - CDKN1B
     - CDKN2A
@@ -11140,6 +11511,8 @@ PropDefinitions:
     - CDX2
     - CEBPA
     - CEP89
+    - CEP164
+    - CEP170B
     - CHCHD7
     - CHD2
     - CHD4
@@ -11174,6 +11547,7 @@ PropDefinitions:
     - CSF3R
     - CSMD3
     - CTCF
+    - CTDP1
     - CTNNA2
     - CTNNB1
     - CTNND1
@@ -11191,16 +11565,17 @@ PropDefinitions:
     - DDB2
     - DDIT3
     - DDR2
-    - DDX10
     - DDX3X
     - DDX5
     - DDX6
+    - DDX10
     - DEK
     - DGCR8
     - DICER1
     - DNAJB1
     - DNM2
     - DNMT3A
+    - DOT1L
     - DROSHA
     - DUX4L1
     - EBF1
@@ -11241,10 +11616,10 @@ PropDefinitions:
     - EXT2
     - EZH2
     - EZR
-    - FAM131B
-    - FAM135B
     - FAM46C
     - FAM47C
+    - FAM131B
+    - FAM135B
     - FANCA
     - FANCC
     - FANCD2
@@ -11285,6 +11660,7 @@ PropDefinitions:
     - FOXO4
     - FOXP1
     - FOXR1
+    - FRYL
     - FSTL3
     - FUBP1
     - FUS
@@ -11293,6 +11669,7 @@ PropDefinitions:
     - GATA2
     - GATA3
     - GLI1
+    - GLIS2
     - GMPS
     - GNA11
     - GNAQ
@@ -11315,13 +11692,15 @@ PropDefinitions:
     - HLF
     - HMGA1
     - HMGA2
+    - HMGB3
     - HMGN2P46
     - HNF1A
     - HNRNPA2B1
+    - HNRNPH1
     - HOOK3
+    - HOXA9
     - HOXA11
     - HOXA13
-    - HOXA9
     - HOXB1
     - HOXC11
     - HOXC13
@@ -11339,9 +11718,10 @@ PropDefinitions:
     - IKBKB
     - IKZF1
     - IL2
-    - IL21R
     - IL6ST
     - IL7R
+    - IL21R
+    - INO80D
     - IRF4
     - IRS4
     - ISX
@@ -11350,6 +11730,7 @@ PropDefinitions:
     - JAK1
     - JAK2
     - JAK3
+    - JARID2
     - JAZF1
     - JUN
     - KAT6A
@@ -11419,11 +11800,11 @@ PropDefinitions:
     - MLH1
     - MLH2
     - MLLT1
-    - MLLT10
-    - MLLT11
     - MLLT3
     - MLLT4
     - MLLT6
+    - MLLT10
+    - MLLT11
     - MN1
     - MNX1
     - MPL
@@ -11434,16 +11815,16 @@ PropDefinitions:
     - MTCP1
     - MTOR
     - MUC1
-    - MUC16
     - MUC4
+    - MUC16
     - MUTYH
     - MYB
     - MYC
     - MYCL
     - MYCN
     - MYD88
-    - MYH11
     - MYH9
+    - MYH11
     - MYO5A
     - MYOD1
     - NAB2
@@ -11481,8 +11862,8 @@ PropDefinitions:
     - NTRK1
     - NTRK3
     - NUMA1
-    - NUP214
     - NUP98
+    - NUP214
     - NUTM1
     - NUTM2A
     - NUTM2B
@@ -11509,12 +11890,14 @@ PropDefinitions:
     - PER1
     - PGR
     - PHF6
+    - PHF23
     - PHOX2B
     - PICALM
     - PIK3CA
     - PIK3CB
     - PIK3R1
     - PIM1
+    - PIM3
     - PLAG1
     - PLCG1
     - PML
@@ -11534,8 +11917,8 @@ PropDefinitions:
     - PPP6C
     - PRCC
     - PRDM1
-    - PRDM16
     - PRDM2
+    - PRDM16
     - PREX2
     - PRF1
     - PRKACA
@@ -11547,9 +11930,10 @@ PropDefinitions:
     - PTCH1
     - PTEN
     - PTK6
+    - PTP4A1
+    - PTPN6
     - PTPN11
     - PTPN13
-    - PTPN6
     - PTPRB
     - PTPRC
     - PTPRK
@@ -11576,14 +11960,15 @@ PropDefinitions:
     - RHOA
     - RHOH
     - RMI2
-    - RNF213
     - RNF43
+    - RNF213
     - ROBO2
     - ROS1
+    - RPL5
     - RPL10
     - RPL22
-    - RPL5
     - RPN1
+    - RPS15
     - RSPO2
     - RSPO3
     - RUNX1
@@ -11602,6 +11987,7 @@ PropDefinitions:
     - SEPT9
     - SET
     - SETBP1
+    - SETD1A
     - SETD2
     - SF3B1
     - SFPQ
@@ -11614,6 +12000,7 @@ PropDefinitions:
     - SKI
     - SLC34A2
     - SLC45A3
+    - SLC66A2 (aka PQLC1)
     - SMAD2
     - SMAD3
     - SMAD4
@@ -11657,9 +12044,9 @@ PropDefinitions:
     - TBL1XR1
     - TBX3
     - TCEA1
-    - TCF12
     - TCF3
     - TCF7L2
+    - TCF12
     - TCL1A
     - TEC
     - TERT
@@ -11682,6 +12069,7 @@ PropDefinitions:
     - TNFRSF14
     - TNFRSF17
     - TOP1
+    - TOP2B
     - TP53
     - TP63
     - TPM3
@@ -11700,6 +12088,7 @@ PropDefinitions:
     - TSC2
     - TSHR
     - U2AF1
+    - UBB
     - UBR5
     - USP6
     - USP8
@@ -11720,6 +12109,7 @@ PropDefinitions:
     - ZBTB16
     - ZCCHC8
     - ZEB1
+    - ZEB2
     - ZFHX3
     - ZMYM3
     - ZNF198
@@ -11762,8 +12152,8 @@ PropDefinitions:
     - Pattern 5
   secondhand_smoke_as_child:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   section_location:
@@ -12200,8 +12590,8 @@ PropDefinitions:
     Type: string
   slide.bone_marrow_malignant_cells:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   slide.number_proliferating_cells:
@@ -12350,6 +12740,7 @@ PropDefinitions:
     - Cell
     - Control Analyte
     - Derived Cell Line
+    - Derived Cell Lines and Sorted Cells
     - EBV Immortalized
     - Fibroblasts from Bone Marrow
     - Granulocytes
@@ -12379,10 +12770,16 @@ PropDefinitions:
     Type: string
   spike_ins_fasta:
     Type: string
+  spindle_cell_percent:
+    Type: number
   stain_type:
     Enum:
     - Haemotoxylin and Eosin (H&E)
     - Immunohistochemistry (IHC)
+  staining_intensity_scale:
+    Enum:
+    - 3 Point Scale
+    - 4 Point Scale
   state:
     Enum:
     - open
@@ -12612,8 +13009,8 @@ PropDefinitions:
     - Not Reported
   synchronous_malignancy:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   tag.id:
@@ -12811,14 +13208,14 @@ PropDefinitions:
     - ng/mL
     - percent
     - U/g Hb
-    - U/mL
     - U/L
+    - U/mL
     - ukat/L
     - umol/L
     - x10^3 cells/mcL
     - x10^9 cells/L
-    - Not Reported
     - Unknown
+    - Not Reported
   test_value:
     Type: number
   test_value_range:
@@ -12827,16 +13224,25 @@ PropDefinitions:
     - 26-50
     - 51-75
     - 76-100
+    - <10%
+    - 10-19%
+    - 20-29%
+    - 30-39%
+    - 40-49%
+    - 50-59%
+    - 60-69%
+    - 70-79%
+    - 80-89%
+    - 90-99%
+    - <1%
+    - 1-49%
+    - '>=50%'
     - Not Reported
   therapeutic_agents:
     Enum:
-    - 10-Deacetyltaxol
-    - 11C Topotecan
-    - 11D10 AluGel Anti-Idiotype Monoclonal Antibody
-    - 12-Allyldeoxoartemisinin
-    - 13-Deoxydoxorubicin
-    - 14C BMS-275183
-    - 17beta-Hydroxysteroid Dehydrogenase Type 5 Inhibitor ASP9521
+    - 2'-F-ara-deoxyuridine
+    - 2,6-Diaminopurine
+    - 2,6-Dimethoxyquinone
     - 2-Deoxy-D-glucose
     - 2-Ethylhydrazide
     - 2-Fluoroadenine
@@ -12849,14 +13255,11 @@ PropDefinitions:
     - 2-Methoxyestradiol Nanocrystal Colloidal Dispersion
     - 2-Methoxyestrone
     - 2-O, 3-O Desulfated Heparin
-    - 2,6-Diaminopurine
-    - 2,6-Dimethoxyquinone
-    - 2'-F-ara-deoxyuridine
     - 3'-C-ethynylcytidine
     - 3'-dA Phosphoramidate NUC-7738
+    - 4'-Iodo-4'-Deoxydoxorubicin
     - 4-Nitroestrone 3-Methyl Ether
     - 4-Thio-2-deoxycytidine
-    - 4'-Iodo-4'-Deoxydoxorubicin
     - 5-Aza-4'-thio-2'-deoxycytidine
     - 5-Fluoro-2-Deoxycytidine
     - 6-Phosphofructo-2-kinase/fructose-2,6-bisphosphatases Isoform 3 Inhibitor ACT-PFK-158
@@ -12866,6 +13269,13 @@ PropDefinitions:
     - 8-Azaguanine
     - 9-Ethyl 6-Mercaptopurine
     - 9H-Purine-6Thio-98D
+    - 10-Deacetyltaxol
+    - 11C Topotecan
+    - 11D10 AluGel Anti-Idiotype Monoclonal Antibody
+    - 12-Allyldeoxoartemisinin
+    - 13-Deoxydoxorubicin
+    - 14C BMS-275183
+    - 17beta-Hydroxysteroid Dehydrogenase Type 5 Inhibitor ASP9521
     - A2A Receptor Antagonist EOS100850
     - Abagovomab
     - Abarelix
@@ -12983,10 +13393,10 @@ PropDefinitions:
     - Allogeneic Anti-CD19-CAR T-cells PBCAR0191
     - Allogeneic Anti-CD20 CAR T-cells LUCAR-20S
     - Allogeneic Anti-CD20-CAR T-cells PBCAR20A
-    - Allogeneic CD22-specific Universal CAR-expressing T-lymphocytes UCART22
     - Allogeneic CD3- CD19- CD57+ NKG2C+ NK Cells FATE-NK100
-    - Allogeneic CD56-positive CD3-negative Natural Killer Cells CYNK-001
     - Allogeneic CD8+ Leukemia-associated Antigens Specific T Cells NEXI-001
+    - Allogeneic CD22-specific Universal CAR-expressing T-lymphocytes UCART22
+    - Allogeneic CD56-positive CD3-negative Natural Killer Cells CYNK-001
     - Allogeneic Cellular Vaccine 1650-G
     - Allogeneic CRISPR-Cas9 Engineered Anti-BCMA T Cells CTX120
     - Allogeneic CRISPR-Cas9 Engineered Anti-CD70 CAR-T Cells CTX130
@@ -12994,8 +13404,8 @@ PropDefinitions:
     - Allogeneic GM-CSF-secreting Breast Cancer Vaccine SV-BR-1-GM
     - Allogeneic GM-CSF-secreting Lethally Irradiated Prostate Cancer Vaccine
     - Allogeneic GM-CSF-secreting Lethally Irradiated Whole Melanoma Cell Vaccine
-    - Allogeneic GM-CSF-secreting Tumor Vaccine PANC 10.05 pcDNA-1/GM-Neo
     - Allogeneic GM-CSF-secreting Tumor Vaccine PANC 6.03 pcDNA-1/GM-Neo
+    - Allogeneic GM-CSF-secreting Tumor Vaccine PANC 10.05 pcDNA-1/GM-Neo
     - Allogeneic IL13-Zetakine/HyTK-Expressing-Glucocorticoid Resistant Cytotoxic
       T Lymphocytes GRm13Z40-2
     - Allogeneic Irradiated Melanoma Cell Vaccine CSF470
@@ -13095,15 +13505,15 @@ PropDefinitions:
     - Anti-5T4 Antibody-drug Conjugate ASN004
     - Anti-5T4 Antibody-Drug Conjugate PF-06263507
     - Anti-5T4 Antibody-drug Conjugate SYD1875
-    - Anti-A33 Monoclonal Antibody KRN330
     - Anti-A5B1 Integrin Monoclonal Antibody PF-04605412
+    - Anti-A33 Monoclonal Antibody KRN330
     - Anti-ACTR/4-1BB/CD3zeta-Viral Vector-transduced Autologous T-Lymphocytes ACTR087
     - Anti-AG7 Antibody Drug Conjugate AbGn-107
-    - Anti-AGS-16 Monoclonal Antibody AGS-16M18
     - Anti-AGS-5 Antibody-Drug Conjugate ASG-5ME
     - Anti-AGS-8 Monoclonal Antibody AGS-8M4
-    - Anti-alpha BCMA/Anti-alpha CD3 T-cell Engaging Bispecific Antibody TNB-383B
+    - Anti-AGS-16 Monoclonal Antibody AGS-16M18
     - Anti-alpha5beta1 Integrin Antibody MINT1526A
+    - Anti-alpha BCMA/Anti-alpha CD3 T-cell Engaging Bispecific Antibody TNB-383B
     - Anti-ANG2 Monoclonal Antibody MEDI-3617
     - Anti-angiopoietin Monoclonal Antibody AMG 780
     - Anti-APRIL Monoclonal Antibody BION-1301
@@ -13125,6 +13535,8 @@ PropDefinitions:
     - Anti-BCMA/PBD ADC MEDI2228
     - Anti-BTLA Monoclonal Antibody TAB004
     - Anti-BTN3A Agonistic Monoclonal Antibody ICT01
+    - Anti-C4.4a Antibody-Drug Conjugate BAY1129980
+    - Anti-C5aR Monoclonal Antibody IPH5401
     - Anti-c-fms Monoclonal Antibody AMG 820
     - Anti-c-KIT Monoclonal Antibody CDX 0158
     - Anti-c-Met Antibody-drug Conjugate HTI-1066
@@ -13134,28 +13546,19 @@ PropDefinitions:
     - Anti-c-Met Monoclonal Antibody HLX55
     - Anti-c-MET Monoclonal Antibody LY2875358
     - Anti-C-met Monoclonal Antibody SAIT301
-    - Anti-C4.4a Antibody-Drug Conjugate BAY1129980
-    - Anti-C5aR Monoclonal Antibody IPH5401
-    - Anti-CA19-9 Monoclonal Antibody 5B1
     - Anti-CA6-DM4 Immunoconjugate SAR566658
+    - Anti-CA19-9 Monoclonal Antibody 5B1
     - Anti-CCR7 Antibody-drug Conjugate JBH492
-    - Anti-CD117 Monoclonal Antibody JSP191
-    - Anti-CD122 Humanized Monoclonal Antibody Mik-Beta-1
-    - Anti-CD123 ADC IMGN632
-    - Anti-CD123 Monoclonal Antibody CSL360
-    - Anti-CD123 Monoclonal Antibody KHK2823
-    - Anti-CD123 x Anti-CD3 Bispecific Antibody XmAb1404
-    - Anti-CD123-Pyrrolobenzodiazepine Dimer Antibody Drug Conjugate SGN-CD123A
-    - Anti-CD123/CD3 Bispecific Antibody APVO436
-    - Anti-CD123/CD3 Bispecific Antibody JNJ-63709178
-    - Anti-CD123/CD3 BiTE Antibody SAR440234
-    - Anti-CD137 Agonistic Monoclonal Antibody ADG106
-    - Anti-CD137 Agonistic Monoclonal Antibody AGEN2373
-    - Anti-CD137 Agonistic Monoclonal Antibody ATOR-1017
-    - Anti-CD137 Agonistic Monoclonal Antibody CTX-471
-    - Anti-CD137 Agonistic Monoclonal Antibody LVGN6051
-    - Anti-CD157 Monoclonal Antibody MEN1112
-    - Anti-CD166 Probody-drug Conjugate CX-2009
+    - Anti-CD3 Immunotoxin A-dmDT390-bisFv(UCHT1)
+    - Anti-CD3/Anti-5T4 Bispecific Antibody GEN1044
+    - Anti-CD3/Anti-BCMA Bispecific Monoclonal Antibody JNJ-64007957
+    - Anti-CD3/Anti-BCMA Bispecific Monoclonal Antibody PF-06863135
+    - Anti-CD3/Anti-CD20 Trifunctional Bispecific Monoclonal Antibody FBTA05
+    - Anti-CD3/Anti-GPRC5D Bispecific Monoclonal Antibody JNJ-64407564
+    - Anti-CD3/Anti-GUCY2C Bispecific Antibody PF-07062119
+    - Anti-CD3/CD7-Ricin Toxin A Immunotoxin
+    - Anti-CD3/CD20 Bispecific Antibody GEN3013
+    - Anti-CD3/CD38 Bispecific Monoclonal Antibody AMG 424
     - Anti-CD19 Antibody-drug Conjugate SGN-CD19B
     - Anti-CD19 Antibody-T-cell Receptor-expressing T-cells ET019003
     - Anti-CD19 iCAR NK Cells
@@ -13165,9 +13568,9 @@ PropDefinitions:
     - Anti-CD19 Monoclonal Antibody XmAb5574
     - Anti-CD19-DM4 Immunoconjugate SAR3419
     - Anti-CD19/Anti-CD22 Bispecific Immunotoxin DT2219ARL
-    - Anti-CD19/CD22 CAR NK Cells
     - Anti-CD19/CD3 BiTE Antibody AMG 562
     - Anti-CD19/CD3 Tetravalent Antibody AFM11
+    - Anti-CD19/CD22 CAR NK Cells
     - Anti-CD20 Monoclonal Antibody B001
     - Anti-CD20 Monoclonal Antibody BAT4306F
     - Anti-CD20 Monoclonal Antibody MIL62
@@ -13179,25 +13582,13 @@ PropDefinitions:
     - Anti-CD20/Anti-CD3 Bispecific IgM Antibody IGM2323
     - Anti-CD20/CD3 Monoclonal Antibody REGN1979
     - Anti-CD20/CD3 Monoclonal Antibody XmAb13676
-    - Anti-CD205 Antibody-drug Conjugate OBT076
     - Anti-CD22 ADC TRPH-222
     - Anti-CD22 Monoclonal Antibody-MMAE Conjugate DCDT2980S
-    - Anti-CD228/MMAE Antibody-drug Conjugate SGN-CD228A
     - Anti-CD25 Monoclonal Antibody RO7296682
     - Anti-CD25-PBD Antibody-drug Conjugate ADCT-301
     - Anti-CD26 Monoclonal Antibody YS110
     - Anti-CD27 Agonistic Monoclonal Antibody MK-5890
     - Anti-CD27L Antibody-Drug Conjugate AMG 172
-    - Anti-CD3 Immunotoxin A-dmDT390-bisFv(UCHT1)
-    - Anti-CD3/Anti-5T4 Bispecific Antibody GEN1044
-    - Anti-CD3/Anti-BCMA Bispecific Monoclonal Antibody JNJ-64007957
-    - Anti-CD3/Anti-BCMA Bispecific Monoclonal Antibody PF-06863135
-    - Anti-CD3/Anti-CD20 Trifunctional Bispecific Monoclonal Antibody FBTA05
-    - Anti-CD3/Anti-GPRC5D Bispecific Monoclonal Antibody JNJ-64407564
-    - Anti-CD3/Anti-GUCY2C Bispecific Antibody PF-07062119
-    - Anti-CD3/CD20 Bispecific Antibody GEN3013
-    - Anti-CD3/CD38 Bispecific Monoclonal Antibody AMG 424
-    - Anti-CD3/CD7-Ricin Toxin A Immunotoxin
     - Anti-CD30 Monoclonal Antibody MDX-1401
     - Anti-CD30 Monoclonal Antibody XmAb2513
     - Anti-CD30/CD16A Monoclonal Antibody AFM13
@@ -13211,7 +13602,6 @@ PropDefinitions:
     - Anti-CD33/CD3 Bispecific Antibody JNJ-67571244
     - Anti-CD33/CD3 BiTE Antibody AMG 330
     - Anti-CD33/CD3 BiTE Antibody AMG 673
-    - Anti-CD352 Antibody-drug Conjugate SGN-CD352A
     - Anti-CD37 Antibody-Drug Conjugate IMGN529
     - Anti-CD37 Bispecific Monoclonal Antibody GEN3009
     - Anti-CD37 MMAE Antibody-drug Conjugate AGS67E
@@ -13221,8 +13611,8 @@ PropDefinitions:
     - Anti-CD38 Monoclonal Antibody SAR442085
     - Anti-CD38 Monoclonal Antibody TAK-079
     - Anti-CD38-targeted IgG4-attenuated IFNa TAK-573
-    - Anti-CD38/CD28xCD3 Tri-specific Monoclonal Antibody SAR442257
     - Anti-CD38/CD3 Bispecific Monoclonal Antibody GBR 1342
+    - Anti-CD38/CD28xCD3 Tri-specific Monoclonal Antibody SAR442257
     - Anti-CD39 Monoclonal Antibody SRF617
     - Anti-CD39 Monoclonal Antibody TTX-030
     - Anti-CD40 Agonist Monoclonal Antibody ABBV-927
@@ -13258,6 +13648,26 @@ PropDefinitions:
     - Anti-CD73 Monoclonal Antibody TJ4309
     - Anti-CD74 Antibody-drug Conjugate STRO-001
     - Anti-CD98 Monoclonal Antibody IGN523
+    - Anti-CD117 Monoclonal Antibody JSP191
+    - Anti-CD122 Humanized Monoclonal Antibody Mik-Beta-1
+    - Anti-CD123 ADC IMGN632
+    - Anti-CD123 Monoclonal Antibody CSL360
+    - Anti-CD123 Monoclonal Antibody KHK2823
+    - Anti-CD123 x Anti-CD3 Bispecific Antibody XmAb1404
+    - Anti-CD123-Pyrrolobenzodiazepine Dimer Antibody Drug Conjugate SGN-CD123A
+    - Anti-CD123/CD3 Bispecific Antibody APVO436
+    - Anti-CD123/CD3 Bispecific Antibody JNJ-63709178
+    - Anti-CD123/CD3 BiTE Antibody SAR440234
+    - Anti-CD137 Agonistic Monoclonal Antibody ADG106
+    - Anti-CD137 Agonistic Monoclonal Antibody AGEN2373
+    - Anti-CD137 Agonistic Monoclonal Antibody ATOR-1017
+    - Anti-CD137 Agonistic Monoclonal Antibody CTX-471
+    - Anti-CD137 Agonistic Monoclonal Antibody LVGN6051
+    - Anti-CD157 Monoclonal Antibody MEN1112
+    - Anti-CD166 Probody-drug Conjugate CX-2009
+    - Anti-CD205 Antibody-drug Conjugate OBT076
+    - Anti-CD228/MMAE Antibody-drug Conjugate SGN-CD228A
+    - Anti-CD352 Antibody-drug Conjugate SGN-CD352A
     - Anti-CDH6 Antibody-drug Conjugate HKT288
     - Anti-CEA BiTE Monoclonal Antibody AMG211
     - Anti-CEA/Anti-DTPA-In (F6-734) Bispecific Antibody
@@ -13275,6 +13685,8 @@ PropDefinitions:
     - Anti-CSF1R Monoclonal Antibody IMC-CS4
     - Anti-CSF1R Monoclonal Antibody SNDX-6352
     - Anti-CTGF Monoclonal Antibody FG-3019
+    - Anti-CTLA4 Antibody Fc Fusion Protein KN044
+    - Anti-CTLA4 Monoclonal Antibody BMS-986218
     - Anti-CTLA-4 Monoclonal Antibody ADG116
     - Anti-CTLA-4 Monoclonal Antibody ADU-1604
     - Anti-CTLA-4 Monoclonal Antibody AGEN1181
@@ -13287,12 +13699,10 @@ PropDefinitions:
     - Anti-CTLA-4/Anti-PD-1 Monoclonal Antibody Combination BCD-217
     - Anti-CTLA-4/LAG-3 Bispecific Antibody XmAb22841
     - Anti-CTLA-4/OX40 Bispecific Antibody ATOR-1015
-    - Anti-CTLA4 Antibody Fc Fusion Protein KN044
-    - Anti-CTLA4 Monoclonal Antibody BMS-986218
     - Anti-CXCR4 Monoclonal Antibody PF-06747143
     - Anti-Denatured Collagen Monoclonal Antibody TRC093
-    - Anti-DKK-1 Monoclonal Antibody LY2812176
     - Anti-DKK1 Monoclonal Antibody BHQ880
+    - Anti-DKK-1 Monoclonal Antibody LY2812176
     - Anti-DLL3/CD3 BiTE Antibody AMG 757
     - Anti-DLL4 Monoclonal Antibody MEDI0639
     - Anti-DLL4/VEGF Bispecific Monoclonal Antibody OMP-305B83
@@ -13369,7 +13779,6 @@ PropDefinitions:
     - Anti-HB-EGF Monoclonal Antibody KHK2866
     - Anti-HBEGF Monoclonal Antibody U3-1565
     - Anti-hepcidin Monoclonal Antibody LY2787106
-    - Anti-HER-2 Bispecific Antibody KN026
     - Anti-HER2 ADC DS-8201a
     - Anti-HER2 Antibody Conjugated Natural Killer Cells ACE1702
     - Anti-HER2 Antibody-drug Conjugate A166
@@ -13397,6 +13806,7 @@ PropDefinitions:
     - Anti-HER2/PBD-MA Antibody-drug Conjugate DHES0815A
     - Anti-HER3 Antibody-drug Conjugate U3 1402
     - Anti-HER3 Monoclonal Antibody GSK2849330
+    - Anti-HER-2 Bispecific Antibody KN026
     - Anti-HGF Monoclonal Antibody TAK-701
     - Anti-HIF-1alpha LNA Antisense Oligonucleotide EZN-2968
     - Anti-HIV-1 Lentiviral Vector-expressing sh5/C46 Cal-1
@@ -13412,10 +13822,10 @@ PropDefinitions:
     - Anti-IGF-1R Monoclonal Antibody AVE1642
     - Anti-IGF-1R Recombinant Monoclonal Antibody BIIB022
     - Anti-IL-1 alpha Monoclonal Antibody MABp1
-    - Anti-IL-13 Humanized Monoclonal Antibody TNX-650
-    - Anti-IL-15 Monoclonal Antibody AMG 714
     - Anti-IL-8 Monoclonal Antibody BMS-986253
     - Anti-IL-8 Monoclonal Antibody HuMax-IL8
+    - Anti-IL-13 Humanized Monoclonal Antibody TNX-650
+    - Anti-IL-15 Monoclonal Antibody AMG 714
     - Anti-ILDR2 Monoclonal Antibody BAY 1905254
     - Anti-ILT4 Monoclonal Antibody MK-4830
     - Anti-integrin Beta-6/MMAE Antibody-drug Conjugate SGN-B6A
@@ -13423,14 +13833,14 @@ PropDefinitions:
     - Anti-IRF4 Antisense Oligonucleotide ION251
     - Anti-KIR Monoclonal Antibody IPH 2101
     - Anti-KSP/Anti-VEGF siRNAs ALN-VSP02
+    - Anti-LAG3 Monoclonal Antibody BI 754111
+    - Anti-LAG3 Monoclonal Antibody MK-4280
+    - Anti-LAG3 Monoclonal Antibody TSR-033
     - Anti-LAG-3 Monoclonal Antibody IBI-110
     - Anti-LAG-3 Monoclonal Antibody INCAGN02385
     - Anti-LAG-3 Monoclonal Antibody LAG525
     - Anti-LAG-3 Monoclonal Antibody REGN3767
     - Anti-LAG-3/PD-L1 Bispecific Antibody FS118
-    - Anti-LAG3 Monoclonal Antibody BI 754111
-    - Anti-LAG3 Monoclonal Antibody MK-4280
-    - Anti-LAG3 Monoclonal Antibody TSR-033
     - Anti-LAMP1 Antibody-drug Conjugate SAR428926
     - Anti-latent TGF-beta 1 Monoclonal Antibody SRK-181
     - Anti-Lewis B/Lewis Y Monoclonal Antibody GNX102
@@ -13462,8 +13872,8 @@ PropDefinitions:
     - Anti-nf-P2X7 Antibody Ointment BIL-010t
     - Anti-NRP1 Antibody ASP1948
     - Anti-Nucleolin Aptamer AS1411
-    - Anti-NY-ESO-1 Immunotherapeutic GSK-2241658A
     - Anti-NY-ESO1/LAGE-1A TCR/scFv Anti-CD3 IMCnyeso
+    - Anti-NY-ESO-1 Immunotherapeutic GSK-2241658A
     - Anti-OFA Immunotherapeutic BB-MPI-03
     - Anti-OX40 Agonist Monoclonal Antibody ABBV-368
     - Anti-OX40 Agonist Monoclonal Antibody BGB-A445
@@ -13472,6 +13882,8 @@ PropDefinitions:
     - Anti-OX40 Hexavalent Agonist Antibody INBRX-106
     - Anti-OX40 Monoclonal Antibody GSK3174998
     - Anti-OX40 Monoclonal Antibody IBI101
+    - Anti-PD1 Monoclonal Antibody AGEN2034
+    - Anti-PD1/CTLA4 Bispecific Antibody XmAb20717
     - Anti-PD-1 Antibody-interleukin-21 Mutein Fusion Protein AMG 256
     - Anti-PD-1 Checkpoint Inhibitor PF-06801591
     - Anti-PD-1 Fusion Protein AMP-224
@@ -13526,8 +13938,6 @@ PropDefinitions:
     - Anti-PD-L1/CD137 Bispecific Antibody MCLA-145
     - Anti-PD-L1/IL-15 Fusion Protein KD033
     - Anti-PD-L1/TIM-3 Bispecific Antibody LY3415244
-    - Anti-PD1 Monoclonal Antibody AGEN2034
-    - Anti-PD1/CTLA4 Bispecific Antibody XmAb20717
     - Anti-PGF Monoclonal Antibody RO5323441
     - Anti-PKN3 siRNA Atu027
     - Anti-PLGF Monoclonal Antibody TB-403
@@ -13540,10 +13950,10 @@ PropDefinitions:
     - Anti-PSMA Monoclonal Antibody MDX1201-A488
     - Anti-PSMA Monoclonal Antibody MLN591-DM1 Immunoconjugate MLN2704
     - Anti-PSMA Monoclonal Antibody-MMAE Conjugate
-    - Anti-PSMA/CD28 Bispecific Antibody REGN5678
     - Anti-PSMA/CD3 Bispecific Antibody CCW702
     - Anti-PSMA/CD3 Bispecific Antibody JNJ-63898081
     - Anti-PSMA/CD3 Monoclonal Antibody MOR209/ES414
+    - Anti-PSMA/CD28 Bispecific Antibody REGN5678
     - Anti-PSMA/PBD ADC MEDI3726
     - Anti-PTK7/Auristatin-0101 Antibody-drug Conjugate PF-06647020
     - Anti-PVRIG Monoclonal Antibody COM701
@@ -13567,14 +13977,14 @@ PropDefinitions:
     - Anti-TIGIT Monoclonal Antibody COM902
     - Anti-TIGIT Monoclonal Antibody OMP-313M32
     - Anti-TIGIT Monoclonal Antibody SGN-TGT
+    - Anti-TIM3 Monoclonal Antibody LY3321367
+    - Anti-TIM3 Monoclonal Antibody SHR-1702
     - Anti-TIM-3 Antibody BMS-986258
     - Anti-TIM-3 Monoclonal Antibody BGB-A425
     - Anti-TIM-3 Monoclonal Antibody INCAGN02390
     - Anti-TIM-3 Monoclonal Antibody MBG453
     - Anti-TIM-3 Monoclonal Antibody Sym023
     - Anti-TIM-3 Monoclonal Antibody TSR-022
-    - Anti-TIM3 Monoclonal Antibody LY3321367
-    - Anti-TIM3 Monoclonal Antibody SHR-1702
     - Anti-Tissue Factor Monoclonal Antibody MORAb-066
     - Anti-TRAILR2/CDH17 Tetravalent Bispecific Antibody BI 905711
     - Anti-TROP2 Antibody-drug Conjugate BAT8003
@@ -13720,13 +14130,12 @@ PropDefinitions:
     - Autologous Anti-BCMA-CAR-4-1BB-CD3zeta-expressing T-cells C-CAR088
     - Autologous Anti-BCMA-CAR-4-1BB-CD3zeta-expressing T-cells CT053
     - Autologous Anti-BCMA-CAR-expressing CD4+/CD8+ T-lymphocytes FCARH143
-    - Autologous Anti-CD123 CAR-T Cells
     - Autologous Anti-CD19 CAR T-cells 19(T2)28z1xx
     - Autologous Anti-CD19 CAR T-cells IM19
     - Autologous Anti-CD19 CAR TCR-zeta/4-1BB-transduced T-lymphocytes huCART19
     - Autologous Anti-CD19 CAR-4-1BB-CD3zeta-expressing T-cells CNCT19
-    - Autologous Anti-CD19 CAR-CD28 T-cells ET019002
     - Autologous Anti-CD19 CAR-CD3zeta-4-1BB-expressing T-cells PZ01
+    - Autologous Anti-CD19 CAR-CD28 T-cells ET019002
     - Autologous Anti-CD19 CAR-expressing T-lymphocytes CLIC-1901
     - Autologous Anti-CD19 Chimeric Antigen Receptor T-cells AUTO1
     - Autologous Anti-CD19 Chimeric Antigen Receptor T-cells SJCAR19
@@ -13739,6 +14148,7 @@ PropDefinitions:
     - Autologous Anti-CD19CAR-HER2t/CD22CAR-EGFRt-expressing T-cells
     - Autologous Anti-CD20 CAR Transduced CD4/CD8 Enriched T-cells MB-CART20.1
     - Autologous Anti-CD22 CAR-4-1BB-TCRz-transduced T-lymphocytes CART22-65s
+    - Autologous Anti-CD123 CAR-T Cells
     - Autologous Anti-EGFR CAR-transduced CXCR 5-modified T-lymphocytes
     - Autologous Anti-FLT3 CAR T Cells AMG 553
     - Autologous Anti-HLA-A*02/AFP TCRm-expressing T-cells ET140202
@@ -13758,7 +14168,6 @@ PropDefinitions:
     - Autologous Bone Marrow-derived CD34/CXCR4-positive Stem Cells AMR-001
     - Autologous CAR-mbIL15-Safety Switch T-cells PRGN-3005
     - Autologous CAR-mbIL15-Safety Switch T-cells PRGN-3006
-    - Autologous CD123-4SCAR-expressing T-cells 4SCAR123
     - Autologous CD19 CAR-expressing CD4+/CD8+ T-cells MB-CART19.1
     - Autologous CD19-targeted CAR T Cells CC-97540
     - Autologous CD19-targeted CAR T Cells JWCAR029
@@ -13767,6 +14176,7 @@ PropDefinitions:
     - Autologous CD20-4SCAR-expressing T-cells 4SCAR20
     - Autologous CD22-4SCAR-expressing T-cells 4SCAR22
     - Autologous CD38-4SCAR-expressing T-cells 4SCAR38
+    - Autologous CD123-4SCAR-expressing T-cells 4SCAR123
     - Autologous Clonal Neoantigen T Cells ATL001
     - Autologous CRISPR-edited Anti-CD19 CAR T Cells XYF19
     - Autologous Deep IL-15 Primed T-cells TRQ15-01
@@ -13939,8 +14349,8 @@ PropDefinitions:
     - Bispecific Antibody AGEN1223
     - Bispecific Antibody AMG 509
     - Bispecific Antibody GS-1423
-    - Bispecific Antibody MDX-H210
     - Bispecific Antibody MDX447
+    - Bispecific Antibody MDX-H210
     - Bisthianostat
     - BiTE Antibody AMG 910
     - Bivalent BRD4 Inhibitor AZD5153
@@ -14075,13 +14485,13 @@ PropDefinitions:
     - Camptothecin-20(S)-O-Propionate Hydrate
     - Camrelizumab
     - Camsirubicin
+    - Canakinumab
     - Cancell
     - Cancer Peptide Vaccine S-588410
     - Canerpaturev
     - Canertinib Dihydrochloride
     - Canfosfamide
     - Canfosfamide Hydrochloride
-    - Canakinumab
     - Cannabidiol
     - Cantrixil
     - Cantuzumab Ravtansine
@@ -14124,12 +14534,10 @@ PropDefinitions:
     - CCR2 Antagonist PF-04136309
     - CCR2/CCR5 Antagonist BMS-813160
     - CCR4 Inhibitor FLX475
+    - CD4-specific Telomerase Peptide Vaccine UCPVax
     - CD11b Agonist GB1275
-    - CD123-CD33 Compound CAR T Cells
-    - CD123-specific Targeting Module TM123
     - CD20-CD19 Compound CAR T Cells
     - CD28/ICOS Antagonist ALPN-101
-    - CD4-specific Telomerase Peptide Vaccine UCPVax
     - CD40 Agonist Monoclonal Antibody CP-870,893
     - CD40 Agonistic Monoclonal Antibody APX005M
     - CD44 Targeted Agent SPL-108
@@ -14139,14 +14547,12 @@ PropDefinitions:
     - CD73 Inhibitor LY3475070
     - CD80-Fc Fusion Protein ALPN-202
     - CD80-Fc Fusion Protein FPT155
+    - CD123-CD33 Compound CAR T Cells
+    - CD123-specific Targeting Module TM123
     - CDC7 Inhibitor TAK-931
     - CDC7 Kinase Inhibitor BMS-863233
     - CDC7 Kinase Inhibitor LY3143921 Hydrate
     - CDC7 Kinase Inhibitor NMS-1116354
-    - CDK Inhibitor AT7519
-    - CDK Inhibitor R547
-    - CDK Inhibitor SNS-032
-    - CDK/JAK2/FLT3 Inhibitor TG02 Citrate
     - CDK1 Inhibitor BEY1107
     - CDK1/2/4 Inhibitor AG-024322
     - CDK2 Inhibitor PF-07104091
@@ -14166,6 +14572,10 @@ PropDefinitions:
     - CDK7 Inhibitor SY-5609
     - CDK8/19 Inhibitor SEL 120
     - CDK9 Inhibitor AZD4573
+    - CDK Inhibitor AT7519
+    - CDK Inhibitor R547
+    - CDK Inhibitor SNS-032
+    - CDK/JAK2/FLT3 Inhibitor TG02 Citrate
     - CEA-MUC-1-TRICOM Vaccine CV301
     - CEA-targeting Agent RG6123
     - CEBPA-targeting saRNA MTL-CEBPA Liposome
@@ -14282,8 +14692,8 @@ PropDefinitions:
     - Colorectal Tumor-Associated Peptides Vaccine IMA910
     - Coltuximab Ravtansine
     - Combretastatin
-    - Combretastatin A-1
     - Combretastatin A1 Diphosphate
+    - Combretastatin A-1
     - Commensal Bacterial Strain Formulation VE800
     - Compound Kushen Injection
     - Conatumumab
@@ -14314,10 +14724,10 @@ PropDefinitions:
     - Cryptophycin
     - Cryptophycin 52
     - Crystalline Genistein Formulation AXP107-11
-    - CSF-1R Inhibitor BLZ945
     - CSF1R Inhibitor ABSK021
     - CSF1R Inhibitor DCC-3014
     - CSF1R Inhibitor PLX73086
+    - CSF-1R Inhibitor BLZ945
     - CT2584 HMS
     - CTLA-4-directed Probody BMS-986249
     - Curcumin
@@ -14464,8 +14874,8 @@ PropDefinitions:
     - Diphtheria Toxin Fragment-Interleukin-2 Fusion Protein E7777
     - Ditiocarb
     - DKK1-Neutralizing Monoclonal Antibody DKN-01
-    - DM-CHOC-PEN
     - DM4-Conjugated Anti-Cripto Monoclonal Antibody BIIB015
+    - DM-CHOC-PEN
     - DNA Interference Oligonucleotide PNT2258
     - DNA Minor Groove Binding Agent SG2000
     - DNA Plasmid Encoding Interleukin-12 INO-9012
@@ -14661,16 +15071,16 @@ PropDefinitions:
     - Erdafitinib
     - Eribulin
     - Eribulin Mesylate
-    - ERK 1/2 Inhibitor ASTX029
-    - ERK Inhibitor CC-90003
-    - ERK Inhibitor GDC-0994
-    - ERK Inhibitor LTT462
-    - ERK Inhibitor MK-8353
     - ERK1/2 Inhibitor ASN007
     - ERK1/2 Inhibitor HH2710
     - ERK1/2 Inhibitor JSI-1187
     - ERK1/2 Inhibitor KO-947
     - ERK1/2 Inhibitor LY3214996
+    - ERK 1/2 Inhibitor ASTX029
+    - ERK Inhibitor CC-90003
+    - ERK Inhibitor GDC-0994
+    - ERK Inhibitor LTT462
+    - ERK Inhibitor MK-8353
     - Erlotinib
     - Erlotinib Hydrochloride
     - Ertumaxomab
@@ -14757,13 +15167,6 @@ PropDefinitions:
     - Fenretinide Phospholipid Suspension ST-001
     - FGF Receptor Antagonist HGS1036
     - FGF/FGFR Pathway Inhibitor E7090
-    - FGFR Inhibitor ASP5878
-    - FGFR Inhibitor AZD4547
-    - FGFR Inhibitor CPL304110
-    - FGFR Inhibitor Debio 1347
-    - FGFR Inhibitor TAS-120
-    - FGFR/CSF-1R Inhibitor 3D185
-    - FGFR/VEGFR/PDGFR/FLT3/SRC Inhibitor XL999
     - FGFR1/2/3 Inhibitor HMPL-453
     - FGFR2 Inhibitor RLY-4008
     - FGFR4 Antagonist INCB062079
@@ -14771,6 +15174,13 @@ PropDefinitions:
     - FGFR4 Inhibitor FGF401
     - FGFR4 Inhibitor H3B-6527
     - FGFR4 Inhibitor ICP-105
+    - FGFR Inhibitor ASP5878
+    - FGFR Inhibitor AZD4547
+    - FGFR Inhibitor CPL304110
+    - FGFR Inhibitor Debio 1347
+    - FGFR Inhibitor TAS-120
+    - FGFR/CSF-1R Inhibitor 3D185
+    - FGFR/VEGFR/PDGFR/FLT3/SRC Inhibitor XL999
     - Fianlimab
     - Fibromun
     - Ficlatuzumab
@@ -14945,8 +15355,8 @@ PropDefinitions:
     - Guselkumab
     - Gusperimus Trihydrochloride
     - Gutolactone
-    - H-ras Antisense Oligodeoxynucleotide ISIS 2503
     - H1299 Tumor Cell Lysate Vaccine
+    - H-ras Antisense Oligodeoxynucleotide ISIS 2503
     - HAAH Lambda phage Vaccine SNS-301
     - Hafnium Oxide-containing Nanoparticles NBTXR3
     - Halichondrin Analogue E7130
@@ -14954,6 +15364,8 @@ PropDefinitions:
     - Halofuginone
     - Halofuginone Hydrobromide
     - HCV DNA Vaccine INO-8000
+    - HDAC6 Inhibitor KA2507
+    - HDAC8 Inhibitor NBM-BMX
     - HDAC Class I/IIb Inhibitor HG146
     - HDAC Inhibitor AR-42
     - HDAC inhibitor CG200745
@@ -14963,8 +15375,6 @@ PropDefinitions:
     - HDAC Inhibitor MPT0E028
     - HDAC Inhibitor OBP-801
     - HDAC/EGFR/HER2 Inhibitor CUDC-101
-    - HDAC6 Inhibitor KA2507
-    - HDAC8 Inhibitor NBM-BMX
     - HDM2 Inhibitor HDM201
     - HDM2 Inhibitor MK-8242
     - Hedgehog Inhibitor IPI-609
@@ -14973,7 +15383,6 @@ PropDefinitions:
     - Henatinib Maleate
     - Heparan Sulfate Glycosaminoglycan Mimetic M402
     - Heparin Derivative SST0001
-    - HER-2-positive B-cell Peptide Antigen P467-DT-CRM197/Montanide Vaccine IMU-131
     - HER2 ECD+TM Virus-like Replicon Particles Vaccine AVX901
     - HER2 Inhibitor CP-724,714
     - HER2 Inhibitor DZD1516
@@ -14983,26 +15392,30 @@ PropDefinitions:
     - HER2-targeted DARPin MP0274
     - HER2-targeted Liposomal Doxorubicin Hydrochloride MM-302
     - HER2-targeting Antibody Fc Fragment FS102
+    - HER-2-positive B-cell Peptide Antigen P467-DT-CRM197/Montanide Vaccine IMU-131
     - Herba Scutellaria Barbata
     - Herbimycin
     - Heterodimeric Interleukin-15
     - Hexamethylene Bisacetamide
     - Hexaminolevulinate
     - Hexylresorcinol
+    - HIF2a RNAi ARO-HIF2
     - HIF-1alpha Inhibitor PX-478
     - HIF-2alpha Inhibitor PT2385
     - HIF-2alpha Inhibitor PT2977
-    - HIF2a RNAi ARO-HIF2
     - Histone-Lysine N-Methyltransferase EZH2 Inhibitor GSK2816126
     - Histrelin Acetate
+    - HLA-A2-restricted Melanoma-specific Peptides Vaccine GRN-1201
     - HLA-A*0201 Restricted TERT(572Y)/TERT(572) Peptides Vaccine Vx-001
     - HLA-A*2402-Restricted Multipeptide Vaccine S-488410
-    - HLA-A2-restricted Melanoma-specific Peptides Vaccine GRN-1201
     - HM2/MMAE Antibody-Drug Conjugate ALT-P7
     - Hodgkin's Antigens-GM-CSF-Expressing Cell Vaccine
     - Holmium Ho 166 Poly(L-Lactic Acid) Microspheres
     - Hormone Therapy
     - HPPH
+    - HPV6/11-targeted DNA Plasmid Vaccine INO-3107
+    - HPV16 E7-specific HLA-A*02:01-restricted IgG1-Fc Fusion Protein CUE-101
+    - HPV16 L2/E6/E7 Fusion Protein Vaccine TA-CIN
     - HPV 16 E6/E7-encoding Arenavirus Vaccine HB-202
     - HPV 16 E7 Antigen-expressing Lactobacillis casei Vaccine BLS-ILB-E710c
     - HPV DNA Plasmids Therapeutic Vaccine VGX-3100
@@ -15010,11 +15423,8 @@ PropDefinitions:
     - HPV E6/E7-encoding Arenavirus Vaccine HB-201
     - HPV Types 16/18 E6/E7-Adenoviral Transduced Autologous Lymphocytes/alpha-Galactosylceramide
       Vaccine BVAC-C
-    - HPV-16 E6 Peptides Vaccine/Candida albicans Extract
     - HPV-6-targeting Immunotherapeutic Vaccine INO-3106
-    - HPV16 E7-specific HLA-A*02:01-restricted IgG1-Fc Fusion Protein CUE-101
-    - HPV16 L2/E6/E7 Fusion Protein Vaccine TA-CIN
-    - HPV6/11-targeted DNA Plasmid Vaccine INO-3107
+    - HPV-16 E6 Peptides Vaccine/Candida albicans Extract
     - Hsp90 Antagonist KW-2478
     - Hsp90 Inhibitor AB-010
     - Hsp90 Inhibitor BIIB021
@@ -15084,15 +15494,15 @@ PropDefinitions:
     - IDH1(R132) Inhibitor IDH305
     - IDH1R132H-Specific Peptide Vaccine PEPIDH1M
     - Idiotype-Pulsed Autologous Dendritic Cell Vaccine APC8020
-    - IDO Peptide Vaccine IO102
-    - IDO-1 Inhibitor LY3381916
-    - IDO/TDO Inhibitor HTI-1090
-    - IDO/TDO Inhibitor LY-01013
     - IDO1 Inhibitor KHK2455
     - IDO1 Inhibitor MK-7162
     - IDO1 Inhibitor PF-06840003
     - IDO1/TDO2 Inhibitor DN1406131
     - IDO1/TDO2 Inhibitor M4112
+    - IDO Peptide Vaccine IO102
+    - IDO-1 Inhibitor LY3381916
+    - IDO/TDO Inhibitor HTI-1090
+    - IDO/TDO Inhibitor LY-01013
     - Idronoxil
     - Idronoxil Suppository NOX66
     - Ieramilimab
@@ -15103,13 +15513,13 @@ PropDefinitions:
     - IGF-1R Inhibitor PL225B
     - IGF-1R/IR Inhibitor KW-2450
     - IGF-methotrexate Conjugate
+    - IL4-Pseudomonas Exotoxin Fusion Protein MDNA55
+    - IL-2 Recombinant Fusion Protein ALT-801
+    - IL-2/9/15 Gamma Chain Receptor Inhibitor BNZ-1
     - IL-10 Immunomodulator MK-1966
     - IL-12-expressing HSV-1 NSC 733972
     - IL-12-expressing Mesenchymal Stem Cell Vaccine GX-051
     - IL-12sc, IL-15sushi, IFNa and GM-CSF mRNA-based Immunotherapeutic Agent SAR441000
-    - IL-2 Recombinant Fusion Protein ALT-801
-    - IL-2/9/15 Gamma Chain Receptor Inhibitor BNZ-1
-    - IL4-Pseudomonas Exotoxin Fusion Protein MDNA55
     - Ilginatinib
     - Ilixadencel
     - Iloprost
@@ -15131,8 +15541,8 @@ PropDefinitions:
     - Immediate-release Tablet Afuresertib
     - Immune Checkpoint Inhibitor ASP8374
     - Immunoconjugate RO5479599
-    - Immunocytokine NHS-IL12
     - Immunocytokine NHS-IL2-LT
+    - Immunocytokine NHS-IL12
     - Immunomodulator LAM-003
     - Immunomodulator OHR/AVR118
     - Immunomodulatory Agent CC-11006
@@ -15185,12 +15595,12 @@ PropDefinitions:
     - Interferon Gamma-1b
     - Interferon-gamma-expressing Adenovirus Vaccine ASN-002
     - Interleukin Therapy
+    - Interleukin-2 Liposome
     - Interleukin-12-Fc Fusion Protein DF6002
     - Interleukin-15 Agonist Fusion Protein SHR1501
     - Interleukin-15 Fusion Protein BJ-001
     - Interleukin-15/Interleukin-15 Receptor Alpha Complex-Fc Fusion Protein XmAb24306
     - Interleukin-15/Interleukin-15 Receptor Alpha Sushi+ Domain Fusion Protein SO-C101
-    - Interleukin-2 Liposome
     - Intermediate-affinity Interleukin-2 Receptor Agonist ALKS 4230
     - Intetumumab
     - Intiquinatine
@@ -15260,14 +15670,14 @@ PropDefinitions:
     - Ixabepilone
     - Ixazomib
     - Ixazomib Citrate
-    - JAK Inhibitor
-    - JAK Inhibitor INCB047986
     - JAK1 Inhibitor AZD4205
     - JAK1 Inhibitor INCB052793
     - JAK2 Inhibitor AZD1480
     - JAK2 Inhibitor BMS-911543
     - JAK2 Inhibitor XL019
     - JAK2/Src Inhibitor NS-018
+    - JAK Inhibitor
+    - JAK Inhibitor INCB047986
     - Jin Fu Kang
     - JNK Inhibitor CC-401
     - Kanglaite
@@ -15401,10 +15811,10 @@ PropDefinitions:
     - LMB-9 Immunotoxin
     - LmddA-LLO-chHER2 Fusion Protein-secreting Live-attenuated Listeria Cancer Vaccine
       ADXS31-164
-    - LMP-2:340-349 Peptide Vaccine
-    - LMP-2:419-427 Peptide Vaccine
     - LMP2-specific T Cell Receptor-transduced Autologous T-lymphocytes
     - LMP7 Inhibitor M3258
+    - LMP-2:340-349 Peptide Vaccine
+    - LMP-2:419-427 Peptide Vaccine
     - Lobaplatin
     - Lodapolimab
     - Lometrexol
@@ -15659,17 +16069,17 @@ PropDefinitions:
     - Momelotinib
     - Monalizumab
     - Monocarboxylate Transporter 1 Inhibitor AZD3965
-    - Monoclonal Antibody 105AD7 Anti-idiotype Vaccine
-    - Monoclonal Antibody 11D10
-    - Monoclonal Antibody 11D10 Anti-Idiotype Vaccine
-    - Monoclonal Antibody 14G2A
     - Monoclonal Antibody 1F5
-    - Monoclonal Antibody 3622W94
     - Monoclonal Antibody 3F8
     - Monoclonal Antibody 3H1 Anti-Idiotype Vaccine
     - Monoclonal Antibody 4B5 Anti-Idiotype Vaccine
     - Monoclonal Antibody 7C11
+    - Monoclonal Antibody 11D10
+    - Monoclonal Antibody 11D10 Anti-Idiotype Vaccine
+    - Monoclonal Antibody 14G2A
     - Monoclonal Antibody 81C6
+    - Monoclonal Antibody 105AD7 Anti-idiotype Vaccine
+    - Monoclonal Antibody 3622W94
     - Monoclonal Antibody A1G4 Anti-Idiotype Vaccine
     - Monoclonal Antibody A27.15
     - Monoclonal Antibody A33
@@ -15727,17 +16137,17 @@ PropDefinitions:
     - mRNA-Derived Prostate Cancer Vaccine CV9103
     - mRNA-derived Prostate Cancer Vaccine CV9104
     - MTF-1 Inhibitor APTO-253 HCl
+    - mTOR1/2 Kinase Inhibitor ME-344
     - mTOR Inhibitor GDC-0349
     - mTOR Kinase Inhibitor AZD8055
     - mTOR Kinase Inhibitor CC-223
     - mTOR Kinase Inhibitor OSI-027
     - mTOR Kinase Inhibitor PP242
-    - mTOR1/2 Kinase Inhibitor ME-344
-    - mTORC 1/2 Inhibitor LXI-15029
     - mTORC1/2 Kinase Inhibitor BI 860585
     - mTORC1/mTORC2/DHFR Inhibitor ABTL0812
-    - MUC-1/WT1 Peptide-primed Autologous Dendritic Cells
+    - mTORC 1/2 Inhibitor LXI-15029
     - MUC1-targeted Peptide GO-203-2C
+    - MUC-1/WT1 Peptide-primed Autologous Dendritic Cells
     - Mucoadhesive Paclitaxel Formulation
     - Multi-AGC Kinase Inhibitor AT13148
     - Multi-epitope Anti-folate Receptor Peptide Vaccine TPIV 200
@@ -15770,10 +16180,10 @@ PropDefinitions:
     - Mycobacterium tuberculosis Arabinomannan Z-100
     - Mycobacterium w
     - Mycophenolic Acid
+    - N,N-Dibenzyl Daunomycin
     - N-(5-tert-butyl-3-isoxazolyl)-N-(4-(4-pyridinyl)oxyphenyl) Urea
     - N-dihydrogalactochitosan
     - N-Methylformamide
-    - N,N-Dibenzyl Daunomycin
     - NA17-A Antigen
     - NA17.A2 Peptide Vaccine
     - Nab-paclitaxel
@@ -15881,8 +16291,8 @@ PropDefinitions:
     - NY-ESO-1-specific TCR Gene-transduced T Lymphocytes TBI-1301
     - NY-ESO-1/GLA-SE Vaccine ID-G305
     - NY-ESO-B
-    - O-Chloroacetylcarbamoylfumagillol
     - O6-Benzylguanine
+    - O-Chloroacetylcarbamoylfumagillol
     - Obatoclax Mesylate
     - Obinutuzumab
     - Oblimersen Sodium
@@ -15918,13 +16328,13 @@ PropDefinitions:
     - Oncolytic Adenovirus Ad5-DNX-2401
     - Oncolytic Adenovirus ORCA-010
     - Oncolytic Herpes Simplex Virus-1 ONCR-177
+    - Oncolytic HSV1716
     - Oncolytic HSV-1 C134
     - Oncolytic HSV-1 Expressing IL-12 and Anti-PD-1 Antibody T3011
     - Oncolytic HSV-1 G207
     - Oncolytic HSV-1 NV1020
     - Oncolytic HSV-1 rQNestin34.5v.2
     - Oncolytic HSV-1 rRp450
-    - Oncolytic HSV1716
     - Oncolytic Measles Virus Encoding Helicobacter pylori Neutrophil-activating Protein
     - Oncolytic Newcastle Disease Virus MEDI5395
     - Oncolytic Newcastle Disease Virus MTH-68H
@@ -15968,7 +16378,6 @@ PropDefinitions:
     - Orvacabtagene Autoleucel
     - Osilodrostat
     - Osimertinib
-    - Other
     - Otlertuzumab
     - Ovapuldencel-T
     - Ovarian Cancer Stem Cell/hTERT/Survivin mRNAs-loaded Autologous Dendritic Cell
@@ -15986,12 +16395,6 @@ PropDefinitions:
     - Oxidopamine
     - OxPhos Inhibitor VLX600
     - Ozarelix
-    - P-cadherin Antagonist PF-03732010
-    - P-cadherin Inhibitor PCA062
-    - P-cadherin-targeting Agent PF-06671008
-    - P-p68 Inhibitor RX-5902
-    - P-TEFb Inhibitor BAY1143572
-    - p300/CBP Bromodomain Inhibitor CCS1477
     - p38 MAPK Inhibitor LY3007113
     - p53 Peptide Vaccine MPS-128
     - p53-HDM2 Interaction Inhibitor MI-773
@@ -16002,6 +16405,12 @@ PropDefinitions:
     - p97 Inhibitor CB-5083
     - p97 Inhibitor CB-5339
     - p97 Inhibitor CB-5339 Tosylate
+    - p300/CBP Bromodomain Inhibitor CCS1477
+    - P-cadherin Antagonist PF-03732010
+    - P-cadherin Inhibitor PCA062
+    - P-cadherin-targeting Agent PF-06671008
+    - P-p68 Inhibitor RX-5902
+    - P-TEFb Inhibitor BAY1143572
     - Paclitaxel
     - Paclitaxel Ceribate
     - Paclitaxel Injection Concentrate for Nanodispersion
@@ -16058,6 +16467,7 @@ PropDefinitions:
     - Panobinostat Nanoparticle Formulation MTX110
     - Panulisib
     - Paricalcitol
+    - PARP7 Inhibitor RBN-2397
     - PARP 1/2 Inhibitor IMP4297
     - PARP 1/2 Inhibitor NOV1401
     - PARP Inhibitor AZD2461
@@ -16066,7 +16476,6 @@ PropDefinitions:
     - PARP Inhibitor NMS-03305293
     - PARP-1/2 Inhibitor ABT-767
     - PARP/Tankyrase Inhibitor 2X-121
-    - PARP7 Inhibitor RBN-2397
     - Parsaclisib
     - Parsaclisib Hydrochloride
     - Parsatuzumab
@@ -16189,8 +16598,8 @@ PropDefinitions:
     - PI3K Alpha/mTOR Inhibitor PWT33597 Mesylate
     - PI3K Inhibitor ACP-319
     - PI3K Inhibitor BGT226
-    - PI3K Inhibitor GDC-0084
     - PI3K Inhibitor GDC0077
+    - PI3K Inhibitor GDC-0084
     - PI3K Inhibitor GSK1059615
     - PI3K Inhibitor WX-037
     - PI3K Inhibitor ZSTK474
@@ -16457,11 +16866,11 @@ PropDefinitions:
     - Recombinant Interferon Alpha 2b-like Protein
     - Recombinant Interferon Beta
     - Recombinant Interferon Gamma
+    - Recombinant Interleukin-2
+    - Recombinant Interleukin-6
     - Recombinant Interleukin-12
     - Recombinant Interleukin-13
     - Recombinant Interleukin-18
-    - Recombinant Interleukin-2
-    - Recombinant Interleukin-6
     - Recombinant KSA Glycoprotein CO17-1A
     - Recombinant Leukocyte Interleukin
     - Recombinant Leukoregulin
@@ -16589,9 +16998,9 @@ PropDefinitions:
     - Ruxolitinib
     - Ruxolitinib Phosphate
     - Ruxotemitide
+    - S1P Receptor Agonist KRP203
     - S-Adenosylmethionine
     - S-equol
-    - S1P Receptor Agonist KRP203
     - Sabarubicin
     - Sabatolimab
     - Sacituzumab Govitecan
@@ -16672,11 +17081,11 @@ PropDefinitions:
     - Shenqi Fuzheng Injection SQ001
     - Sho-Saiko-To
     - Short Chain Fatty Acid HQK-1004
-    - SHP-1 Agonist SC-43
     - SHP2 Inhibitor JAB-3068
     - SHP2 Inhibitor RLY-1971
     - SHP2 Inhibitor RMC-4630
     - SHP2 Inhibitor TNO155
+    - SHP-1 Agonist SC-43
     - Shu Yu Wan Formula
     - Sialyl Tn Antigen
     - Sialyl Tn-KLH Vaccine
@@ -16773,12 +17182,12 @@ PropDefinitions:
     - Stallimycin
     - Staphylococcal Enterotoxin A
     - Staphylococcal Enterotoxin B
-    - STAT Inhibitor OPB-111077
     - STAT3 Inhibitor DSP-0337
     - STAT3 Inhibitor OPB-31121
     - STAT3 Inhibitor OPB-51602
     - STAT3 Inhibitor TTI-101
     - STAT3 Inhibitor WP1066
+    - STAT Inhibitor OPB-111077
     - Staurosporine
     - STING Agonist BMS-986301
     - STING Agonist GSK3745417
@@ -16992,10 +17401,6 @@ PropDefinitions:
     - Tivantinib
     - Tivozanib
     - TLC ELL-12
-    - TLR Agonist BDB001
-    - TLR Agonist BSG-001
-    - TLR Agonist CADI-05
-    - TLR-Directed Cationic Lipid-DNA Complex JVRS-100
     - TLR7 Agonist 852A
     - TLR7 agonist BNT411
     - TLR7 Agonist LHC165
@@ -17003,6 +17408,10 @@ PropDefinitions:
     - TLR8 Agonist DN1508052
     - TLR9 Agonist AST-008
     - TLR9 Agonist SD-101
+    - TLR Agonist BDB001
+    - TLR Agonist BSG-001
+    - TLR Agonist CADI-05
+    - TLR-Directed Cationic Lipid-DNA Complex JVRS-100
     - TM4SF1-CAR/EpCAM-CAR-expressing Autologous T Cells
     - Tocilizumab
     - Tocladesine
@@ -17049,8 +17458,8 @@ PropDefinitions:
     - Trametinib
     - Trametinib Dimethyl Sulfoxide
     - Trans Sodium Crocetinate
-    - Transdermal 17beta-Estradiol Gel BHR-200
     - Transdermal 4-Hydroxytestosterone
+    - Transdermal 17beta-Estradiol Gel BHR-200
     - Transferrin Receptor-Targeted Anti-RRM2 siRNA CALAA-01
     - Transferrin Receptor-Targeted Liposomal p53 cDNA
     - Transferrin-CRM107
@@ -17185,12 +17594,12 @@ PropDefinitions:
     - Vedolizumab
     - VEGF Inhibitor PTC299
     - VEGF/HGF-targeting DARPin MP0250
+    - VEGFR2 Tyrosine Kinase Inhibitor PF-00337210
+    - VEGFR2/PDGFR/c-Kit/Flt-3 Inhibitor SU014813
     - VEGFR Inhibitor KRN951
     - VEGFR-2 DNA Vaccine VXM01
     - VEGFR/FGFR Inhibitor ODM-203
     - VEGFR/PDGFR Tyrosine Kinase Inhibitor TAK-593
-    - VEGFR2 Tyrosine Kinase Inhibitor PF-00337210
-    - VEGFR2/PDGFR/c-Kit/Flt-3 Inhibitor SU014813
     - Veliparib
     - Veltuzumab
     - Vemurafenib
@@ -17329,6 +17738,7 @@ PropDefinitions:
     - Zotatifin
     - Zotiraciclib Citrate
     - Zuclomiphene Citrate
+    - Other
     - Unknown
     - Not Reported
   therapeutic_level_achieved:
@@ -17699,13 +18109,13 @@ PropDefinitions:
     Type: string
   tissue_type:
     Enum:
-    - Tumor
-    - Normal
     - Abnormal
+    - Normal
     - Peritumoral
-    - Not Allowed To Collect
+    - Tumor
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
     Req: 1
   to_trim_adapter_sequence:
     Type: boolean
@@ -17715,6 +18125,13 @@ PropDefinitions:
     Type: integer
   tobacco_smoking_status:
     Enum:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
     - Current Reformed Smoker, Duration Not Specified
     - Current Reformed Smoker for < or = 15 yrs
     - Current Reformed Smoker for > 15 yrs
@@ -17724,13 +18141,6 @@ PropDefinitions:
     - Smoking history not documented
     - Unknown
     - Not Reported
-    - '1'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
     - Not Allowed To Collect
   total_reads:
     Type: integer
@@ -17967,7 +18377,6 @@ PropDefinitions:
     - Oral Cavity
     - Oral Cavity - Mucosa Only
     - Oropharynx
-    - Other
     - Ovary
     - Palate
     - Pancreas
@@ -18068,8 +18477,11 @@ PropDefinitions:
     - Vulva
     - White Blood Cells
     - Wrist
+    - Other
     - Unknown
     - Not Reported
+  treatment_anatomic_sites:
+    Type: array
   treatment_arm:
     Enum:
     - A081105
@@ -18112,25 +18524,25 @@ PropDefinitions:
     Enum:
     - Complete Necrosis (No Viable Tumor)
     - Incomplete Necrosis (Viable Tumor Present)
-    - No Necrosis
     - No Known Treatment Effect
+    - No Necrosis
     - Unknown
     - Not Reported
   treatment_effect_indicator:
     Enum:
-    - Yes
-    - No
-    - Not Reported
+    - '"Yes"'
+    - '"No"'
     - Unknown
+    - Not Reported
   treatment_frequency:
     Enum:
-    - Every 24 Hours
     - Every Hour
-    - Every Other Day
     - Five Times Daily
     - Four Times Daily
     - Three Times Daily
     - Twice Daily
+    - Every 24 Hours
+    - Every Other Day
     - Twice Weekly
     - Once Weekly
     - Unknown
@@ -18153,8 +18565,8 @@ PropDefinitions:
     - Not Reported
   treatment_or_therapy:
     Enum:
-    - yes
-    - no
+    - '"yes"'
+    - '"no"'
     - unknown
     - not reported
   treatment_outcome:
@@ -18206,14 +18618,12 @@ PropDefinitions:
     - Immunotherapy (Including Vaccines)
     - Internal Radiation
     - Isolated Limb Perfusion (ILP)
-    - Not Allowed To Collect
     - Organ Transplantation
-    - Other
     - Peptide Receptor Radionuclide Therapy (PRRT)
     - Pharmaceutical Therapy, NOS
     - Pleurodesis
-    - Pleurodesis, Talc
     - Pleurodesis, NOS
+    - Pleurodesis, Talc
     - Radiation Therapy, NOS
     - Radiation, 2D Conventional
     - Radiation, 3D Conformal
@@ -18244,16 +18654,20 @@ PropDefinitions:
     - Stereotactic Radiosurgery
     - Steroid Therapy
     - Surgery
-    - Surgery, NOS
     - Surgery, Minimally Invasive
+    - Surgery, NOS
     - Surgery, Open
     - Targeted Molecular Therapy
     - Total Pancreatectomy
     - Whipple
+    - Other
     - Unknown
     - Not Reported
+    - Not Allowed To Collect
   treatments:
     Type: TBD
+  tumor_burden:
+    Type: number
   tumor_code:
     Enum:
     - Acute Leukemia of Ambiguous Lineage (ALAL)
@@ -18310,25 +18724,32 @@ PropDefinitions:
     - '81'
   tumor_confined_to_organ_of_origin:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   tumor_depth:
+    Type: number
+  tumor_depth_descriptor:
+    Enum:
+    - Deep
+    - Superficial
+    - Not Reported
+  tumor_depth_measurement:
     Type: number
   tumor_descriptor:
     Enum:
     - Metastatic
     - New Primary
     - NOS
-    - Not Allowed To Collect
-    - Not Applicable
     - Premalignant
     - Primary
     - Recurrence
     - Xenograft
     - Unknown
     - Not Reported
+    - Not Applicable
+    - Not Allowed To Collect
     Req: 1
   tumor_focality:
     Enum:
@@ -18342,8 +18763,8 @@ PropDefinitions:
     - G2
     - G3
     - G4
-    - GX
     - GB
+    - GX
     - High Grade
     - Intermediate Grade
     - Low Grade
@@ -18355,10 +18776,26 @@ PropDefinitions:
     - Four Tier
     - Three Tier
     - Not Reported
+  tumor_infiltrating_lymphocytes:
+    Enum:
+    - Few
+    - Many
+    - Moderate
+  tumor_infiltrating_macrophages:
+    Enum:
+    - Few
+    - Many
+    - Moderate
   tumor_largest_dimension_diameter:
+    Type: number
+  tumor_length_measurement:
     Type: number
   tumor_level_prostate:
     Type: array
+  tumor_measurement_method:
+    Enum:
+    - Echographic
+    - Pathologic
   tumor_ploidy:
     Type: number
   tumor_purity:
@@ -18371,7 +18808,15 @@ PropDefinitions:
     - '3'
     - Unknown
     - Not Reported
+  tumor_shape:
+    Enum:
+    - Diffuse
+    - Dome
+    - Mushroom
+    - Unknown
   tumor_thickness:
+    Type: number
+  tumor_width_measurement:
     Type: number
   type_of_smoke_exposure:
     Enum:
@@ -18435,13 +18880,13 @@ PropDefinitions:
     - Smokeless Tobacco
   uicc_clinical_m:
     Enum:
+    - cM0 (i+)
     - M0
     - M1
     - M1a
     - M1b
     - M1c
     - MX
-    - cM0 (i+)
     - Unknown
     - Not Reported
   uicc_clinical_n:
@@ -18538,16 +18983,17 @@ PropDefinitions:
     - T4c
     - T4d
     - T4e
-    - TX
     - Ta
     - Tis
     - Tis (DCIS)
     - Tis (LCIS)
     - Tis (Paget's)
+    - TX
     - Unknown
     - Not Reported
   uicc_pathologic_m:
     Enum:
+    - cM0 (i+)
     - M0
     - M1
     - M1a
@@ -18556,7 +19002,6 @@ PropDefinitions:
     - M1d
     - M2
     - MX
-    - cM0 (i+)
     - Unknown
     - Not Reported
   uicc_pathologic_n:
@@ -18576,10 +19021,10 @@ PropDefinitions:
     - N1c
     - N1mi
     - N2
-    - N2mi
     - N2a
     - N2b
     - N2c
+    - N2mi
     - N3
     - N3a
     - N3b
@@ -18603,7 +19048,6 @@ PropDefinitions:
     - Stage IB2
     - Stage IC
     - Stage II
-    - Stage IS
     - Stage IIA
     - Stage IIA1
     - Stage IIA2
@@ -18618,6 +19062,7 @@ PropDefinitions:
     - Stage IIIC1
     - Stage IIIC2
     - Stage IIID
+    - Stage IS
     - Stage IV
     - Stage IVA
     - Stage IVB
@@ -18657,12 +19102,12 @@ PropDefinitions:
     - T4c
     - T4d
     - T4e
-    - TX
     - Ta
     - Tis
     - Tis (DCIS)
     - Tis (LCIS)
     - Tis (Paget's)
+    - TX
     - Unknown
     - Not Reported
   uicc_staging_system_edition:
@@ -18677,10 +19122,15 @@ PropDefinitions:
     - 8th
     - Unknown
     - Not Reported
+  ulceration_indicator:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Not Reported
   undescended_testis_corrected:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   undescended_testis_corrected_age:
     Type: integer
@@ -18699,8 +19149,8 @@ PropDefinitions:
     - Not Reported
   undescended_testis_history:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Not Reported
   undescended_testis_history_laterality:
     Enum:
@@ -18736,19 +19186,19 @@ PropDefinitions:
     - Methylation
     - Mosaicism
     - Mutation, NOS
-    - Other
     - Partial Methylation
     - Rearrangement
     - Repeated Sequences
     - Splice
     - Substitution
     - Translocation
+    - Other
     - Unknown
     - Not Reported
   vascular_invasion_present:
     Enum:
-    - Yes
-    - No
+    - '"Yes"'
+    - '"No"'
     - Unknown
     - Not Reported
   vascular_invasion_type:
@@ -18790,6 +19240,14 @@ PropDefinitions:
     - '9'
   well_number:
     Type: string
+  wgs_coverage:
+    Enum:
+    - 0x-10x
+    - 10x-25x
+    - 25x-150x
+    - 150x+
+    - Unknown
+    - Not Applicable
   who_cns_grade:
     Enum:
     - Grade I
@@ -18823,10 +19281,10 @@ PropDefinitions:
     Type: number
   zone_of_origin_prostate:
     Enum:
-    - Peripheral zone
-    - Transition zone
     - Central zone
     - Overlapping/multiple zones
+    - Peripheral zone
+    - Transition zone
     - Unknown zone
   zygosity:
     Enum:
