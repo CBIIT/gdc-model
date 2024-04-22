@@ -911,27 +911,6 @@ PropDefinitions:
     Type: TBD
   aggregated_somatic_mutations:
     Type: TBD
-  aids_risk_factors:
-    Enum:
-    - Candidiasis
-    - Coccidioidomycosis
-    - Cryptococcosis
-    - Cryptosporidiosis, Chronic Intestinal
-    - Cytomegalovirus
-    - Encephalopathy
-    - Herpes Simplex Virus
-    - Histoplasmosis
-    - Isosporiasis
-    - Mycobacterium avium Complex
-    - Mycobacterium tuberculosis
-    - Mycobacterium, NOS
-    - Nocardiosis
-    - Pneumocystis Pneumonia
-    - Pneumonia, NOS
-    - Progressive Multifocal Leukoencephalopathy
-    - Salmonella Septicemia
-    - Toxoplasmosis
-    - Wasting Syndrome
   ajcc_clinical_m:
     Enum:
     - cM0 (i+)
@@ -1546,6 +1525,7 @@ PropDefinitions:
     - CD30
     - CD33
     - CD34
+    - CD43
     - CD45
     - CD56
     - CD79A
@@ -1758,6 +1738,7 @@ PropDefinitions:
     - Hard Palate
     - Head & Neck
     - Head - Face Or Neck, Nos
+    - Head, Face or Neck, NOS
     - Heart
     - Hepatic
     - Hepatic Duct
@@ -1999,10 +1980,6 @@ PropDefinitions:
     Type: number
   blood_test_normal_range_upper:
     Type: number
-  bmi:
-    Type: number
-  body_surface_area:
-    Type: number
   breslow_thickness:
     Type: number
   burkitt_lymphoma_clinical_variant:
@@ -2232,18 +2209,6 @@ PropDefinitions:
     - Not Reported
   cause_of_response:
     Type: string
-  cd4_count:
-    Type: number
-  cdc_hiv_risk_factors:
-    Enum:
-    - Hemophiliac
-    - Heterosexual Contact
-    - Homosexual Contact
-    - Intravenous Drug User
-    - None
-    - Transfusion Recipient
-    - Unknown
-    - Not Reported
   cell_count:
     Type: integer
   center.code:
@@ -2484,8 +2449,6 @@ PropDefinitions:
     - '"No"'
     - Unknown
     - Not Reported
-  comorbidities:
-    Type: array
   comorbidity:
     Enum:
     - Abnormal Glucose Level
@@ -2666,13 +2629,6 @@ PropDefinitions:
     - Varicella Zoster Virus
     - Wagr Syndrome
     - Other
-    - Unknown
-    - Not Reported
-  comorbidity_method_of_diagnosis:
-    Enum:
-    - Histology
-    - Pathology
-    - Radiology
     - Unknown
     - Not Reported
   composition:
@@ -3375,8 +3331,6 @@ PropDefinitions:
     Type: integer
   days_to_collection:
     Type: integer
-  days_to_comorbidity:
-    Type: integer
   days_to_consent:
     Type: integer
   days_to_diagnosis:
@@ -3393,6 +3347,8 @@ PropDefinitions:
   days_to_last_known_disease_status:
     Type: TBD
   days_to_lost_to_followup:
+    Type: integer
+  days_to_pathology_detail:
     Type: integer
   days_to_progression:
     Type: integer
@@ -3433,6 +3389,12 @@ PropDefinitions:
     Req: 1
   demographic.occupation_duration_years:
     Type: integer
+  demographic.premature_at_birth:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
   demographic.race:
     Enum:
     - american indian or alaska native
@@ -3453,26 +3415,14 @@ PropDefinitions:
     - Unknown
     - Not Reported
     Req: 1
+  demographic.weeks_gestation_at_birth:
+    Type: number
   demographics:
     Type: TBD
   derived_files:
     Type: TBD
   described_cases:
     Type: TBD
-  diabetes_treatment_type:
-    Enum:
-    - Alpha-Glucosidase Inhibitor
-    - Biguanide
-    - Diet
-    - Injected Insulin
-    - Insulin
-    - Linagliptin
-    - Oral Hypoglycemic
-    - Sulfonylurea
-    - Thiazolidinedione
-    - Other
-    - Unknown
-    - Not Reported
   diagnosis.age_at_diagnosis:
     Req: 1
     Type: TBD
@@ -3480,12 +3430,14 @@ PropDefinitions:
     Type: TBD
   diagnosis.days_to_recurrence:
     Type: TBD
-  diagnosis.measurement_type:
-    Enum:
-    - Pathologic
-    - Radiologic
   diagnosis.mitotic_count:
     Type: integer
+  diagnosis.pregnant_at_diagnosis:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
   diagnosis.progression_or_recurrence:
     Enum:
     - '"yes"'
@@ -3558,8 +3510,6 @@ PropDefinitions:
     - Not Reported
   distributor_reference:
     Type: string
-  dlco_ref_predictive_percent:
-    Type: number
   doi:
     Req: 1
     Type: string
@@ -3715,6 +3665,12 @@ PropDefinitions:
     - Histologic Confirmation
     - Physical Examination
     - Positive Biomarker(s)
+  exercise_frequency_weekly:
+    Enum:
+    - 5 or More Days
+    - 3 to 4 Days
+    - 1 to 2 Days
+    - None
   exon:
     Type: string
   experiment_metadata.data_category:
@@ -3778,8 +3734,11 @@ PropDefinitions:
     Type: integer
   exposure_source:
     Enum:
+    - Home
     - Occupational
     - Secondary
+    - Social
+    - Work
     - Unknown
   exposure_type:
     Enum:
@@ -3811,6 +3770,11 @@ PropDefinitions:
     - Extensive
     - Focal
     - Not Reported
+  extracapsular_extension_present:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
   extranodal_extension:
     Enum:
     - Gross Extension
@@ -3818,17 +3782,13 @@ PropDefinitions:
     - No Extranodal Extension
   extrascleral_extension:
     Type: boolean
-  eye_color:
+  extrathyroid_extension:
     Enum:
-    - Amber
-    - Blue
-    - Brown
-    - Gray
-    - Green
-    - Hazel
-    - Red & Violet
-    - Other
-    - Not Reported
+    - None
+    - Minimal (T3)
+    - Moderate/Advanced (T4a)
+    - Very Advanced (T4b)
+    - Unknown
   fab_morphology_code:
     Enum:
     - M0
@@ -3846,14 +3806,6 @@ PropDefinitions:
     Type: TBD
   fastq_name:
     Type: string
-  fev1_fvc_post_bronch_percent:
-    Type: number
-  fev1_fvc_pre_bronch_percent:
-    Type: number
-  fev1_ref_post_bronch_percent:
-    Type: number
-  fev1_ref_pre_bronch_percent:
-    Type: number
   figo_stage:
     Enum:
     - Stage 0
@@ -3965,19 +3917,213 @@ PropDefinitions:
     - Not Reported
   flow_cell_barcode:
     Type: string
+  follow_up.aids_risk_factors:
+    Enum:
+    - Candidiasis
+    - Coccidioidomycosis
+    - Cryptococcosis
+    - Cryptosporidiosis, Chronic Intestinal
+    - Cytomegalovirus
+    - Encephalopathy
+    - Herpes Simplex Virus
+    - Histoplasmosis
+    - Isosporiasis
+    - Mycobacterium avium Complex
+    - Mycobacterium tuberculosis
+    - Mycobacterium, NOS
+    - Nocardiosis
+    - Pneumocystis Pneumonia
+    - Pneumonia, NOS
+    - Progressive Multifocal Leukoencephalopathy
+    - Salmonella Septicemia
+    - Toxoplasmosis
+    - Wasting Syndrome
+  follow_up.bmi:
+    Type: number
+  follow_up.body_surface_area:
+    Type: number
   follow_up.cases:
     Req: 1
     Type: TBD
+  follow_up.cd4_count:
+    Type: number
+  follow_up.cdc_hiv_risk_factors:
+    Enum:
+    - Hemophiliac
+    - Heterosexual Contact
+    - Homosexual Contact
+    - Intravenous Drug User
+    - None
+    - Transfusion Recipient
+    - Unknown
+    - Not Reported
+  follow_up.comorbidities:
+    Type: array
+  follow_up.comorbidity_method_of_diagnosis:
+    Enum:
+    - Histology
+    - Pathology
+    - Radiology
+    - Unknown
+    - Not Reported
+  follow_up.days_to_comorbidity:
+    Type: integer
   follow_up.days_to_recurrence:
     Type: integer
+  follow_up.diabetes_treatment_type:
+    Enum:
+    - Alpha-Glucosidase Inhibitor
+    - Biguanide
+    - Diet
+    - Injected Insulin
+    - Insulin
+    - Linagliptin
+    - Oral Hypoglycemic
+    - Sulfonylurea
+    - Thiazolidinedione
+    - Other
+    - Unknown
+    - Not Reported
   follow_up.diagnoses:
     Type: TBD
+  follow_up.dlco_ref_predictive_percent:
+    Type: number
+  follow_up.eye_color:
+    Enum:
+    - Amber
+    - Blue
+    - Brown
+    - Gray
+    - Green
+    - Hazel
+    - Red & Violet
+    - Other
+    - Not Reported
+  follow_up.fev1_fvc_post_bronch_percent:
+    Type: number
+  follow_up.fev1_fvc_pre_bronch_percent:
+    Type: number
+  follow_up.fev1_ref_post_bronch_percent:
+    Type: number
+  follow_up.fev1_ref_pre_bronch_percent:
+    Type: number
+  follow_up.haart_treatment_indicator:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  follow_up.height:
+    Type: number
+  follow_up.hepatitis_sustained_virological_response:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  follow_up.hiv_viral_load:
+    Type: number
+  follow_up.hormonal_contraceptive_type:
+    Enum:
+    - Progestin
+    - Progestin and Estrogen
+    - Unknown
+    - Not Reported
+  follow_up.hormonal_contraceptive_use:
+    Enum:
+    - Current User
+    - Former User
+    - Never Used
+    - Unknown
+    - Not Reported
+  follow_up.hormone_replacement_therapy_type:
+    Enum:
+    - Estrogen only
+    - Progesterone and Estrogen
+    - Progesterone only
+    - Unknown
+    - Not Reported
+  follow_up.hysterectomy_margins_involved:
+    Enum:
+    - Bladder
+    - Macroscopic Parametrium
+    - Microscopic Parametrium
+    - None
+    - Vagina
+    - Unknown
+    - Not Reported
+  follow_up.hysterectomy_type:
+    Enum:
+    - Hysterectomy, NOS
+    - Not performed
+    - Radical Hysterectomy
+    - Simple Hysterectomy
+    - Unknown
+    - Not Reported
+  follow_up.immunosuppressive_treatment_type:
+    Enum:
+    - Anti-TNF Therapy
+    - Azathioprine
+    - Cyclophosphamide
+    - Methotrexate
+    - None
+    - Other
+    - Unknown
+    - Not Reported
+  follow_up.menopause_status:
+    Enum:
+    - Perimenopausal
+    - Postmenopausal
+    - Premenopausal
+    - Unknown
+    - Not Reported
+  follow_up.nadir_cd4_count:
+    Type: number
+  follow_up.pancreatitis_onset_year:
+    Type: integer
+  follow_up.pregnancy_count:
+    Type: integer
+  follow_up.pregnancy_outcome:
+    Enum:
+    - Ectopic Pregnancy
+    - Induced Abortion
+    - Live Birth
+    - Miscarriage
+    - Spontaneous Abortion
+    - Stillbirth
+    - Unknown
+    - Not Reported
   follow_up.progression_or_recurrence:
     Enum:
     - '"Yes"'
     - '"No"'
     - Unknown
     - Not Reported
+  follow_up.reflux_treatment_type:
+    Enum:
+    - Antacids
+    - H2 Blockers
+    - Medically Treated
+    - No Treatment
+    - Proton Pump Inhibitors
+    - Surgically Treated
+    - Unknown
+    - Not Reported
+    - Not Applicable
+  follow_up.risk_factor_method_of_diagnosis:
+    Enum:
+    - Biochemical Assessment
+    - Both Clinical and Biochemical Assessments
+    - Clinical Assessment
+    - Not Reported
+  follow_up.risk_factor_treatment:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  follow_up.risk_factors:
+    Type: array
   follow_up.timepoint_category:
     Enum:
     - Adjuvant Therapy
@@ -3997,6 +4143,49 @@ PropDefinitions:
     - Recurrence/Progression
     - Within 3 Months of Surgery
     - Other
+    - Not Reported
+  follow_up.undescended_testis_corrected:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Not Reported
+  follow_up.undescended_testis_corrected_age:
+    Type: integer
+  follow_up.undescended_testis_corrected_laterality:
+    Enum:
+    - Bilateral
+    - Left
+    - Right
+    - Not Reported
+  follow_up.undescended_testis_corrected_method:
+    Enum:
+    - Hormones
+    - Orchiopexy
+    - Spontaneous Descent
+    - Testis Removed
+    - Not Reported
+  follow_up.undescended_testis_history:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Not Reported
+  follow_up.undescended_testis_history_laterality:
+    Enum:
+    - Bilateral
+    - Left
+    - Right
+    - Not Reported
+  follow_up.viral_hepatitis_serologies:
+    Enum:
+    - HBV Core Antibody
+    - HBV DNA
+    - HBV Genotype
+    - HBV Surface Antibody
+    - HCV Genotype
+    - Hepatitis B Surface Antigen
+    - Hepatitis C Antibody
+    - Hepatitis C Virus RNA
+    - Unknown
     - Not Reported
   follow_up.weight:
     Type: number
@@ -4848,18 +5037,10 @@ PropDefinitions:
     Type: number
   growth_rate:
     Type: integer
-  haart_treatment_indicator:
+  histologic_progression_type:
     Enum:
-    - '"Yes"'
-    - '"No"'
-    - Unknown
-    - Not Reported
-  height:
-    Type: number
-  hepatitis_sustained_virological_response:
-    Enum:
-    - '"Yes"'
-    - '"No"'
+    - Anaplastic
+    - Poorly differentiated
     - Unknown
     - Not Reported
   histone_family:
@@ -4902,28 +5083,6 @@ PropDefinitions:
     - Colorectal Cancer
     - Lower Grade Glioma
     - Phenochromocytoma or Paraganglioma
-  hiv_viral_load:
-    Type: number
-  hormonal_contraceptive_type:
-    Enum:
-    - Progestin
-    - Progestin and Estrogen
-    - Unknown
-    - Not Reported
-  hormonal_contraceptive_use:
-    Enum:
-    - Current User
-    - Former User
-    - Never Used
-    - Unknown
-    - Not Reported
-  hormone_replacement_therapy_type:
-    Enum:
-    - Estrogen only
-    - Progesterone and Estrogen
-    - Progesterone only
-    - Unknown
-    - Not Reported
   hpv_positive_type:
     Enum:
     - '16'
@@ -4966,23 +5125,6 @@ PropDefinitions:
     - HPV66
     - HPV68
     - HPV73
-  hysterectomy_margins_involved:
-    Enum:
-    - Bladder
-    - Macroscopic Parametrium
-    - Microscopic Parametrium
-    - None
-    - Vagina
-    - Unknown
-    - Not Reported
-  hysterectomy_type:
-    Enum:
-    - Hysterectomy, NOS
-    - Not performed
-    - Radical Hysterectomy
-    - Simple Hysterectomy
-    - Unknown
-    - Not Reported
   icd_10:
     Type: string
   icd_10_code:
@@ -5026,16 +5168,7 @@ PropDefinitions:
     - CT Scan
     - MRI
     - PET
-  immunosuppressive_treatment_type:
-    Enum:
-    - Anti-TNF Therapy
-    - Azathioprine
-    - Cyclophosphamide
-    - Methotrexate
-    - None
-    - Other
-    - Unknown
-    - Not Reported
+    - Ultrasound
   in_review:
     Type: boolean
   includes_spike_ins:
@@ -5110,6 +5243,7 @@ PropDefinitions:
     - Illumina MiSeq
     - Illumina NextSeq
     - Illumina NovaSeq 6000
+    - Illumina NovaSeq X
     - Ion Torrent PGM
     - Ion Torrent Proton
     - Ion Torrent S5
@@ -5366,6 +5500,9 @@ PropDefinitions:
     - Aortic
     - Axillary
     - Cervical
+    - Cervical, Central
+    - Cervical, Lateral
+    - Cervical, NOS
     - Epitrochlear
     - Femoral
     - Hilar
@@ -5563,6 +5700,11 @@ PropDefinitions:
     - Other
   mean_coverage:
     Type: number
+  measurement_type:
+    Enum:
+    - Echographic
+    - Pathologic
+    - Radiologic
   measurement_unit:
     Enum:
     - Centimeters
@@ -5579,13 +5721,6 @@ PropDefinitions:
     Enum:
     - '"Yes"'
     - '"No"'
-    - Not Reported
-  menopause_status:
-    Enum:
-    - Perimenopausal
-    - Postmenopausal
-    - Premenopausal
-    - Unknown
     - Not Reported
   metaplasia_present:
     Enum:
@@ -5828,6 +5963,12 @@ PropDefinitions:
     Req: 1
   methylation_liftover_workflows:
     Type: TBD
+  micrometastasis_present:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
   micropapillary_features:
     Enum:
     - Absent
@@ -5894,6 +6035,7 @@ PropDefinitions:
     - Karyotype
     - Microarray
     - Microsatellite Analysis
+    - Microscopy, NOS
     - Nuclear Staining
     - PCR
     - RNA Sequencing
@@ -5960,6 +6102,7 @@ PropDefinitions:
     - End of Treatment Course 1
     - End of Treatment Course 2
     - Preoperative
+    - Prior to Treatment
     - Not Reported
   molecular_tests:
     Type: TBD
@@ -6662,6 +6805,7 @@ PropDefinitions:
     - 8974/1
     - 8975/1
     - 8980/3
+    - 8980/6
     - 8981/3
     - 8982/0
     - 8982/3
@@ -7145,8 +7289,13 @@ PropDefinitions:
     - '12'
     - '13'
     - '61'
-  nadir_cd4_count:
-    Type: number
+  myasthenia_gravis_classification:
+    Enum:
+    - Class I
+    - Class II
+    - Class III
+    - Class IV
+    - Class V
   namespace:
     Req: 1
     Type: string
@@ -7178,6 +7327,12 @@ PropDefinitions:
     - '"No"'
     - Unknown
     - Not Reported
+  nononcologic_therapeutic_agents:
+    Enum:
+    - Acetaminophen
+    - Aspirin
+    - Metformin
+    - Statin, NOS
   normal_tumor_genotype_snp_match:
     Enum:
     - '"Yes"'
@@ -7197,6 +7352,301 @@ PropDefinitions:
     Type: array
   oct_embedded:
     Type: string
+  other_clinical_attribute.aids_risk_factors:
+    Enum:
+    - Candidiasis
+    - Coccidioidomycosis
+    - Cryptococcosis
+    - Cryptosporidiosis, Chronic Intestinal
+    - Cytomegalovirus
+    - Encephalopathy
+    - Herpes Simplex Virus
+    - Histoplasmosis
+    - Isosporiasis
+    - Mycobacterium avium Complex
+    - Mycobacterium tuberculosis
+    - Mycobacterium, NOS
+    - Nocardiosis
+    - Pneumocystis Pneumonia
+    - Pneumonia, NOS
+    - Progressive Multifocal Leukoencephalopathy
+    - Salmonella Septicemia
+    - Toxoplasmosis
+    - Wasting Syndrome
+  other_clinical_attribute.bmi:
+    Type: number
+  other_clinical_attribute.body_surface_area:
+    Type: number
+  other_clinical_attribute.cases:
+    Type: TBD
+  other_clinical_attribute.cd4_count:
+    Type: number
+  other_clinical_attribute.cdc_hiv_risk_factors:
+    Enum:
+    - Hemophiliac
+    - Heterosexual Contact
+    - Homosexual Contact
+    - Intravenous Drug User
+    - None
+    - Transfusion Recipient
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.comorbidities:
+    Type: array
+  other_clinical_attribute.comorbidity_method_of_diagnosis:
+    Enum:
+    - Histology
+    - Pathology
+    - Radiology
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.days_to_comorbidity:
+    Type: integer
+  other_clinical_attribute.diabetes_treatment_type:
+    Enum:
+    - Alpha-Glucosidase Inhibitor
+    - Biguanide
+    - Diet
+    - Injected Insulin
+    - Insulin
+    - Linagliptin
+    - Oral Hypoglycemic
+    - Sulfonylurea
+    - Thiazolidinedione
+    - Other
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.dlco_ref_predictive_percent:
+    Type: number
+  other_clinical_attribute.eye_color:
+    Enum:
+    - Amber
+    - Blue
+    - Brown
+    - Gray
+    - Green
+    - Hazel
+    - Red & Violet
+    - Other
+    - Not Reported
+  other_clinical_attribute.fev1_fvc_post_bronch_percent:
+    Type: number
+  other_clinical_attribute.fev1_fvc_pre_bronch_percent:
+    Type: number
+  other_clinical_attribute.fev1_ref_post_bronch_percent:
+    Type: number
+  other_clinical_attribute.fev1_ref_pre_bronch_percent:
+    Type: number
+  other_clinical_attribute.follow_ups:
+    Type: TBD
+  other_clinical_attribute.haart_treatment_indicator:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.height:
+    Type: number
+  other_clinical_attribute.hepatitis_sustained_virological_response:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.hiv_viral_load:
+    Type: number
+  other_clinical_attribute.hormonal_contraceptive_type:
+    Enum:
+    - Progestin
+    - Progestin and Estrogen
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.hormonal_contraceptive_use:
+    Enum:
+    - Current User
+    - Former User
+    - Never Used
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.hormone_replacement_therapy_type:
+    Enum:
+    - Estrogen only
+    - Progesterone and Estrogen
+    - Progesterone only
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.hysterectomy_margins_involved:
+    Enum:
+    - Bladder
+    - Macroscopic Parametrium
+    - Microscopic Parametrium
+    - None
+    - Vagina
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.hysterectomy_type:
+    Enum:
+    - Hysterectomy, NOS
+    - Not Performed
+    - Radical Hysterectomy
+    - Simple Hysterectomy
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.immunosuppressive_treatment_type:
+    Enum:
+    - Anti-TNF Therapy
+    - Azathioprine
+    - Cyclophosphamide
+    - Methotrexate
+    - None
+    - Other
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.menopause_status:
+    Enum:
+    - Perimenopausal
+    - Postmenopausal
+    - Premenopausal
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.nadir_cd4_count:
+    Type: number
+  other_clinical_attribute.pancreatitis_onset_year:
+    Type: integer
+  other_clinical_attribute.pregnancy_count:
+    Type: integer
+  other_clinical_attribute.pregnancy_outcome:
+    Enum:
+    - Ectopic Pregnancy
+    - Induced Abortion
+    - Live Birth
+    - Miscarriage
+    - Spontaneous Abortion
+    - Stillbirth
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.pregnant_at_diagnosis:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.premature_at_birth:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.reflux_treatment_type:
+    Enum:
+    - Antacids
+    - H2 Blockers
+    - Medically Treated
+    - No Treatment
+    - Proton Pump Inhibitors
+    - Surgically Treated
+    - Unknown
+    - Not Reported
+    - Not Applicable
+  other_clinical_attribute.risk_factor_method_of_diagnosis:
+    Enum:
+    - Biochemical Assessment
+    - Both Clinical and Biochemical Assessments
+    - Clinical Assessment
+    - Not Reported
+  other_clinical_attribute.risk_factor_treatment:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.risk_factors:
+    Type: array
+  other_clinical_attribute.timepoint_category:
+    Enum:
+    - Adjuvant Therapy
+    - Adolescence
+    - Adulthood
+    - Childhood
+    - Follow-up
+    - Initial Diagnosis
+    - Last Contact
+    - Post Adjuvant Therapy
+    - Post Hormone Therapy
+    - Post Secondary Therapy
+    - Postoperative
+    - Preoperative
+    - Prior to Diagnosis
+    - Prior to Treatment
+    - Recurrence/Progression
+    - Within 3 Months of Surgery
+    - Other
+    - Not Reported
+  other_clinical_attribute.treatment_frequency:
+    Enum:
+    - Every Hour
+    - Five Times Daily
+    - Four Times Daily
+    - Three Times Daily
+    - Twice Daily
+    - Once Daily
+    - Every Other Day
+    - Twice Weekly
+    - Once Weekly
+    - Once a Week for at Least a Year
+    - Occasionally
+    - Never
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.undescended_testis_corrected:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Not Reported
+  other_clinical_attribute.undescended_testis_corrected_age:
+    Type: integer
+  other_clinical_attribute.undescended_testis_corrected_laterality:
+    Enum:
+    - Bilateral
+    - Left
+    - Right
+    - Not Reported
+  other_clinical_attribute.undescended_testis_corrected_method:
+    Enum:
+    - Hormones
+    - Orchiopexy
+    - Spontaneous Descent
+    - Testis Removed
+    - Not Reported
+  other_clinical_attribute.undescended_testis_history:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Not Reported
+  other_clinical_attribute.undescended_testis_history_laterality:
+    Enum:
+    - Bilateral
+    - Left
+    - Right
+    - Not Reported
+  other_clinical_attribute.viral_hepatitis_serologies:
+    Enum:
+    - HBV Core Antibody
+    - HBV DNA
+    - HBV Genotype
+    - HBV Surface Antibody
+    - HCV Genotype
+    - Hepatitis B Surface Antigen
+    - Hepatitis C Antibody
+    - Hepatitis C Virus RNA
+    - Unknown
+    - Not Reported
+  other_clinical_attribute.weeks_gestation_at_birth:
+    Type: number
+  other_clinical_attribute.weight:
+    Type: number
+  other_clinical_attributes:
+    Type: TBD
   ovarian_specimen_status:
     Enum:
     - Ovarian Capsule Fragmented
@@ -7213,11 +7663,19 @@ PropDefinitions:
     - Not Reported
   overrepresented_sequences:
     Type: TBD
+  oxygen_use_indicator:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
+  oxygen_use_type:
+    Enum:
+    - Continuous
+    - Intermittent
   pack_years_smoked:
     Type: number
   pairs_on_diff_chr:
-    Type: integer
-  pancreatitis_onset_year:
     Type: integer
   papillary_renal_cell_type:
     Enum:
@@ -7247,10 +7705,6 @@ PropDefinitions:
     - Not Reported
   pathology_detail.diagnoses:
     Type: TBD
-  pathology_detail.measurement_type:
-    Enum:
-    - Pathologic
-    - Radiologic
   pathology_detail.number_proliferating_cells:
     Type: integer
   pathology_detail.percent_tumor_nuclei:
@@ -7400,30 +7854,6 @@ PropDefinitions:
     Type: number
   portion_number:
     Type: string
-  pregnancy_count:
-    Type: integer
-  pregnancy_outcome:
-    Enum:
-    - Ectopic Pregnancy
-    - Induced Abortion
-    - Live Birth
-    - Miscarriage
-    - Spontaneous Abortion
-    - Stillbirth
-    - Unknown
-    - Not Reported
-  pregnant_at_diagnosis:
-    Enum:
-    - '"Yes"'
-    - '"No"'
-    - Unknown
-    - Not Reported
-  premature_at_birth:
-    Enum:
-    - '"Yes"'
-    - '"No"'
-    - Unknown
-    - Not Reported
   prescribed_dose:
     Type: number
   preservation_method:
@@ -8103,6 +8533,7 @@ PropDefinitions:
     - Diffuse melanocytosis
     - Diffuse meningiomatosis
     - Diffuse midline glioma, H3 K27M-mutant
+    - Diffuse Pediatric-type High Grade Glioma
     - Digital papillary adenocarcinoma
     - Diktyoma, benign
     - Diktyoma, malignant
@@ -10662,6 +11093,12 @@ PropDefinitions:
     Type: string
   publication.updated_datetime:
     Type: TBD
+  radiosensitizing_agent:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
   radon_exposure:
     Enum:
     - '"Yes"'
@@ -10751,21 +11188,18 @@ PropDefinitions:
     - Disease Progression
     - Withdrawal by Subject
     - Other
+  reason_treatment_not_given:
+    Enum:
+    - Adverse Event/Complications
+    - Not Done per Treating Physician's Discretion
+    - Participant Refusal
+    - Scheduling Problems
+    - Unknown
+    - Not Reported
   recist_targeted_regions_number:
     Type: integer
   recist_targeted_regions_sum:
     Type: number
-  reflux_treatment_type:
-    Enum:
-    - Antacids
-    - H2 Blockers
-    - Medically Treated
-    - No Treatment
-    - Proton Pump Inhibitors
-    - Surgically Treated
-    - Unknown
-    - Not Reported
-    - Not Applicable
   regimen_or_line_of_therapy:
     Type: string
   related_files:
@@ -11190,20 +11624,6 @@ PropDefinitions:
     - Wagr Syndrome
     - Unknown
     - Not Reported
-  risk_factor_method_of_diagnosis:
-    Enum:
-    - Biochemical Assessment
-    - Both Clinical and Biochemical Assessments
-    - Clinical Assessment
-    - Not Reported
-  risk_factor_treatment:
-    Enum:
-    - '"Yes"'
-    - '"No"'
-    - Unknown
-    - Not Reported
-  risk_factors:
-    Type: array
   rna_expression_workflow.aligned_reads_files:
     Type: TBD
   rna_expression_workflow.submitted_aligned_reads_files:
@@ -12780,6 +13200,13 @@ PropDefinitions:
     Enum:
     - 3 Point Scale
     - 4 Point Scale
+  staining_intensity_value:
+    Enum:
+    - '0'
+    - 1+
+    - 2+
+    - 3+
+    - 4+
   state:
     Enum:
     - open
@@ -13181,12 +13608,14 @@ PropDefinitions:
     - Intermediate
     - Loss of Expression
     - Low
+    - Mitotic Count Reported
     - Negative
     - Normal
     - Not Amplified
     - Overexpressed
     - Positive
     - Stable
+    - Staining Intensity Value Reported
     - Test Value Reported
     - Unknown
     - Not Reported
@@ -13194,7 +13623,6 @@ PropDefinitions:
   test_units:
     Enum:
     - cells/mL
-    - count x10^9/L
     - g/dL
     - g/L
     - mcg/L
@@ -17743,6 +18171,12 @@ PropDefinitions:
     - Not Reported
   therapeutic_level_achieved:
     Type: boolean
+  therapeutic_levels_achieved:
+    Enum:
+    - '"Yes"'
+    - '"No"'
+    - Unknown
+    - Not Reported
   therapeutic_target_level:
     Enum:
     - '>14 mg/L'
@@ -18168,13 +18602,28 @@ PropDefinitions:
     - End of Consolidation Therapy
     - End of Treatment Course
     - First Complete Response
+    - First Treatment
     - Postoperative
     - Preoperative
     - Prior to Diagnosis
     - Prior to Procurement
     - Prior to Study Registration
+    - Prior to Treatment
     - Progression
     - Recurrence
+    - Not Reported
+  treatment.treatment_frequency:
+    Enum:
+    - Every Hour
+    - Five Times Daily
+    - Four Times Daily
+    - Three Times Daily
+    - Twice Daily
+    - Every 24 Hours
+    - Every Other Day
+    - Twice Weekly
+    - Once Weekly
+    - Unknown
     - Not Reported
   treatment_anatomic_site:
     Enum:
@@ -18534,19 +18983,6 @@ PropDefinitions:
     - '"No"'
     - Unknown
     - Not Reported
-  treatment_frequency:
-    Enum:
-    - Every Hour
-    - Five Times Daily
-    - Four Times Daily
-    - Three Times Daily
-    - Twice Daily
-    - Every 24 Hours
-    - Every Other Day
-    - Twice Weekly
-    - Once Weekly
-    - Unknown
-    - Not Reported
   treatment_intent_type:
     Enum:
     - Adjuvant
@@ -18770,7 +19206,6 @@ PropDefinitions:
     - Low Grade
     - Unknown
     - Not Reported
-    - not reported
   tumor_grade_category:
     Enum:
     - Four Tier
@@ -18792,10 +19227,6 @@ PropDefinitions:
     Type: number
   tumor_level_prostate:
     Type: array
-  tumor_measurement_method:
-    Enum:
-    - Echographic
-    - Pathologic
   tumor_ploidy:
     Type: number
   tumor_purity:
@@ -19127,37 +19558,6 @@ PropDefinitions:
     - '"Yes"'
     - '"No"'
     - Not Reported
-  undescended_testis_corrected:
-    Enum:
-    - '"Yes"'
-    - '"No"'
-    - Not Reported
-  undescended_testis_corrected_age:
-    Type: integer
-  undescended_testis_corrected_laterality:
-    Enum:
-    - Bilateral
-    - Left
-    - Right
-    - Not Reported
-  undescended_testis_corrected_method:
-    Enum:
-    - Hormones
-    - Orchiopexy
-    - Spontaneous Descent
-    - Testis Removed
-    - Not Reported
-  undescended_testis_history:
-    Enum:
-    - '"Yes"'
-    - '"No"'
-    - Not Reported
-  undescended_testis_history_laterality:
-    Enum:
-    - Bilateral
-    - Left
-    - Right
-    - Not Reported
   use_per_day:
     Type: number
   variant_origin:
@@ -19210,20 +19610,6 @@ PropDefinitions:
     - No Vascular Invasion
     - Unknown
     - Not Reported
-  viral_hepatitis_serologies:
-    Enum:
-    - HBV Core Antibody
-    - HBV DNA
-    - HBV Genotype
-    - HBV Surface Antibody
-    - HCV Genotype
-    - Hepatitis B Surface Antigen
-    - Hepatitis C Antibody
-    - Hepatitis C Virus RNA
-    - Unknown
-    - Not Reported
-  weeks_gestation_at_birth:
-    Type: number
   weiss_assessment_findings:
     Type: array
   weiss_assessment_score:

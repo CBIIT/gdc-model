@@ -14,11 +14,18 @@ Terms:
     Value: Ishak Score 0
     Version: 20.05a
   '1':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
+  1+:
+    Code: C186200
+    Definition: A measurement of the amount or proportion of tissue or cells that
+      have a staining intensity of 1+
+    Origin: NCIt
+    Value: Staining Intensity 1+
+    Version: 23.08d
   1,2 - Portal Fibrosis:
     Code: C157159
     Definition: Portal fibrosis is present.
@@ -33,17 +40,24 @@ Terms:
     Value: One to Three Positive Lymph Nodes
     Version: 20.10d
   '2':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
+  2+:
+    Code: C186201
+    Definition: A measurement of the amount or proportion of tissue or cells that
+      have a staining intensity of 2+
+    Origin: NCIt
+    Value: Staining Intensity 2+
+    Version: 23.08d
   '3':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   3 Prime UTR Variant:
     Code: C63433
     Definition: Any mutation in a gene occurring in the 3\' end which contains sequences
@@ -78,6 +92,13 @@ Terms:
     Origin: NCIt
     Value: 3'-dA Phosphoramidate NUC-7738
     Version: 20.10d
+  3+:
+    Code: C186202
+    Definition: A measurement of the amount or proportion of tissue or cells that
+      have a staining intensity of 3+
+    Origin: NCIt
+    Value: Staining Intensity 3+
+    Version: 23.08d
   3,4 - Fibrous Septa:
     Code: C157161
     Definition: Fibrosis extends beyond the portal areas and bridging fibrosis is
@@ -93,11 +114,11 @@ Terms:
     Value: Time Between Waking and First Smoke - Between 31 and 60 Minutes
     Version: 19.12e
   '4':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   4 or More:
     Code: C172226
     Definition: An indication that cancer cells have been detected in four or more
@@ -105,12 +126,19 @@ Terms:
     Origin: NCIt
     Value: Four or More Positive Lymph Nodes
     Version: 20.10d
+  4+:
+    Code: ''
+    Definition: A measurement of the amount or proportion of tissue or cells that
+      have a staining intensity of 4+
+    Origin: ''
+    Value: Staining Intensity 4+
+    Version: ''
   '5':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   5 - Nodular Formation and Incomplete Cirrhosis:
     Code: C95155
     Definition: Marked bridging fibrosis with formation of occasional hepatic nodules
@@ -134,11 +162,11 @@ Terms:
     Value: 5-Hydroxyindoleacetic Acid Measurement
     Version: 20.10d
   '6':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   6 - Established Cirrhosis:
     Code: C95156
     Definition: Marked fibrosis with cirrhosis is present.
@@ -159,11 +187,11 @@ Terms:
     Value: AJCC v6 Stage
     Version: 20.05a
   '7':
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   7th:
     Code: C90530
     Definition: A cancer stage defined according to the AJCC 7th edition criteria.
@@ -9509,6 +9537,19 @@ Terms:
     Origin: NCIt
     Value: Accidental Vehicle Fire Smoke Exposure
     Version: 19.12e
+  Acetaminophen:
+    Code: C198
+    Definition: A p-aminophenol derivative with analgesic and antipyretic activities.
+      Although the exact mechanism through which acetaminophen exert its effects has
+      yet to be fully determined, acetaminophen may inhibit the nitric oxide (NO)
+      pathway mediated by a variety of neurotransmitter receptors including N-methyl-D-aspartate
+      (NMDA) and substance P, resulting in elevation of the pain threshold. The antipyretic
+      activity may result from inhibition of prostaglandin synthesis and release in
+      the central nervous system (CNS) and prostaglandin-mediated effects on the heat-regulating
+      center in the anterior hypothalamus.
+    Origin: NCIt
+    Value: Acetaminophen
+    Version: 23.08d
   Achromic nevus:
     Code: C27095
     Definition: A benign nevus characterized by the absence of melanin pigment in
@@ -10756,15 +10797,6 @@ Terms:
     Origin: NCIt
     Value: Adoptive Mother
     Version: 19.12e
-  Adrenal:
-    Code: C12666
-    Definition: A flattened, roughly triangular body resting upon the upper end of
-      each kidney; it is one of the ductless glands furnishing internal secretions
-      (epinephrine and norepinephrine from the medulla and steroid hormones from the
-      cortex).
-    Origin: NCIt
-    Value: Adrenal Gland
-    Version: 20.05a
   Adrenal Gland:
     Code: C12666
     Definition: A flattened, roughly triangular body resting upon the upper end of
@@ -10866,6 +10898,15 @@ Terms:
     Definition: A primary or metastatic malignant neoplasm affecting the adrenal cortex.
     Origin: NCIt
     Value: Malignant Adrenal Cortex Neoplasm
+    Version: 20.05a
+  Adrenal gland, NOS:
+    Code: C12666
+    Definition: A flattened, roughly triangular body resting upon the upper end of
+      each kidney; it is one of the ductless glands furnishing internal secretions
+      (epinephrine and norepinephrine from the medulla and steroid hormones from the
+      cortex).
+    Origin: NCIt
+    Value: Adrenal Gland
     Version: 20.05a
   Adrenal medullary paraganglioma:
     Code: C3326
@@ -14015,6 +14056,15 @@ Terms:
     Origin: NCIt
     Value: Aspacytarabine
     Version: 20.10d
+  Aspirin:
+    Code: C287
+    Definition: An orally administered non-steroidal antiinflammatory agent. Acetylsalicylic
+      acid binds to and acetylates serine residues in cyclooxygenases, resulting in
+      decreased synthesis of prostaglandin, platelet aggregation, and inflammation.
+      This agent exhibits analgesic, antipyretic, and anticoagulant properties.
+    Origin: NCIt
+    Value: Aspirin
+    Version: 23.08d
   Astroblastoma:
     Code: C4324
     Definition: A rare glial neoplasm more commonly found in young adults. It is characterized
@@ -16126,13 +16176,6 @@ Terms:
     Origin: NCIt
     Value: Pigmented Adrenal Cortex Adenoma
     Version: 20.05a
-  Bladder:
-    Code: C12414
-    Definition: The distensible sac-like organ that functions as a reservoir of urine,
-      collecting from the kidneys and eliminating via the urethra.
-    Origin: NCIt
-    Value: Bladder
-    Version: 20.05a
   Bladder Cancer:
     Code: C4912
     Definition: A carcinoma arising from the bladder epithelium. Approximately 90%
@@ -16147,6 +16190,13 @@ Terms:
       walls of the bladder converge and become contiguous with the proximal urethra.
     Origin: NCIt
     Value: Bladder Neck
+    Version: 20.05a
+  Bladder, NOS:
+    Code: C12414
+    Definition: The distensible sac-like organ that functions as a reservoir of urine,
+      collecting from the kidneys and eliminating via the urethra.
+    Origin: NCIt
+    Value: Bladder
     Version: 20.05a
   Blast cell leukemia:
     Code: C9300
@@ -16933,14 +16983,14 @@ Terms:
     Version: 20.10d
   CD10:
     Code: C16836
-    Definition: Neprilysin (750 aa, ~86 kDa) is encoded by the human MME gene. This
+    Definition: Neprilysin (750 aa, null86 kDa) is encoded by the human MME gene. This
       protein is involved in the metabolism of biologically active peptides.
     Origin: NCIt
     Value: Neprilysin
     Version: 20.10d
   CD117:
     Code: C17328
-    Definition: Mast/stem cell growth factor receptor Kit (976 aa, ~110 kDa) is encoded
+    Definition: Mast/stem cell growth factor receptor Kit (976 aa, null110 kDa) is encoded
       by the human KIT gene. This protein is involved in cell survival, tyrosine phosphorylation
       and ligand-mediated signaling.
     Origin: NCIt
@@ -17001,7 +17051,7 @@ Terms:
     Version: 20.10d
   CD138:
     Code: C96914
-    Definition: Syndecan-1 (310 aa, ~32 kDa) is encoded by the human SDC1 gene. This
+    Definition: Syndecan-1 (310 aa, null32 kDa) is encoded by the human SDC1 gene. This
       protein is involved in the mediation of cell adhesion, signaling and cytoskeletal
       organization.
     Origin: NCIt
@@ -17009,7 +17059,7 @@ Terms:
     Version: 20.10d
   CD14:
     Code: C17488
-    Definition: Monocyte differentiation antigen CD14 (375 aa, ~40 kDa) is encoded
+    Definition: Monocyte differentiation antigen CD14 (375 aa, null40 kDa) is encoded
       by the human CD14 gene. This protein plays a role in the innate immune response
       to lipopolysaccharide exposure.
     Origin: NCIt
@@ -17026,14 +17076,14 @@ Terms:
     Version: 20.10d
   CD19:
     Code: C38894
-    Definition: B-lymphocyte antigen CD19 (556 aa, ~61 kDa) is encoded by the human
+    Definition: B-lymphocyte antigen CD19 (556 aa, null61 kDa) is encoded by the human
       CD19 gene. This protein is involved in enhancing B-cell receptor-dependent signaling.
     Origin: NCIt
     Value: B-Lymphocyte Antigen CD19
     Version: 20.10d
   CD20:
     Code: C38896
-    Definition: B-lymphocyte antigen CD20 (297 aa, ~33 kDa) is encoded by the human
+    Definition: B-lymphocyte antigen CD20 (297 aa, null33 kDa) is encoded by the human
       MS4A1 gene. This protein plays a role in both the activation and proliferation
       of B-cells.
     Origin: NCIt
@@ -17064,7 +17114,7 @@ Terms:
     Version: 20.10d
   CD22:
     Code: C17279
-    Definition: B-cell receptor CD22 (847 aa, ~95 kDa) is encoded by the human CD22
+    Definition: B-cell receptor CD22 (847 aa, null95 kDa) is encoded by the human CD22
       gene. This protein is involved in B-cell/B-cell interactions and downstream
       signaling.
     Origin: NCIt
@@ -17072,7 +17122,7 @@ Terms:
     Version: 20.10d
   CD23:
     Code: C96902
-    Definition: Low affinity immunoglobulin epsilon Fc receptor (321 aa, ~36 kDa)
+    Definition: Low affinity immunoglobulin epsilon Fc receptor (321 aa, null36 kDa)
       is encoded by the human FCER2 gene. This protein is involved in B cell differentiation
       and IgE production.
     Origin: NCIt
@@ -17080,7 +17130,7 @@ Terms:
     Version: 20.10d
   CD25:
     Code: C17073
-    Definition: Interleukin-2 receptor subunit alpha (272 aa, ~31 kDa) is encoded
+    Definition: Interleukin-2 receptor subunit alpha (272 aa, null31 kDa) is encoded
       by the human IL2RA gene. This protein plays a role in interleukin-2-dependent
       signaling.
     Origin: NCIt
@@ -17133,7 +17183,7 @@ Terms:
     Version: 20.10d
   CD30:
     Code: C38906
-    Definition: Tumor necrosis factor receptor superfamily member 8 (595 aa, ~ 64
+    Definition: Tumor necrosis factor receptor superfamily member 8 (595 aa, null 64
       kDa) is encoded by the human TNFRSF8 gene. This protein is involved in ligand-mediated
       signal transduction, the positive regulation of apoptosis and the inhibition
       of cell proliferation.
@@ -17142,7 +17192,7 @@ Terms:
     Version: 20.10d
   CD33:
     Code: C97246
-    Definition: Myeloid cell surface antigen CD33 (364 aa, ~40 kDa) is encoded by
+    Definition: Myeloid cell surface antigen CD33 (364 aa, null40 kDa) is encoded by
       the human CD33 gene. This protein is involved in the mediation of cell adhesion
       and the regulation of cell-cell signaling.
     Origin: NCIt
@@ -17150,12 +17200,19 @@ Terms:
     Version: 20.10d
   CD34:
     Code: C17280
-    Definition: Hematopoietic progenitor cell antigen CD34 (385 aa, ~41 kDa) is encoded
+    Definition: Hematopoietic progenitor cell antigen CD34 (385 aa, null41 kDa) is encoded
       by the human CD34 gene. This protein plays a role in cell-cell adhesion and
       may have a role in leukocyte migration.
     Origin: NCIt
     Value: Hematopoietic Progenitor Cell Antigen CD34
     Version: 20.10d
+  CD43:
+    Code: C101153
+    Definition: Leukosialin (400 aa, null40 kDa) is encoded by the human SPN gene. This
+      protein is involved in immune cell function.
+    Origin: NCIt
+    Value: Leukosialin
+    Version: 23.08d
   CD44v6-specific CAR T-cells:
     Code: C173368
     Definition: A preparation of genetically modified T-lymphocytes transduced with
@@ -17172,14 +17229,14 @@ Terms:
     Version: 20.10d
   CD45:
     Code: C17282
-    Definition: Receptor-type tyrosine-protein phosphatase C (1304 aa, ~147 kDa) is
+    Definition: Receptor-type tyrosine-protein phosphatase C (1304 aa, null147 kDa) is
       encoded by the human PTPRC gene. This protein plays a role in protein dephosphorylation.
     Origin: NCIt
     Value: Receptor-Type Tyrosine-Protein Phosphatase C
     Version: 20.10d
   CD5:
     Code: C73124
-    Definition: T-cell surface glycoprotein CD5 (495 aa, ~54 kDa) is encoded by the
+    Definition: T-cell surface glycoprotein CD5 (495 aa, null54 kDa) is encoded by the
       human CD5 gene. This protein may be involved in regulating the proliferation
       of T-cells.
     Origin: NCIt
@@ -17198,7 +17255,7 @@ Terms:
     Version: 20.10d
   CD7:
     Code: C38935
-    Definition: T-cell antigen CD7 (240 aa, ~25 kDa) is encoded by the human CD7 gene.
+    Definition: T-cell antigen CD7 (240 aa, null25 kDa) is encoded by the human CD7 gene.
       This protein plays a role in the development and function of lymphoid cells.
     Origin: NCIt
     Value: T-Cell Antigen CD7
@@ -17517,7 +17574,7 @@ Terms:
     Version: 20.10d
   CENP-A:
     Code: C152974
-    Definition: Histone H3-like centromeric protein A (140 aa, ~16 kDa) is encoded
+    Definition: Histone H3-like centromeric protein A (140 aa, null16 kDa) is encoded
       by the human CENPA gene. This protein plays a role in cell cycle progression,
       cell division and centromeric nucleosome assembly.
     Origin: NCIt
@@ -20069,6 +20126,13 @@ Terms:
     Origin: NCIt
     Value: Connective Tissue
     Version: 20.10d
+  Continuous:
+    Code: C53279
+    Definition: Remain in force or carry on without letup; keep or maintain in unaltered
+      condition; exist in time or space without stop or interruption.
+    Origin: NCIt
+    Value: Continue
+    Version: 23.08d
   Conventional central osteosarcoma:
     Code: C35870
     Definition: A high grade malignant bone-forming mesenchymal neoplasm producing
@@ -27056,35 +27120,35 @@ Terms:
     Version: 20.10d
   H2A.X:
     Code: C19432
-    Definition: Histone H2AX (143 aa, ~15 kDa) is encoded by the human H2AX gene.
+    Definition: Histone H2AX (143 aa, null15 kDa) is encoded by the human H2AX gene.
       This protein plays a role in nucleosome formation and V(D)J recombination.
     Origin: NCIt
     Value: Histone H2AX
     Version: 20.10d
   H2A.Z:
     Code: C126766
-    Definition: Histone H2A.Z (128 aa, ~14 kDa) is encoded by the human H2AZ1 gene.
+    Definition: Histone H2A.Z (128 aa, null14 kDa) is encoded by the human H2AZ1 gene.
       This protein is involved in nucleosome and heterochromatin formation.
     Origin: NCIt
     Value: Histone H2A.Z
     Version: 20.10d
   H2A.Z.1:
     Code: C126766
-    Definition: Histone H2A.Z (128 aa, ~14 kDa) is encoded by the human H2AZ1 gene.
+    Definition: Histone H2A.Z (128 aa, null14 kDa) is encoded by the human H2AZ1 gene.
       This protein is involved in nucleosome and heterochromatin formation.
     Origin: NCIt
     Value: Histone H2A.Z
     Version: 20.10d
   H2A.Z.2:
     Code: C162832
-    Definition: Histone H2A.V (128 aa, ~14 kDa) is encoded by the human H2AZ2 gene.
+    Definition: Histone H2A.V (128 aa, null14 kDa) is encoded by the human H2AZ2 gene.
       This protein is involved in nucleosome formation.
     Origin: NCIt
     Value: Histone H2A.V
     Version: 20.10d
   H2A.Z.2.2:
     Code: C162834
-    Definition: Histone H2A.V isoform 2 (114 aa, ~12 kDa) is encoded by the human
+    Definition: Histone H2A.V isoform 2 (114 aa, null12 kDa) is encoded by the human
       H2AZ2 gene. This protein plays a role in nucleosome stability.
     Origin: NCIt
     Value: Histone H2A.V Isoform 2
@@ -27115,7 +27179,7 @@ Terms:
     Version: 20.10d
   H3.1:
     Code: C101734
-    Definition: Histone H3.1 (136 aa, ~15 kDa) is encoded by the human H3C1, H3C2,
+    Definition: Histone H3.1 (136 aa, null15 kDa) is encoded by the human H3C1, H3C2,
       H3C3, H3C4, H3C6, H3C7, H3C8, H3C10, H3C11 and H3C12 genes. This protein plays
       a role in the formation of chromatin structures.
     Origin: NCIt
@@ -27123,7 +27187,7 @@ Terms:
     Version: 20.10d
   H3.2:
     Code: C148067
-    Definition: Histone H3.2 (136 aa, ~15 kDa) is encoded by the human H3C13, H3C14
+    Definition: Histone H3.2 (136 aa, null15 kDa) is encoded by the human H3C13, H3C14
       and H3C15 genes. This protein plays a role in nucleosome remodeling and chromosomal
       structure.
     Origin: NCIt
@@ -27131,14 +27195,14 @@ Terms:
     Version: 20.10d
   H3.3:
     Code: C101445
-    Definition: Histone H3.3 (136 aa, ~15 kDa) is encoded by both the human H3-3A
+    Definition: Histone H3.3 (136 aa, null15 kDa) is encoded by both the human H3-3A
       and H3-3B genes. This protein plays a role in chromosomal structure.
     Origin: NCIt
     Value: Histone H3.3
     Version: 20.10d
   H3.5:
     Code: C154668
-    Definition: Histone H3.3C (135 aa, ~15 kDa) is encoded by the human H3-5 gene.
+    Definition: Histone H3.3C (135 aa, null15 kDa) is encoded by the human H3-5 gene.
       This protein is involved in the modulation of DNA accessibility to the transcriptional
       machinery.
     Origin: NCIt
@@ -27153,7 +27217,7 @@ Terms:
     Version: 20.10d
   H3.Y:
     Code: C155738
-    Definition: Histone H3.Y (136 aa, ~15 kDa) is encoded by the human H3.Y gene.
+    Definition: Histone H3.Y (136 aa, null15 kDa) is encoded by the human H3.Y gene.
       This protein may be involved in both transcriptional regulation and the formation
       of higher order chromatin structures.
     Origin: NCIt
@@ -27173,14 +27237,14 @@ Terms:
     Version: 20.10d
   H3t (H3.4):
     Code: C154671
-    Definition: Histone H3.1t (136 aa, ~16 kDa) is encoded by the human H3-4 gene.
+    Definition: Histone H3.1t (136 aa, null16 kDa) is encoded by the human H3-4 gene.
       This protein is involved in formation of higher order chromatin structures.
     Origin: NCIt
     Value: Histone H3.1t
     Version: 20.10d
   H4:
     Code: C16686
-    Definition: Histone H4 (103 aa, ~11 kDa) is encoded by the human H4C1, H4C2, H4C3,
+    Definition: Histone H4 (103 aa, null11 kDa) is encoded by the human H4C1, H4C2, H4C3,
       H4C4, H4C5, H4C6, H4C6, H4C8, H4C9, H4C11, H4C12, H4C13, H4C14, H4C15, H4-16
       genes. This protein plays a role in nucleating the formation of high order chromatin
       structures as a part of nucleosomes.
@@ -28332,6 +28396,12 @@ Terms:
     Origin: NCIt
     Value: Holy See
     Version: 19.12e
+  Home:
+    Code: C18002
+    Definition: A person\'s place of residence.
+    Origin: NCIt
+    Value: Home
+    Version: 23.08d
   Homozygous:
     Code: C45826
     Definition: Having two identical allelic forms of a gene, one inherited from each
@@ -29657,6 +29727,12 @@ Terms:
     Origin: NCIt
     Value: Intermediate Risk
     Version: 20.05a
+  Intermittent:
+    Code: C71325
+    Definition: Periodically stopping and starting.
+    Origin: NCIt
+    Value: Intermittent
+    Version: 23.08d
   Interstitial cell tumor, NOS:
     Code: C3188
     Definition: A sex cord-stromal tumor occurring in the testis and rarely in the
@@ -32455,7 +32531,7 @@ Terms:
     Origin: NCIt
     Value: Inguinal Lymph Node
     Version: 20.05a
-  Lymph Node, NOS:
+  Lymph node, NOS:
     Code: C12745
     Definition: A bean-shaped organ surrounded by a connective tissue capsule. It
       is part of the lymphatic system and is found throughout the body. It is composed
@@ -35251,7 +35327,7 @@ Terms:
     Version: 20.05a
   Mesothelin:
     Code: C20887
-    Definition: Mesothelin (630 aa, ~69 kDa) is encoded by the human MSLN gene. This
+    Definition: Mesothelin (630 aa, null69 kDa) is encoded by the human MSLN gene. This
       protein may play a role in cellular adhesion.
     Origin: NCIt
     Value: '''Mesothelin'''
@@ -35382,6 +35458,16 @@ Terms:
     Origin: NCIt
     Value: Skin Metatypical Carcinoma
     Version: 20.05a
+  Metformin:
+    Code: C61612
+    Definition: An agent belonging to the biguanide class of antidiabetics with antihyperglycemic
+      activity. Metformin is associated with a very low incidence of lactic acidosis.
+      This agent helps reduce LDL cholesterol and triglyceride levels, and is not
+      associated with weight gain, and prevents the cardiovascular complications of
+      diabetes. Metformin is not metabolized and is excreted unchanged by the kidneys.
+    Origin: NCIt
+    Value: Metformin
+    Version: 23.08d
   Methylation:
     Code: C16848
     Definition: The covalent chemical or biochemical addition of a methyl group(s)
@@ -35551,6 +35637,13 @@ Terms:
     Origin: NCIt
     Value: Microsatellite Instability Analysis
     Version: 20.10d
+  Microscopy, NOS:
+    Code: C16853
+    Definition: The use of various technologies to resolve the structure or features
+      of objects too small or fine to naturally be seen by eye.
+    Origin: NCIt
+    Value: Microscopy
+    Version: 23.08d
   Middle ear:
     Code: C12274
     Definition: The part of the ear including the eardrum and ossicles. The middle
@@ -37461,7 +37554,7 @@ Terms:
     Version: 20.10d
   NSE:
     Code: C62216
-    Definition: Gamma-enolase (434 aa, ~47 kDa) is encoded by the human ENO2 gene.
+    Definition: Gamma-enolase (434 aa, null47 kDa) is encoded by the human ENO2 gene.
       This protein is involved in glycolysis, neurotrophy and neuroprotection.
     Origin: NCIt
     Value: Gamma-Enolase
@@ -42509,6 +42602,16 @@ Terms:
     Origin: NCIt
     Value: Pulmonary Blastoma
     Version: 20.05a
+  Pneumonia, NOS:
+    Code: C3333
+    Definition: An acute, acute and chronic, or chronic inflammation focally or diffusely
+      affecting the lung parenchyma, due to infections (viruses, fungi, mycoplasma,
+      or bacteria), treatment (e.g. radiation), or exposure (inhalation) to chemicals.
+      Symptoms include cough, shortness of breath, fevers, chills, chest pain, headache,
+      sweating, and weakness.
+    Origin: NCIt
+    Value: Pneumonia
+    Version: 23.03d
   Poland:
     Code: C17002
     Definition: A country in central Europe, east of Germany.
@@ -42603,12 +42706,12 @@ Terms:
     Value: Yolk Sac Tumor
     Version: 20.05a
   Poorly Differentiated:
-    Code: C14167
-    Definition: Describes tumor cells that generally have lost most of the appearance
-      of normal cells. They tend to grow and spread.
+    Code: C42047
+    Definition: A neuroblastoma in which the differentiating neuroblasts constitute
+      less than five-percent of the tumor cells.
     Origin: NCIt
-    Value: Poorly Differentiated
-    Version: 23.03d
+    Value: Poorly Differentiated Neuroblastoma
+    Version: 20.05a
   Poorly cohesive carcinoma:
     Code: C4127
     Definition: An adenocarcinoma characterized by the presence of a diffuse cellular
@@ -43200,7 +43303,7 @@ Terms:
     Version: 20.05a
   Prostate-Specific Antigen (PSA):
     Code: C17525
-    Definition: Prostate-specific antigen (261 aa, ~29 kDa) is encoded by the human
+    Definition: Prostate-specific antigen (261 aa, null29 kDa) is encoded by the human
       KLK3 gene. This protein plays a role in both proteolysis and seminal fluid liquefaction.
     Origin: NCIt
     Value: Prostate-Specific Antigen
@@ -46381,7 +46484,7 @@ Terms:
       or longer.
     Origin: NCIt
     Value: Six Weeks or More
-    Version: 19.12e
+    Version: ''
   Skin:
     Code: C12470
     Definition: An organ that constitutes the external surface of the body. It consists
@@ -46611,6 +46714,12 @@ Terms:
     Origin: NCIt
     Value: Smooth Muscle Neoplasm
     Version: 20.05a
+  Social:
+    Code: C102712
+    Definition: The surroundings or environment in which social activities occur.
+    Origin: NCIt
+    Value: Social Setting
+    Version: 23.08d
   Social Security Death Index:
     Code: C107424
     Definition: A publically-accessible database derived from the Social Security
@@ -51477,6 +51586,12 @@ Terms:
     Origin: NCIt
     Value: Ukraine
     Version: 19.12e
+  Ultrasound:
+    Code: C17230
+    Definition: The use of high-frequency sound waves to generate images of the body.
+    Origin: NCIt
+    Value: Ultrasound Imaging
+    Version: 23.08d
   Ultrasound Guided Biopsy:
     Code: C93022
     Definition: Biopsy of tissue using ultrasound imaging as an aid in directing a
@@ -51715,7 +51830,7 @@ Terms:
     Origin: NCIt
     Value: Upifitamab
     Version: 20.10d
-  Upper gum:
+  Upper Gum:
     Code: C54205
     Definition: Upper Gingiva
     Origin: NCIt
@@ -51906,13 +52021,6 @@ Terms:
     Origin: NCIt
     Value: Uruguay
     Version: 19.12e
-  Uterine Adnexa:
-    Code: C12321
-    Definition: The accessory structures of the uterus, including the ovaries, fallopian
-      tubes, broad ligament, and the ovarian and uterine ligaments.
-    Origin: NCIt
-    Value: Appendage of the Uterus
-    Version: 20.05a
   Uterine Cancer:
     Code: C3552
     Definition: Primary or metastatic malignant neoplasm involving the uterine corpus
@@ -51920,6 +52028,13 @@ Terms:
     Origin: NCIt
     Value: Malignant Uterine Neoplasm
     Version: 19.12e
+  Uterine adnexa:
+    Code: C12321
+    Definition: The accessory structures of the uterus, including the ovaries, fallopian
+      tubes, broad ligament, and the ovarian and uterine ligaments.
+    Origin: NCIt
+    Value: Appendage of the Uterus
+    Version: 20.05a
   Uterus, NOS:
     Code: C12405
     Definition: A hollow, thick-walled, muscular organ located within the pelvic cavity
@@ -52671,6 +52786,12 @@ Terms:
     Origin: NCIt
     Value: Wood-Burning Factory Smoke Exposure
     Version: 19.12e
+  Work:
+    Code: C17556
+    Definition: The physical location where work or employment takes place.
+    Origin: NCIt
+    Value: Worksite
+    Version: 23.08d
   Work-related smoke, NOS:
     Code: C164103
     Definition: Occupational exposure to airborne gases and particulates produced
@@ -53126,8 +53247,11 @@ Terms:
     Version: 1.1
   adverse_event_grade:
     Code: 2944515
-    Definition: The text term used to describe a specific histone variants, which
-      are proteins that substitute for the core canonical histones.
+    Definition: Numeric representation of the intensity/severity of an unfavorable
+      and unintended sign (including an abnormal laboratory finding), symptom, syndrome,
+      or disease, temporally associated with the use of a medical product or procedure,
+      regardless of whether or not it is considered related to the product or procedure
+      (attribution of unrelated, unlikely, possible, probable, or definite).
     Origin: caDSR
     Value: Adverse Event Severity Grade
     Version: 1
@@ -54690,6 +54814,13 @@ Terms:
     Origin: NCIt
     Value: Extrascleral Extension of Uveal Melanoma
     Version: 22.11d
+  extrathyroid_extension:
+    Code: 3179452
+    Definition: Text term to describe the degree to which the primary tumor has extra
+      thyroid extension.
+    Origin: caDSR
+    Value: Extrathyroid Carcinoma Present Extension Status
+    Version: 1
   eye_color:
     Code: C157437
     Definition: The color of the iris of the eye
@@ -54977,6 +55108,13 @@ Terms:
     Origin: NCIt
     Value: '''Hispanic or Latino'''
     Version: 19.12e
+  histologic_progression_type:
+    Code: 3181384
+    Definition: Text term to describe the disease progression as determined by microscopic
+      review of cells and their surrounding extracellular environment in tissues.
+    Origin: caDSR
+    Value: Histologic Disease Progression Present Type
+    Version: 1
   histone_family:
     Code: 6142511
     Definition: The text term used to describe the family, or classification of a
@@ -55179,11 +55317,11 @@ Terms:
     Value: Index Date Type
     Version: 1
   induction:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   initial_disease_status:
     Code: ''
     Definition: The text term used to describe the status of the patient\'s malignancy
@@ -55305,11 +55443,11 @@ Terms:
     Value: Multiple Myeloma Disease Stage Diagnosis Status
     Version: 1
   iv:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   karnofsky_performance_status:
     Code: 2003853
     Definition: Text term used to describe the classification used of the functional
@@ -55516,14 +55654,14 @@ Terms:
     Version: 20.10d
   mH2A.1:
     Code: C113624
-    Definition: Core histone macro-H2A.1 (372 aa, ~40 kDa) is encoded by the human
+    Definition: Core histone macro-H2A.1 (372 aa, null40 kDa) is encoded by the human
       MACROH2A1 gene. This protein plays a role in chromatin modification.
     Origin: NCIt
     Value: Core Histone Macro-H2A.1
     Version: 20.10d
   mH2A.2:
     Code: C154659
-    Definition: Core histone macro-H2A.2 (372 aa, ~40 kDa) is encoded by the human
+    Definition: Core histone macro-H2A.2 (372 aa, null40 kDa) is encoded by the human
       MACROH2A2 gene. This protein plays a role in nucleosome formation and transcriptional
       repression.
     Origin: NCIt
@@ -55544,11 +55682,11 @@ Terms:
     Value: Gross
     Version: 20.05a
   maf:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   male:
     Code: C20197
     Definition: A person who belongs to the sex that normally produces sperm. The
@@ -55807,6 +55945,15 @@ Terms:
     Origin: ''
     Value: ''
     Version: ''
+  myasthenia_gravis_classification:
+    Code: C187352
+    Definition: A finding associated with a patient with myasthenia gravis that is
+      based on the classification system developed by the Myasthenia Gravis Foundation
+      of America (MGFA) for grading myasthenia gravis that divides the disease into
+      5 main classes and several subclasses.
+    Origin: NCIt
+    Value: Myasthenia Gravis Foundation of America Class
+    Version: 23.08d
   nadir_cd4_count:
     Code: ''
     Definition: Numeric value that represents the lowest point to which the CD4 count
@@ -55955,6 +56102,18 @@ Terms:
     Origin: caDSR
     Value: Ovary Surface Involvement Indicator
     Version: 1
+  oxygen_use_indicator:
+    Code: 7847908
+    Definition: An indication whether administration of oxygen to an individual occurred.
+    Origin: caDSR
+    Value: Oxygen Therapy Administered Indicator
+    Version: 1
+  oxygen_use_type:
+    Code: 3181408
+    Definition: Text term to describe the type of oxygen the patient uses at home.
+    Origin: caDSR
+    Value: Patient Oxygen Use Type
+    Version: 1
   p97 Inhibitor CB-5339:
     Code: C167257
     Definition: An orally bioavailable, selective, second-generation inhibitor of
@@ -56099,9 +56258,9 @@ Terms:
     Value: Specimen Follicular Features Percentage Value
     Version: ''
   percent_gc_content:
-    Code: ''
+    Code: C181848
     Definition: The overall %GC of all bases in all sequences.
-    Origin: FastQC
+    Origin: NCIt
     Value: '%GC'
     Version: ''
   percent_granulocyte_infiltration:
@@ -56259,16 +56418,6 @@ Terms:
     Origin: caDSR
     Value: Molecular Laboratory Procedure Ploidy Result Type
     Version: 1
-  pneumonia_nos:
-    Code: C3333
-    Definition: An acute, acute and chronic, or chronic inflammation focally or diffusely
-      affecting the lung parenchyma, due to infections (viruses, fungi, mycoplasma,
-      or bacteria), treatment (e.g. radiation), or exposure (inhalation) to chemicals.
-      Symptoms include cough, shortness of breath, fevers, chills, chest pain, headache,
-      sweating, and weakness.
-    Origin: NCIt
-    Value: Pneumonia
-    Version: 23.03d
   portion_number:
     Code: 5432711
     Definition: Numeric value that represents the sequential number assigned to a
@@ -56509,6 +56658,13 @@ Terms:
     Origin: caDSR
     Value: Race Category Text
     Version: 1
+  radiosensitizing_agent:
+    Code: C798
+    Definition: Indication if an agent that makes tumor cells more sensitive to radiation
+      therapy was used in treatment.
+    Origin: NCIt
+    Value: Radiosensitizing Agent
+    Version: 23.08d
   radon_exposure:
     Code: 2816352
     Definition: The yes/no/unknown indicator used to describe whether the patient
@@ -56542,6 +56698,12 @@ Terms:
     Origin: ''
     Value: Treatment Ended Reason
     Version: ''
+  reason_treatment_not_given:
+    Code: C102704
+    Definition: The reason the treatment was not administered.
+    Origin: NCIt
+    Value: Reason Treatment Not Administered
+    Version: 23.08d
   recist_targeted_regions_number:
     Code: ''
     Definition: Numeric value that represents the number of baseline target lesions,
@@ -56980,11 +57142,11 @@ Terms:
     Value: Cell Morphology Percent Uveal Spindle Cell Melanoma Integer
     Version: 1
   stage_0:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   stain_type:
     Code: ''
     Definition: The text term used to describe the type of stain used on a slide.
@@ -56997,6 +57159,13 @@ Terms:
     Origin: ''
     Value: ''
     Version: ''
+  staining_intensity_value:
+    Code: C127762
+    Definition: The degree or magnitude of staining by a dye or reagent within a microscopic
+      specimen.
+    Origin: NCIt
+    Value: Staining Intensity
+    Version: 23.08d
   state:
     Code: ''
     Definition: The current state of the object.
@@ -57019,29 +57188,29 @@ Terms:
     Value: Malignant Disease Diagnosis Synchronous Indicator
     Version: 1
   t1b1:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   t1b2:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   t2a1:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   t2a2:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   target_capture_kit:
     Code: ''
     Definition: Description that can uniquely identify a target capture kit. Suggested
@@ -57127,12 +57296,27 @@ Terms:
     Origin: ''
     Value: ''
     Version: ''
+  therapeutic_levels_achieved:
+    Code: C198198
+    Definition: An indication that the intended level of therapeutic agent was achieved
+      in an individual.
+    Origin: NCIt
+    Value: Therapeutic Agent Level Achieved Indicator
+    Version: 23.08d
   therapeutic_target_level:
     Code: ''
     Definition: Describes a specific target for an administered treatment.
     Origin: ''
     Value: ''
     Version: ''
+  thyroid_gland_isthmus:
+    Code: C32887
+    Definition: The narrow, central portion of the thyroid gland that crosses the
+      trachea anteriorly and connects the lateral lobes of the gland. When present,
+      the normal variant pyramidal lobe may extend from the isthmus.
+    Origin: NCIt
+    Value: Thyroid Gland Isthmus
+    Version: 23.08d
   time_between_clamping_and_freezing:
     Code: 5432611
     Definition: Numeric representation of the elapsed time between the surgical clamping
@@ -57662,11 +57846,11 @@ Terms:
     Value: Universally Unique Identifier
     Version: ''
   v:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   variant_origin:
     Code: ''
     Definition: The text term used to describe the biological origin of a specific
@@ -57753,11 +57937,11 @@ Terms:
     Value: ''
     Version: ''
   white:
-    Code: ~
-    Definition: ~
-    Origin: ~
-    Value: ~
-    Version: ~
+    Code: null
+    Definition: null
+    Origin: null
+    Value: null
+    Version: null
   who_cns_grade:
     Code: ''
     Definition: The WHO (World Health Organization) grading classification of CNS
