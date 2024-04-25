@@ -1485,6 +1485,8 @@ PropDefinitions:
         Type: TBD
     aliquot.analyte_type_id:
         Desc: A single letter code used to identify a type of molecular analyte.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 5432508
             Origin: caDSR
@@ -1581,6 +1583,8 @@ PropDefinitions:
         - W
         - X
         - Y
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 5432508
             Origin: caDSR
@@ -4231,6 +4235,8 @@ PropDefinitions:
         - '"No"'
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 6010765
             Origin: caDSR
@@ -4278,6 +4284,8 @@ PropDefinitions:
         Desc: Numeric value used to describe the number of weeks starting from the
             approximate date of the biological mother's last menstrual period and
             ending with the birth of the patient.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 2737369
             Origin: caDSR
@@ -4315,6 +4323,8 @@ PropDefinitions:
             method of counting varies, according to the specific tumor examined. Usually,
             the mitotic count is determined based on the number of mitoses per high
             power field (40X) or 10 high power fields.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: C47864
             Origin: NCIt
@@ -4329,6 +4339,8 @@ PropDefinitions:
         - '"No"'
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     diagnosis.progression_or_recurrence:
         Desc: Indicates whether a patient has a progression or recurrence after initial
             treatment. This can include local, regional, or metastatic disease.
@@ -5102,9 +5114,13 @@ PropDefinitions:
         - Salmonella Septicemia
         - Toxoplasmosis
         - Wasting Syndrome
+        Tags:
+            Deprecated: true
     follow_up.bmi:
         Desc: A calculated numerical quantity that represents an individual's weight
             to height ratio.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 2006410
             Origin: caDSR
@@ -5114,6 +5130,8 @@ PropDefinitions:
     follow_up.body_surface_area:
         Desc: Numeric value used to represent the 2-dimensional extent of the body
             surface relating height to weight.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 653
             Origin: caDSR
@@ -5126,6 +5144,8 @@ PropDefinitions:
     follow_up.cd4_count:
         Desc: The text term used to describe the outcome of the procedure to determine
             the amount of the CD4 expressing cells in a sample.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 4182751
             Origin: caDSR
@@ -5144,9 +5164,13 @@ PropDefinitions:
         - Transfusion Recipient
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.comorbidities:
         Desc: The text term used to describe a comorbidity disease, which coexists
             with the patient's malignant disease.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 2970715
             Origin: caDSR
@@ -5162,6 +5186,8 @@ PropDefinitions:
         - Radiology
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 6142386
             Origin: caDSR
@@ -5170,6 +5196,8 @@ PropDefinitions:
     follow_up.days_to_comorbidity:
         Desc: Number of days between the date used for index and the date the patient
             was diagnosed with a comorbidity.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 6154729
             Origin: caDSR
@@ -5200,6 +5228,8 @@ PropDefinitions:
         - Other
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3587247
             Origin: caDSR
@@ -5210,6 +5240,8 @@ PropDefinitions:
     follow_up.dlco_ref_predictive_percent:
         Desc: The value, as a percentage of predicted lung volume, measuring the amount
             of carbon monoxide detected in a patient's lungs.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 2180255
             Origin: caDSR
@@ -5229,6 +5261,8 @@ PropDefinitions:
         - Red & Violet
         - Other
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: C157437
             Origin: NCIt
@@ -5237,6 +5271,8 @@ PropDefinitions:
     follow_up.fev1_fvc_post_bronch_percent:
         Desc: Percentage value to represent result of Forced Expiratory Volume in
             1 second (FEV1) divided by the Forced Vital Capacity (FVC) post-bronchodilator.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3302956
             Origin: caDSR
@@ -5246,6 +5282,8 @@ PropDefinitions:
     follow_up.fev1_fvc_pre_bronch_percent:
         Desc: Percentage value to represent result of Forced Expiratory Volume in
             1 second (FEV1) divided by the Forced Vital Capacity (FVC) pre-bronchodilator.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3302955
             Origin: caDSR
@@ -5256,6 +5294,8 @@ PropDefinitions:
         Desc: The percentage comparison to a normal value reference range of the volume
             of air that a patient can forcibly exhale from the lungs in one second
             post-bronchodilator.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3302948
             Origin: caDSR
@@ -5267,6 +5307,8 @@ PropDefinitions:
         Desc: The percentage comparison to a normal value reference range of the volume
             of air that a patient can forcibly exhale from the lungs in one second
             pre-bronchodilator.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3302947
             Origin: caDSR
@@ -5282,8 +5324,12 @@ PropDefinitions:
         - '"No"'
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.height:
         Desc: The height of the patient in centimeters.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 649
             Origin: caDSR
@@ -5298,6 +5344,8 @@ PropDefinitions:
         - '"No"'
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 6423783
             Origin: caDSR
@@ -5307,6 +5355,8 @@ PropDefinitions:
         Desc: Numeric value that represents the concentration of an analyte or aliquot
             extracted from the sample or sample portion, measured in milligrams per
             milliliter.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 2649682
             Origin: caDSR
@@ -5320,6 +5370,8 @@ PropDefinitions:
         - Progestin and Estrogen
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.hormonal_contraceptive_use:
         Desc: The text term used to indicate whether the patient used hormonal contraceptives.
         Enum:
@@ -5328,6 +5380,8 @@ PropDefinitions:
         - Never Used
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.hormone_replacement_therapy_type:
         Desc: The specific type of hormone replacement therapy received by the patient.
         Enum:
@@ -5336,6 +5390,8 @@ PropDefinitions:
         - Progesterone only
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.hysterectomy_margins_involved:
         Desc: The text term used to indicate whether the patient's disease was determined
             to be involved based on the surgical margins of the hysterectomy.
@@ -5347,6 +5403,8 @@ PropDefinitions:
         - Vagina
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.hysterectomy_type:
         Desc: The text term used to describe the type of hysterectomy the patient
             had.
@@ -5357,6 +5415,8 @@ PropDefinitions:
         - Simple Hysterectomy
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.immunosuppressive_treatment_type:
         Desc: The text term used to describe the type of immunosuppresive treatment
             the patient received.
@@ -5369,6 +5429,8 @@ PropDefinitions:
         - Other
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.menopause_status:
         Desc: Text term used to describe the patient's menopause status.
         Enum:
@@ -5377,6 +5439,8 @@ PropDefinitions:
         - Premenopausal
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 2434914
             Origin: caDSR
@@ -5385,10 +5449,14 @@ PropDefinitions:
     follow_up.nadir_cd4_count:
         Desc: Numeric value that represents the lowest point to which the CD4 count
             has dropped (nadir).
+        Tags:
+            Deprecated: true
         Type: number
     follow_up.pancreatitis_onset_year:
         Desc: Numeric value to represent the year that the patient was diagnosed with
             clinical chronic pancreatitis.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3457763
             Origin: caDSR
@@ -5397,6 +5465,8 @@ PropDefinitions:
         Type: integer
     follow_up.pregnancy_count:
         Desc: The number of times an individual has become pregnant.
+        Tags:
+            Deprecated: true
         Type: integer
     follow_up.pregnancy_outcome:
         Desc: The text term used to describe the type of pregnancy the patient had.
@@ -5409,6 +5479,8 @@ PropDefinitions:
         - Stillbirth
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.progression_or_recurrence:
         Desc: Indicates whether a patient has a progression or recurrence after initial
             treatment. This can include local, regional, or metastatic disease.
@@ -5435,6 +5507,8 @@ PropDefinitions:
         - Unknown
         - Not Reported
         - Not Applicable
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 3440206
             Origin: caDSR
@@ -5448,6 +5522,8 @@ PropDefinitions:
         - Both Clinical and Biochemical Assessments
         - Clinical Assessment
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: C177576
             Origin: NCIt
@@ -5462,6 +5538,8 @@ PropDefinitions:
         - '"No"'
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 6514356
             Origin: caDSR
@@ -5470,6 +5548,8 @@ PropDefinitions:
     follow_up.risk_factors:
         Desc: The text term used to describe a risk factor the patient had at the
             time of or prior to their diagnosis.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 6142389
             Origin: caDSR
@@ -5509,8 +5589,12 @@ PropDefinitions:
         - '"Yes"'
         - '"No"'
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.undescended_testis_corrected_age:
         Desc: The patient's age when their undescended testis was corrected.
+        Tags:
+            Deprecated: true
         Type: integer
     follow_up.undescended_testis_corrected_laterality:
         Desc: Describes the lateral location of the patient's undescended testis correction.
@@ -5519,6 +5603,8 @@ PropDefinitions:
         - Left
         - Right
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.undescended_testis_corrected_method:
         Desc: Describes the method used to correct the patient's undescended testis.
         Enum:
@@ -5527,12 +5613,16 @@ PropDefinitions:
         - Spontaneous Descent
         - Testis Removed
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.undescended_testis_history:
         Desc: The persistent failure of one or both testes to descend into the scrotum.
         Enum:
         - '"Yes"'
         - '"No"'
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: C12326
             Origin: NCIt
@@ -5545,6 +5635,8 @@ PropDefinitions:
         - Left
         - Right
         - Not Reported
+        Tags:
+            Deprecated: true
     follow_up.viral_hepatitis_serologies:
         Desc: Text term that describes the kind of serological laboratory test used
             to determine the patient's hepatitis status.
@@ -5559,6 +5651,8 @@ PropDefinitions:
         - Hepatitis C Virus RNA
         - Unknown
         - Not Reported
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 4395982
             Origin: caDSR
@@ -5566,6 +5660,8 @@ PropDefinitions:
             Version: 1.0
     follow_up.weight:
         Desc: The weight of the patient measured in kilograms.
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 651
             Origin: caDSR
@@ -14434,6 +14530,8 @@ PropDefinitions:
     sample.is_ffpe:
         Desc: Indicator to signify whether or not the tissue sample was fixed in formalin
             and embedded in paraffin (FFPE).
+        Tags:
+            Deprecated: true
         Term:
         -   Code: 4170557
             Origin: caDSR
