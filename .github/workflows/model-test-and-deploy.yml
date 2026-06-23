@@ -1,0 +1,24 @@
+name: Model Validate and Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-and-build:
+    permissions:
+      packages: read
+      contents: write
+    uses: CBIIT/bento-workflows/.github/workflows/model-test-and-deploy.yml@v3.0.25
+    with:
+      model_files: |
+        gdc-model.yaml gdc-model-props.yaml gdc-model-terms.yaml
+      model_prefix: gdc-model
+      event_name: ${{ github.event_name }}
+      nodes_only_graph: yes
+    secrets:
+      token: inherit
+
